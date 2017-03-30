@@ -1,0 +1,49 @@
+/**********************************************
+    Author: Geek.Yu
+	Create time:  2017-03-18 20:18
+	Application: Add response style of the layout for the project
+
+	作者：喻文强
+	创建时间： 2017-03-18 20:18
+	主要用途： 为项目添加响应式布局的样式
+
+************************************************/
+
+
+/*仅320px*568px屏，代表iphone5*/
+@media only screen and (width:320px ) and (height:568px) {
+	
+	.swiper-container {
+	    height: 122px;
+	}
+	
+}
+
+
+/*大于等于320px宽屏的移动设备*/
+@media screen and (max-width:320px) {
+	
+	.swiper-container {
+	    height: 128px;
+	}
+	
+}
+
+
+/*大于且等于360px屏, 代表Galaxy S5,Galaxy Note3*/
+@media screen and (min-width:360px ) {
+	
+    .swiper-container {
+	    height: 138px;
+	}
+	
+}
+
+/*大于且等于400px屏, 代表Nexus 5X,Nexus 6P,iphone 6 Plus*/
+@media screen and (min-width:400px ) {
+	
+    .swiper-container {
+	    height: 150px;
+	}
+	
+}
