@@ -1,0 +1,24 @@
+<div class="navbar nav-index">
+	<div class="navbar-inner">
+		<div class="left sliding">
+			<a href="" class="back link icon-only"><i class="icon-t-back fa c-666"></i><span class="w20"></span></a>
+		</div>
+		<div class="center"><span>我的消息</span></div>
+	</div>
+</div>
+<div data-page="messageDetails" class="page no-toolbar">
+	<div class="page-content" id="message_details">
+		<script id="tmpmessageDetails" type="text/template7">
+			{{#list}}
+			<div class="Details-box">
+				<div class="title">{{title}}</div>
+				<div class="line1"></div>
+				<div class="time">发布时间：{{addtime}}</div>
+				<div class="info">
+					{{content}}
+				</div>
+			</div>
+			{{/list}}
+		</script>
+	</div>
+</div>

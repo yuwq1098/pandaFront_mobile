@@ -1,0 +1,50 @@
+<meta charset="utf-8">
+<div class="navbar nav-index">
+	<div class="navbar-inner">
+		<div class="left sliding">
+			<a href="" class="back link icon-only"><i class="icon-t-back fa c-666"></i><span class="w20"></span></a>
+		</div>
+		<div class="center nicheng"><span>我的收藏</span></div>
+	</div>
+</div>
+<div data-page="collection" class="page no-toolbar collcecion">
+	<div class="page-content collect">
+		<ul id="collectres">
+		  <script type="text/template7" id="tmpcollect">
+			{{#each list}}
+		  <li  data-id="{{memberid}}">
+			<div class="list-block Orderdynamic">
+				<a href="" class="item-link">
+					<div class=" item-content ">
+						<div class="item-media marb0"><img src="{{images}}" width="90 " height="65 "></div>
+						<div class="item-inner ">
+							<div class="item-title-row ">
+								<div class="item-title">{{name}}</div>
+							</div>
+							<div class="item-subtitle " style="line-height: 20px; ">
+								<div class="f12c999">{{type}}</div>
+								<div class="f12c999">{{level}}</div>
+								<div class="f12c999 "><span class="c-fc6e51">¥</span><span class="fs20 c-fc6e51 padlr2">{{price}}</span>起</div>
+								<div class="f12c555 ">{{address}}</div>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+			</li>
+			{{else}}
+			<div class="error-no">
+				<div class="img"><img src="img/seach1.png"></div>
+				<div class="f12c999">暂时没有找到任何数据</div>
+				<div class="refresh">
+					<a href="javascript:;" id="orderRefresh">点击刷新~</a>
+				</div>
+			</div>
+			{{/each}}
+			</script>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript" src="js/framework7.min.js"></script>
+<script type="text/javascript" src="js/h5p.plugins.js"></script>
+<script type="text/javascript" src="js/config.js"></script>

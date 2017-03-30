@@ -1,0 +1,106 @@
+<div class="navbar nav-index">
+  <div class="navbar-inner">
+    <div class="left sliding">
+      <a href="" class="back link icon-only"><i class="icon-t-back fa "></i></a>
+    </div>
+    <div class="center"><span>常用信息</span></div>
+  </div>
+</div>
+<div class="pages navbar-through toolbar-through">
+    <div data-page="contactlist" class="page no-toolbar commoninfo">
+        <div class="page-content">
+            <div class="content-block commoninfo_nav">
+              <!-- tabs控制面板 -->
+              <div class="buttons-row ">
+                <!-- 关联到第一个tab, 默认激活 -->
+                <a href="#tab1" class="tab-link active button">常用旅客</a>
+                <!-- 关联到第二个tab -->
+                <a href="#tab2" class="tab-link button addresslist">常用地址</a>
+              </div>
+            </div>
+            <!-- Tabs, 标签内容区容器 -->
+            <div class="tabs">
+              <!-- Tab 1, 默认激活 -->
+              <div id="tab1" class="tab active">
+                <div class="content-block info_item">
+                   <div class="list-block media-list contact">
+                     <ul id="contact_list">
+                     <script type="text/template7" id="tmpcontactlist">
+                        {{#each list}}
+                         <li class="swipeout" data-id={{id}} type="1">
+                           <a href="#" class="item-link item-content">
+                             <div class="item-media"><img src="./img/member/default_common_avator.png" width="60"></div>
+                             <div class="item-inner">
+                               <div class="item-title-row">
+                                 <div class="item-title">{{contact_name}}</div>
+                               </div>
+                               <div class="item-subtitle"></div>
+                               <div class="item-text">
+                                 <p>手机号码：{{contact_phone}}</p>
+                                 <p>身份证：{{contact_num}}</p>
+                               </div>
+                             </div>
+                            <div class="swipeout-actions-right">
+                              <a href="#" class="swipeout-delete" data-confirm="是否删除常用联系人？" data-confirm-title="温馨提示">删除</a>
+                            </div>
+                           </a>
+                         </li>
+                      {{else}}
+                      <div class="error-no">
+                        <div class="img"><img src="img/seach1.png"></div>
+                        <div class="f12c999">暂时没有找到任何数据</div>
+                        <div class="refresh">
+                          <a href="javascript:;" id="orderRefresh">点击刷新~</a>
+                        </div>
+                      </div>
+                      {{/each}}                         
+                    </script>
+                     </ul>
+                     <a class="add_new_btn" href="commoninfo/add_customer.html"></a>
+                   </div>
+                </div>
+              </div>
+              <!-- Tab 2 -->
+              <div id="tab2" class="tab">
+                <div class="content-block info_item">
+                   <div class="list-block media-list">
+                     <ul id="address_list">
+                         <script type="text/template7" id="tmpaddresslist">
+                          {{#each list}}
+                         <li class="swipeout" data-id={{id}} type="2">
+                           <a href="#" class="item-link item-content">
+                             <div class="item-media"><img src="./img/member/default_common_avator.png" width="60"></div>
+                             <div class="item-inner">
+                               <div class="item-title-row">
+                                 <div class="item-title">{{username}}</div>
+                               </div>
+                               <div class="item-subtitle"></div>
+                               <div class="item-text">
+                                 <p>手机号码：{{phone}}</p>
+                                 <p>地址：{{area}}{{address}}</p>
+                               </div>
+                             </div>
+                            <div class="swipeout-actions-right">
+                              <a href="#" class="swipeout-delete" data-confirm="是否删除常用地址？" data-confirm-title="温馨提示">删除</a>
+                            </div>                             
+                           </a>
+                         </li>
+                      {{else}}
+                      <div class="error-no">
+                        <div class="img"><img src="img/seach1.png"></div>
+                        <div class="f12c999">暂时没有找到任何数据</div>
+                        <div class="refresh">
+                          <a href="javascript:;" id="orderRefresh">点击刷新~</a>
+                        </div>
+                      </div>
+                      {{/each}}                       
+                    </script>
+                     </ul>
+                     <a class="add_new_btn" href="commoninfo/add_address.html"></a>
+                   </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+<div class="navbar nav-index">
+    <div class="navbar-inner">
+        <div class="left sliding">
+            <a href="" class="back link icon-only"><i class="icon-t-back fa"></i></a>
+        </div>
+        <div class="center"><span>熊猫旅行</span></div>
+    </div>
+</div>
+<div class="pages navbar-through toolbar-through">
+    <div data-page="login" class="page no-toolbar pd_login">
+        <div class="page-content">
+          <div class="content-block pd_login_t">
+            <!-- tabs控制面板 -->
+            <div class="buttons-row">
+              <!-- 关联到第一个tab, 默认激活 -->
+              <a href="#tab1" class="tab-link active ">熊猫账户登录</a>
+              <!-- 关联到第二个tab -->
+              <a href="#tab2" class="tab-link ">无密码快捷登录</a>
+            </div>
+          </div>
+          <!-- Tabs, 标签内容区容器 -->
+          <div class="tabs">
+            <!-- Tab 1, 默认激活 -->
+            <div id="tab1" class="tab active">
+               <div class="list-block">
+                 <form class="value_check">
+                   <ul>
+                   <li>
+                     <div class="item-content">
+                       <div class="item-inner">
+                         <div class="item-input">
+                           <input type="text" name="username" placeholder="请输入账号或手机号">
+                         </div>
+                       </div>
+                     </div>
+                   </li>
+                   <li>
+                     <div class="item-content">
+                       <div class="item-inner">
+                         <div class="item-input">
+                           <input type="password" name="password" placeholder="请输入密码">
+                         </div>
+                         <i class="member-icon password hidepw "></i>
+                       </div>
+                     </div>
+                   </li>
+                   </ul>
+                   <div class="content-block">
+                    <!--onclick="initLogin()"-->
+                       <a href="#" value="1" class="button button-big  login_btn btnlogin default_btn_green">登录</a>
+                   </div>
+                 </form>
+                 <div class="content-block quick_link">
+                     <a href="auth/register.html">快速注册</a> <span>|</span> <a href="auth/forget-password-verifi-phone.html">忘记密码</a>
+                 </div>
+                 <div class="content-block third_login">
+                     <div class="title">
+                         <span>第三方账户登录</span>
+                     </div>
+                 </div>
+                 <div class="content-block third_icon">
+                     <a href=""><i class="member-icon wechat"></i></a>
+                     <a href=""><i class="member-icon qq"></i></a>
+                  <!--    <a href=""><i class="member-icon sina"></i></a> -->
+                 </div>
+               </div>
+            </div>
+            <!-- Tab 2 -->
+            <div id="tab2" class="tab">
+                <div class="list-block">
+                  <ul>
+                    <li>
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-input">
+                            <!--判断标识-->
+                            <input type="text" name="mark" value="" style="display: none;">
+                            <input type="text" name="phone" placeholder="请输入手机号">
+                          </div>
+                          <span onclick="getSmscode()" class="get_code">获取验证码</span>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-input">
+                            <input type="password" name="sms_code" placeholder="请输入验证码">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="content-block">
+                      <a href="#" value="2" class="button button-big  login_btn phonelogin default_btn_green">登录</a>
+                  </div>
+                  <div class="content-block quick_link">
+                      <a href="auth/register.html">快速注册</a> <span>|</span> <a href="auth/forget-password-verifi-phone.html">忘记密码</a>
+                  </div>
+                  <div class="content-block third_login">
+                      <div class="title">
+                          <span>第三方账户登录</span>
+                      </div>
+                  </div>
+                  <div class="content-block third_icon">
+                      <a href=""><i class="member-icon wechat"></i></a>
+                      <a href=""><i class="member-icon qq"></i></a>
+                      <!-- <a href=""><i class="member-icon sina"></i></a> -->
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+{
+  "my/index.html": {
+    "href": "my/index.html",
+    "priority": 0
+  },
+  "postal/index.html": {
+    "href": "postal/index.html",
+    "resources": [],
+    "refer": [],
+    "priority": 1
+  },
+  "index.html": {
+    "href": "index.html",
+    "resources": [],
+    "refer": [],
+    "priority": 0
+  }
+}

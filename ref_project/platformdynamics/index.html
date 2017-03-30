@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="theme-color" content="#2196f3">
+		<base href="../index.html">
+		<title>张网旅游 APP</title>
+		<link rel="stylesheet" href="css/framework7.ios.css">
+		<!--<link rel="stylesheet" href="css/framework7.material.css">-->
+		<link rel="stylesheet" href="css/t.global.css">
+	</head>
+
+	<body>
+		<div class="statusbar-overlay"></div>
+		<div class="panel-overlay"></div>
+		<!-- Views -->
+		<div class="views">
+			<!-- Your main view, should have "view-main" class -->
+			<div class="view view-main navbar-through toolbar-through">
+				<div class="navbar nav-index">
+					<div class="navbar-inner">
+						<div class="left sliding">
+							<a href="index.html" class="back link icon-only"><i class="fa icon-t-back c-666"></i><span class="w20"></span></a>
+						</div>
+						<div class="center"><span>平台动态</span></div>
+						<div class="right sliding">
+							<!--<a href="#" class="open-panel link icon-only"><i class="fa icon-t-search c-FFFFFF"></i></a>-->
+						</div>
+					</div>
+				</div>
+				<div data-page="platformdynamics" class="page no-toolbar ">
+					<div class="page-content infinite-scroll platformdy">
+							<div class="list-block Platform bank">
+								<ul style="width: 100%;" id="Platformdynamics">
+									<script id="tmpPlatList" type="text/template7">
+									{{#each list}}
+									<li>
+										<a href="#" class="item-link item-content">
+											{{#if litpic}}
+											<div class="item-media"><img src="{{litpic}}" width="80" height="50"/></div>
+											{{else}}
+											{{/if}}
+											<div class="item-inner">
+												<div class="item-title-row">
+													<div class="item-title">{{title}}</div>
+												</div>
+												<div class="item-subtitle">{{addtime}}</div>
+											</div>
+										</a>
+									</li>
+									{{else}}
+									<div class="error-no">
+										<div class="img"><img src="img/seach1.png"></div>
+										<div class="f12c999">暂时没有找到任何数据</div>
+										<!--<div class="refresh">
+											<a href="javascript:;" id="orderRefresh">点击刷新~{{statusname}}</a>
+										</div>-->
+									</div>
+									{{/each}}
+									</script>
+								</ul>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--<script type="text/javascript" src="js/mui.min.js"></script>-->
+		<script type="text/javascript" src="js/framework7.min.js"></script>
+		<script type="text/javascript" src="js/h5p.plugins.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/config.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,48 @@
+<div class="navbar">
+	<div class="navbar-inner">
+		<div class="left">
+			<a href="addbank.html" class="back link icon-only"><i class="fa icon-t-back c-666"></i><span class="w20"></span></a>
+		</div>
+		<div class="center"><span>填写银行卡信息</span></div>
+		<div class="right">
+			<!--<a href="#" class="open-panel link icon-only"><i class="fa icon-t-problem c-FFFFFF"></i></a>-->
+		</div>
+	</div>
+</div>
+<div data-page="writeinfo" class="page no-toolbar">
+	<div class="page-content">
+		<div class="list-block write-info">
+			<ul>
+				<li>
+					<div class="item-content">
+						<div class="item-inner">
+							<div class="item-title label">卡类型</div>
+							<div class="item-input" id="bank">
+								<!--{{#writeInfo}}-->
+								<input type="text" value="{{bankname}}     {{cardtype}}" readonly="readonly" class="first-hide">
+								<!--{{/writeInfo}}-->
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="item-content">
+						<div class="item-inner">
+							<div class="item-title label">手机号</div>
+							<div class="item-input">
+								<input type="text" placeholder="银行预留手机号" name="phone" id="phone" class="fl" style="width: 92%;">
+								<!--<i class="fa icon-t-exclamatory-mark pt14 c-999999 "></i>-->
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class=" pulic">同意
+			<a class="link" href="#">《服务条款》</a>
+		</div>
+		<p class="pay">
+			<a class="button button-big button-fill" href="javascript:;" id="Reserve"><span>下一步</span></a>
+		</p>
+	</div>
+</div>

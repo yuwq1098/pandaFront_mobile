@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="theme-color" content="#2196f3">
+		<base href="../index.html">
+		<title>张网旅游 APP</title>
+		<link rel="stylesheet" href="css/framework7.ios.css">
+		<!--<link rel="stylesheet" href="css/framework7.material.css">-->
+		<link rel="stylesheet" href="css/t.global.css">
+	</head>
+
+	<body>
+		<div class="statusbar-overlay"></div>
+		<div class="panel-overlay"></div>
+		<!-- Views -->
+		<div class="views">
+			<!-- Your main view, should have "view-main" class -->
+			<div class="view view-main navbar-through toolbar-through">
+				<div class="navbar nav-index">
+					<div class="navbar-inner">
+						<div class="left sliding">
+							<a href="" class="back link icon-only"><i class="icon-t-back fa c-666"></i><span class="w20"></span></a>
+						</div>
+						<div class="center"><span>个人信息</span></div>
+					</div>
+				</div>
+				<div data-page="personalinfo" class="page no-toolbar">
+					<div class="page-content ">
+						<div class="list-block personinfo" id="personalInfo">
+							{{#group}}
+							<ul>
+								<li>
+									<!--personalinfo/headerphoto.html-->
+									<a href="javascript:;" class="item-link item-content personinfo-header">
+										<div class="item-inner">
+											<div class="item-title f14c555">头像</div>
+											<img style="background-image: url(img/member.png);background-size: 100% 100%;"  _src="{{#if litpic}}{{litpic}}{{else}}img/member.png{{/if}}" >
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="personalinfo/rename.html" class="item-link item-content ">
+										<div class="item-inner ">
+											<div class="item-title f14c555">昵称</div>
+											<div class="item-after fs14">{{nickname}}</div>
+										</div>
+									</a>
+								</li>
+								<li class="personinfo-sex">
+									<a href="#" class="item-link smart-select " data-back-text="返回" data-back-on-select="ture" data-open-in="popup">
+										<!-- select -->
+										<select name="sex" id="sex">
+											{{#js_compare "this.sex=='保密'"}}
+											<option value="保密" selected="selected">保密</option>
+											<option value="男">男</option>
+											<option value="女">女</option>
+											{{/js_compare}} {{#js_compare "this.sex=='男'"}}
+											<option value="保密">保密</option>
+											<option value="男" selected="selected">男</option>
+											<option value="女">女</option>
+											{{/js_compare}} {{#js_compare "this.sex=='女'"}}
+											<option value="保密">保密</option>
+											<option value="男">男</option>
+											<option value="女" selected="selected">女</option>
+											{{/js_compare}}
+										</select>
+										<div class="item-content">
+											<div class="item-inner">
+												<!-- Select label -->
+
+												<div class="item-title f14c555">性别</div>
+												<!-- Selected value, not required -->
+												<div class="item-after fs14" id="sexname">
+
+												</div>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li class="personinfo-truename">
+									<a href="personalinfo/truename.html" class="item-link item-content">
+										<div class="item-inner">
+											<div class="item-title f14c555">真实姓名</div>
+											<div class="item-after fs14">{{truename}}</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="personalinfo/personcardnum.html" class="item-link item-content">
+										<div class="item-inner">
+											<div class="item-title f14c555">身份证号</div>
+											<div class="item-after fs14">{{cardid}}</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="set/changemobile.html" class="item-link item-content">
+										<div class="item-inner">
+											<div class="item-title f14c555">手机号码</div>
+											<div class="item-after fs14">{{mobile}}</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+							{{/group}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/framework7.min.js"></script>
+		<script type="text/javascript" src="js/h5p.plugins.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/config.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/utitls.js"></script> 
+	</body>
+
+</html>

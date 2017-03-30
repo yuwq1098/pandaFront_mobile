@@ -1,0 +1,50 @@
+<div class="navbar nav-index">
+	<div class="navbar-inner">
+		<div class="left sliding">
+			<a href="" class="back link icon-only"><i class="fa icon-t-back c-666"></i><span class="w20"></span></a>
+		</div>
+		<div class="center"><span>订单搜索</span></div>
+
+	</div>
+</div>
+<div data-page="order-search" class="page page-on-center no-toolbar order search-tab">
+	<form class="searchbar searchbar-init searchbar-ny" data-search-list=".list-block-search" data-search-in=".item-title" data-found=".searchbar-found" data-not-found=".searchbar-not-found">
+		<div class="searchbar-input">
+			<input type="search" id="ordersearch" placeholder="订单号、景区名称、联系人">
+			<a href="#" class="searchbar-clear"></a>
+		</div>
+		<a href="#" class="searchbar-cancel">取消</a>
+	</form>
+	<div class="searchbar-overlay"></div>
+	<div class="subnavbar tabs-line2">
+		<div class="buttons-row">
+			<a href="#tab-all-search" class="button tab-link mlr2 active">全部</a>
+			<a href="#tab-ticket-search" class="button tab-link mlr2">门票</a>
+			<a href="#tab-hotel-search" class="button tab-link mlr2">酒店</a>
+			<a href="#tab-line-search" class="button tab-link mlr2">线路</a>
+			<a href="#tab-specialty-search" class="button tab-link mlr2">特产</a>
+		</div>
+	</div>
+	<div class="page-content" id="searchList" >
+		<div class="tabs-animated-wrap special">
+			<div class="tabs">
+				<div id="tab-all-search" class="tab active infinite-scroll" data-distance="50" data-order-type="0">
+				
+				</div>
+				<div id="tab-ticket-search" class="tab infinite-scroll" data-distance="50" data-order-type="5">
+					
+				</div>
+				<div id="tab-hotel-search" class="tab infinite-scroll" data-distance="50" data-order-type="2">
+					
+				</div>
+				<div id="tab-line-search" class="tab infinite-scroll" data-distance="50" data-order-type="1">
+					
+				</div>
+				<div id="tab-specialty-search" class="tab infinite-scroll" data-distance="50" data-order-type="16">
+					
+				</div>
+			</div>
+			<!--<div class="infinite-scroll-preloader"><div class="preloader"></div></div>-->
+		</div>
+	</div>
+</div>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="theme-color" content="#2196f3">
+		<base href="../index.html">
+		<title>张网旅游 APP</title>
+		<link rel="stylesheet" href="css/framework7.ios.css">
+		<!--<link rel="stylesheet" href="css/framework7.material.css">-->
+		<link rel="stylesheet" href="css/t.global.css">
+	</head>
+
+	<body>
+		<div class="statusbar-overlay"></div>
+		<div class="panel-overlay"></div>
+		<!-- Views -->
+		<div class="views">
+			<!-- Your main view, should have "view-main" class -->
+			<div class="view view-main navbar-through toolbar-through">
+				<div class="navbar nav-index">
+					<div class="navbar-inner">
+						<div class="left sliding">
+							<a href="" class="back link icon-only"><i class="icon-t-back fa c-666"></i><span class="w20"></span></a>
+						</div>
+						<div class="center"><span>余额</span></div>
+					</div>
+				</div>
+				<div data-page="balance" class="page no-toolbar" style="background:#339A99;">
+					<div class="page-content" style="padding-top: 0px;margin-top: 48px;">
+						<div id="MyBalance">
+							<!--{{#group}}-->
+							<div class="balance-top">
+								<div class="img"><img src="img/yetop_1.jpg"></div>
+								<div class="txt">余额</div>
+								<div class="money c-F37171 first-hide">¥{{fx_Assets}}</div>
+							</div>
+							<div class="list-block balance-list">
+								<ul>
+									<li>
+										<a href="javascript:void(0);" class="item-link item-content">
+											<div class="item-media">
+												<i class="fa icon-t-taday-gains c-F37171"></i>
+											</div>
+											<div class="item-inner">
+												<div class="item-title f12c555">昨日收益</div>
+												<div class="item-after c-f37171 fs14 first-hide">¥{{fx_amount_yesterday}}</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);" class="item-link item-content">
+											<div class="item-media">
+												<i class="fa icon-t-sum-gains c-FF9966"></i>
+											</div>
+											<div class="item-inner">
+												<div class="item-title f12c555">总收益</div>
+												<div class="item-after c-f37171 fs14 first-hide">¥{{fx_amount}}</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);" class="item-link item-content">
+											<div class="item-media">
+												<i class="fa icon-t-postaled c-E7D269"></i>
+											</div>
+											<div class="item-inner">
+												<div class="item-title f12c555">已提现金额</div>
+												<div class="item-after c-f37171 fs14 first-hide">¥{{fx_surplus}}</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<!--{{/group}}-->
+						</div>
+						<div class="balance-links">
+							<div class="row">
+								<div class="col-33">
+									<a href="account/detailed.html">
+										<span class="fa-stack icon-stack-6"> 
+			      							<i class="fa icon-t-round fa-stack-2x c-8bd9b3"></i>
+				  							<i class="fa icon-t-transaction-records fa-stack-1x fa-inverse"></i>
+			    						</span>
+										<span class="tit">交易明细</span>
+									</a>
+								</div>
+								<div class="col-33">
+									<a href="my/drawalrecord.html">
+										<span class="fa-stack icon-stack-6"> 
+			      		 					<i class="fa icon-t-round fa-stack-2x c-66b6ff"></i>
+				  							<i class="fa icon-t-my-postal fa-stack-1x fa-inverse"></i>
+			    						</span>
+										<span class="tit">提现记录</span>
+									</a>
+								</div>
+								<div class="col-33">
+									<a href="bank/addbank.html">
+										<span class="fa-stack icon-stack-6"> 
+			      							<i class="fa icon-t-round fa-stack-2x c-a487ef"></i>
+				  							<i class="fa icon-t-defaultbank fa-stack-1x rem1 fa-inverse"></i>
+			    						</span>
+										<span class="tit">绑定银行卡</span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="button-box1 pad1215">
+							<a class="button button-big button-fill" href="postal/index.html"><span>提现</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--<script type="text/javascript" src="js/mui.min.js"></script>-->
+		<script type="text/javascript" src="js/framework7.min.js"></script>
+		<script type="text/javascript" src="js/h5p.plugins.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/config.js"></script>
+	</body>
+
+</html>

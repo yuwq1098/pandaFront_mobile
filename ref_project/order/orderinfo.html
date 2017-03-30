@@ -1,0 +1,101 @@
+<div class="navbar nav-index">
+	<div class="navbar-inner">
+		<div class="left sliding">
+			<a href="" class="back link icon-only"><i class="icon-t-back fa c-666"></i><span class="w20"></span></a>
+		</div>
+		<div class="center"><span>订单信息</span></div>
+	</div>
+</div>
+<div data-page="orderinfo" class="page no-toolbar" id="order_info">
+	<script id="tmpOrderInfo" type="text/template7">
+	<div class="page-content" id="info-order-data">
+		<div class="list-block">
+			<ul>
+				<li class="item-content">
+					<div class="item-inner">
+						<div class="item-title f12c999">订单状态：<span class="padl40 f12c555">{{data.order_status}}</span></div>
+					</div>
+				</li>
+				<li class="item-content">
+					<div class="item-inner">
+						<div class="item-title f12c999">订单金额：<span class="c-F37171 padl40">{{data.order_amount}}</span></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="list-block">
+			<ul>
+				<a class="item-link">
+					<li class="item-content">
+						<div class="item-inner">
+							<div class="item-title f14c555 fs16">
+								{{data.product_name}}
+							</div><p/>
+							{{#if data.product_address}}
+							<div class="f12c999"><span class="padl40 f12c555">
+							地址：{{data.product_address}}</span>
+							</div>
+							{{/if}}
+							{{#if data.product_remark}}
+							<div class="f12c999"><span class="padl40 f12c555">
+							简介：{{data.product_remark}}</span>
+							</div>
+							{{/if}}
+						</div>
+					</li>
+				</a>
+				<li class="item-content">
+					<div class="item-orderinfo">
+						<div class="f12c999">预定数量：<span class="padl40 f12c555">{{data.book_num}}</span></div>
+						<div class="f12c999">入住时间：<span class="padl40 f12c555">{{data.play_time}}</span></div>
+						<div class="f12c999">离店时间：<span class="padl40 f12c555">{{data.leave_time}}</span></div>
+						<div class="f12c999">最晚到店：<span class="padl40 f12c555">{{data.play_time}}</span></div>
+						<div class="f12c999">订单编号：<span class="padl40 f12c555 local_order_sn">{{data.order_sn}}</span></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="list-block">
+			<ul>
+				<li class="item-content">
+					<div class="item-inner">
+						<div class="item-title f14c555 fs16">入住人信息</div>
+					</div>
+				</li>
+				<li class="item-content">
+					<div class="item-orderinfo">
+						<div class="f12c999">入住人：<span class="padl50 f12c555">{{data.contacts_name}}</span></div>
+						<div class="f12c999">手机号：<span class="padl50 f12c555">{{data.contacts_phone}}</span></div>
+						<div class="f12c999">身份证：<span class="padl50 f12c555">{{data.contacts_id_card}}</span></div>
+						<div class="f12c999">下单时间：<span class="padl40 f12c555">{{data.add_time}}</span></div>
+						<div class="f12c999">支付方式：<span class="padl40 f12c555">{{data.payment}}</span></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="list-block">
+		{{#if data.handle_can_cancel}}
+			<div class="button-box1 pad1215">
+				<a class="button button-big button-fill" id="btnOrderCancel" href="javascript:;">取消订单</a>
+			</div>
+		{{/if}}
+		{{#if data.handle_can_refund}}
+			<div class="button-box1 pad1215">
+				<a class="button button-big button-fill" id="submessage" href="#">申请退款</a>
+			</div>
+		{{/if}}
+		{{#if data.handle_can_comment}}
+			<div class="button-box1 pad1215">
+				<a class="button button-big button-fill" id="submessage" href="order/orderopinion.html?_order_sn={{data.order_sn}}&_order_type={{data.order_type}}">立即评价</a>
+			</div>
+		{{/if}}
+		{{#if data.handle_can_pay}}
+			<div class="button-box1 pad1215">
+				<a class="button button-big button-fill" id="submessage" href="#">立即支付</a>
+			</div>
+		{{/if}}
+		
+		</div>
+	</div>
+	</script>
+</div>

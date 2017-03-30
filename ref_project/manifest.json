@@ -1,0 +1,632 @@
+{
+	"@platforms": [
+		"android",
+		"iPhone",
+		"iPad"
+	],
+	"id": "H5CB0E96A",/*应用的标识，创建应用时自动生成，勿手动修改*/
+	"name": "张网分销",/*应用名称，程序桌面图标名称*/
+	"version": {
+		"name": "1.10.28.01bata",/*应用版本名称*/
+		"code": ""
+	},
+	"description": "",/*应用描述信息*/
+	"icons": {
+		"72": "icon.png"
+	},
+	"launch_path": "index.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+	"developer": {
+		"name": "",/*开发者名称*/
+		"email": "",/*开发者邮箱地址*/
+		"url": ""
+	},
+	"permissions": {
+
+
+
+		"Cache": {
+			"description": "管理应用缓存"
+		},
+
+		"Console": {
+			"description": "跟踪调试输出日志"
+		},
+
+
+
+		"Events": {
+			"description": "应用扩展事件"
+		},
+		"File": {},
+
+
+		"Invocation": {},
+		"Orientation": {},
+
+		"Storage": {},
+
+
+		"Runtime": {},
+		"XMLHttpRequest": {},
+
+		"Barcode": {},
+
+
+		"Webview": {},
+		"NativeUI": {},
+		"Navigator": {},
+		"NativeObj": {},
+		"Downloader": {},
+		"Push": {},
+		"OAuth": {
+			"description": "登录授权"
+		},"Gallery":{},"Camera":{},"Zip":{}
+	},
+	"plus": {
+		"splashscreen": {
+			"autoclose": false,/*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
+			"waiting": false
+		},
+		"popGesture": "close",/*设置应用默认侧滑返回关闭Webview窗口，"none"为无侧滑返回功能，"hide"为侧滑隐藏Webview窗口。参考http://ask.dcloud.net.cn/article/102*/
+		"runmode": "normal",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
+		"hardwareAccelerated": true,
+		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
+		"distribute": {
+			"plugins": {
+				"oauth": {
+					"weixin": {
+						"appid": "wxfa2b1d9a719a5a5e",
+						"appsecret": "345a7bea83b19fc561835864c395ca71"
+					},
+					"qq": {
+						"appid": "101327765"
+					}
+				},
+				"push": {
+					"igexin": {
+						"appid": "QG5TMez7NS6RuANFvAYCh9",
+						"appkey": "TK0nlkr6JP84DGqIX7WOG2",
+						"appsecret": "gtZZenjzRJADHXoiccT034"
+					}
+				}
+			},
+			"apple": {
+				"appid": "",/*iOS应用标识，苹果开发网站申请的appid，如io.dcloud.HelloH5*/
+				"mobileprovision": "",/*iOS应用打包配置文件*/
+				"password": "",/*iOS应用打包个人证书导入密码*/
+				"p12": "",/*iOS应用打包个人证书，打包配置文件关联的个人证书*/
+				"devices": "universal",/*iOS应用支持的设备类型，可取值iphone/ipad/universal*/
+				"frameworks": []
+			},
+			"google": {
+				"packagename": "",/*Android应用包名，如io.dcloud.HelloH5*/
+				"keystore": "",/*Android应用打包使用的密钥库文件*/
+				"password": "",/*Android应用打包使用密钥库中证书的密码*/
+				"aliasname": "",/*Android应用打包使用密钥库中证书的别名*/
+				"permissions": [
+					"<uses-permission android:name=\"android.permission.GET_TASKS\"/>",
+					"<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+					"<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+					"<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+					"<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+					"<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+					"<uses-feature android:name=\"android.hardware.camera\"/>",
+					"<uses-permission android:name=\"android.permission.RECEIVE_USER_PRESENT\"/>",
+					"<uses-permission android:name=\"android.permission.RECEIVE_WAP_PUSH\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\"/>",
+					"<uses-permission android:name=\"android.permission.CAMERA\"/>"
+				],
+				/*使用Native.js调用原生安卓API需要使用到的系统权限*/
+				"ImmersedStatusbar": true
+			},
+			"orientation": [
+				"portrait-primary"
+			],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
+			"icons": {
+				"ios": {
+					"prerendered": true, /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*/
+					"auto": "", /*应用图标，分辨率：512x512，用于自动生成各种尺寸程序图标*/
+					"iphone": {
+						"normal": "unpackage/res/icons/57x57.png", /*iPhone3/3GS程序图标，分辨率：57x57*/
+						"retina": "unpackage/res/icons/114x114.png", /*iPhone4程序图标，分辨率：114x114*/
+						"retina7": "unpackage/res/icons/120x120.png", /*iPhone4S/5/6程序图标，分辨率：120x120*/
+						"retina8": "unpackage/res/icons/180x180.png", /*iPhone6 Plus程序图标，分辨率：180x180*/
+						"spotlight-normal": "unpackage/res/icons/29x29.png", /*iPhone3/3GS Spotlight搜索程序图标，分辨率：29x29*/
+						"spotlight-retina": "unpackage/res/icons/58x58.png", /*iPhone4 Spotlight搜索程序图标，分辨率：58x58*/
+						"spotlight-retina7": "unpackage/res/icons/80x80.png", /*iPhone4S/5/6 Spotlight搜索程序图标，分辨率：80x80*/
+						"settings-normal": "unpackage/res/icons/29x29.png", /*iPhone4设置页面程序图标，分辨率：29x29*/
+						"settings-retina": "unpackage/res/icons/58x58.png", /*iPhone4S/5/6设置页面程序图标，分辨率：58x58*/
+						"settings-retina8": "unpackage/res/icons/87x87.png"
+					},
+					"ipad": {
+						"normal": "unpackage/res/icons/72x72.png", /*iPad普通屏幕程序图标，分辨率：72x72*/
+						"retina": "unpackage/res/icons/144x144.png", /*iPad高分屏程序图标，分辨率：144x144*/
+						"normal7": "unpackage/res/icons/76x76.png", /*iPad iOS7程序图标，分辨率：76x76*/
+						"retina7": "unpackage/res/icons/152x152.png", /*iPad iOS7高分屏程序图标，分辨率：152x152*/
+						"spotlight-normal": "unpackage/res/icons/50x50.png", /*iPad Spotlight搜索程序图标，分辨率：50x50*/
+						"spotlight-retina": "unpackage/res/icons/100x100.png", /*iPad高分屏Spotlight搜索程序图标，分辨率：100x100*/
+						"spotlight-normal7": "unpackage/res/icons/40x40.png",/*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*/
+						"spotlight-retina7": "unpackage/res/icons/80x80.png",/*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
+						"settings-normal": "unpackage/res/icons/29x29.png",/*iPad设置页面程序图标，分辨率：29x29*/
+						"settings-retina": "unpackage/res/icons/58x58.png"
+					}
+				},
+				"android": {
+					"mdpi": "unpackage/res/icons/48x48.png", /*普通屏程序图标，分辨率：48x48*/
+					"ldpi": "unpackage/res/icons/48x48.png", /*大屏程序图标，分辨率：48x48*/
+					"hdpi": "unpackage/res/icons/72x72.png", /*高分屏程序图标，分辨率：72x72*/
+					"xhdpi": "unpackage/res/icons/96x96.png",/*720P高分屏程序图标，分辨率：96x96*/
+					"xxhdpi": "unpackage/res/icons/144x144.png"
+				}
+			},
+			"splashscreen": {
+				"ios": {
+					"iphone": {
+						"default": "", /*iPhone3启动图片选，分辨率：320x480*/
+						"retina35": "",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
+						"retina40": "",/*4.0 英寸设备(iPhone5/iPhone5s)启动图片，分辨率：640x1136*/
+						/*4.7 英寸设备(iPhone6)启动图片，分辨率：750x1334*/
+						"retina55": "",/*5.5 英寸设备(iPhone6 Plus)启动图片，分辨率：1242x2208*/
+						"retina55l": ""
+					},
+					"ipad": {
+						"portrait": "", /*iPad竖屏启动图片，分辨率：768x1004*/
+						"portrait-retina": "",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
+						"landscape": "", /*iPad横屏启动图片，分辨率：1024x748*/
+						"landscape-retina": "", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
+						"portrait7": "", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
+						"portrait-retina7": "",/*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
+						"landscape7": "", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
+						"landscape-retina7": ""
+					}
+				},
+				"android": {
+					/*普通屏启动图片，分辨率：240x282*/
+					"ldpi": "", /*大屏启动图片，分辨率：320x442*/
+					"hdpi": "img/setting/480x762.png", /*高分屏启动图片，分辨率：480x762*/
+					/*720P高分屏启动图片，分辨率：720x1242*/
+					"xxhdpi": "img/setting/1080x1882.png",
+					"xhdpi": "img/setting/720x1242.png"
+				}
+			},
+			"debug": false
+		}
+	},
+	"dependencies": {
+		"pages": {
+			"index.html": {
+				"resources": [
+					"js/framework7.min.js",
+					"css/framework7.material.colors.min.css",
+					"css/framework7.material.min.css",
+					"js/config.js",
+					"about.html",
+					"img/i-f7-material.png",
+					"test/index.html",
+					"img/i-form-comment-material.svg",
+					"img/i-form-gender-material.svg",
+					"img/i-form-email-material.svg",
+					"img/i-form-calendar-material.svg",
+					"services.html",
+					"img/i-form-name-material.svg",
+					"img/i-form-password-material.svg",
+					"img/i-form-url-material.svg",
+					"img/i-form-settings-material.svg",
+					"img/i-form-toggle-material.svg",
+					"form.html",
+					"img/i-form-tel-material.svg",
+					"css/framework7.ios.colors.min.css",
+					"css/framework7.ios.min.css",
+					"img/index/Plat.png",
+					"img/index/Order.png",
+					"img/index/Distributor.png",
+					"img/index/Data.png",
+					"img/index/NewOrder.png",
+					"img/index/icon-QRcode.png",
+					"img/index/Cheats.png",
+					"img/index/Detailed.png",
+					"img/index/Scan.png",
+					"img/index/Drawals.png",
+					"img/index/Fans.png",
+					"img/index/Whole.png",
+					"img/index/icon-set.png",
+					"img/index/icon-info.png",
+					"img/index/icon-code.png",
+					"js/h5p.plugins.js",
+					"qrcode/scanning.html",
+					"img/index/lines.png",
+					"img/index/hotels.png",
+					"img/index/head.png",
+					"img/index/spots.png",
+					"img/index/icon-pic.png",
+					"img/index/district.png",
+					"img/index/My.png",
+					"img/index/test.jpg",
+					"js/framework7.js",
+					"css/font-awesome.css",
+					"fonts/fontawesome-webfont.woff2",
+					"fonts/t-fxfont.woff",
+					"fenxiao/index.html",
+					"my/index.html",
+					"css/new_file.css",
+					"css/main.css",
+					"iconfont/iconfont.woff",
+					"img/member.jpg",
+					"css/t.global.css",
+					"css/t.index.css",
+					"css/t.my.css",
+					"login.html",
+					"postal/index.html",
+					"css/t.postal.css",
+					"css/framework7.ios.css",
+					"css/framework7.material.css",
+					"img/yzm1.jpg",
+					"img/icons.png",
+					"register.html",
+					"postal/addbank.html",
+					"postal/writeinfo.html",
+					"img/logo.png",
+					"img/logo2.png",
+					"my/set.html",
+					"my/about.html",
+					"my/passwordset1.html",
+					"postal/writecode.html",
+					"index.html",
+					"my/passwordset2.html",
+					"img/index/loading.png",
+					"img/index/toparrow.png",
+					"img/index/loadings.png",
+					"/img/index/load.svg",
+					"/img/index/toparrow.png",
+					"img/index/load.svg",
+					"img/index/toparrow.svg",
+					"fenxiao/platformdynamics.html",
+					"my/accountmanage.html",
+					"my/passwordset4.html",
+					"my/passwordset3.html",
+					"order/index.html",
+					"fenxiao/cheats.html",
+					"my/fans.html",
+					"css/order.css",
+					"img/pic_1.jpg",
+					"fenxiao/literature.html",
+					"my/distributor.html",
+					"img/ewm1.jpg",
+					"fenxiao/commission.html",
+					"message.html",
+					"my/userinfo.html",
+					"my/message.html",
+					"js/mui.min.js",
+					"/img/ewm1.jpg",
+					"/js/config.js",
+					"/js/framework7.min.js",
+					"/css/framework7.ios.css",
+					"/js/mui.min.js",
+					"/css/t.postal.css",
+					"/css/t.global.css",
+					"/js/h5p.plugins.js",
+					"/img/logo2.png",
+					"/img/index/test.jpg",
+					"js/main.js",
+					"fenxiao/Newdrawals.html",
+					"my/balancedetail.html",
+					"set/index.html",
+					"set/about.html",
+					"my/safety.html",
+					"message/index.html",
+					"distributor/index.html",
+					"set/accountmanage.html",
+					"img/member.png",
+					"commission/index.html",
+					"fans/index.html",
+					"set/currency.html",
+					"set/safety.html",
+					"set/passwordset3.html",
+					"cheats/index.html",
+					null,
+					"img/icon-xl.png",
+					"set/passwordset4.html",
+					"literature/index.html",
+					"img/seach1.png",
+					"fonts/t-fxfont.ttf",
+					"my/balance.html",
+					"img/yetop_1.jpg",
+					"set/changemobile.html",
+					"set/changemobile2.html",
+					"literature/nextgroup.html",
+					"platformdynamics/index.html",
+					"personalinfo/headerphoto.html",
+					"img/userphoto.jpg",
+					"personalinfo/rename.html",
+					"img/xiangce.png",
+					"personalinfo/index.html",
+					"img/paizhao.svg",
+					"personalinfo/personcardnum.html",
+					"mymateriel/index.html",
+					"personalinfo/phonenumble.html",
+					"personalinfo/truename.html",
+					"my/drawalrecord.html",
+					"css/iconfont.woff",
+					"personalinfo/personadress.html",
+					"css/iconfont.css",
+					"css/font-awesome.min.css",
+					"css/feedback-page.css",
+					"img/iconfont-tianjia.png",
+					"fonts/iconfont.ttf",
+					"fonts/iconfont.woff",
+					"css/app.css",
+					"js/common.js",
+					"js/utitls.js",
+					"search.html",
+					"all/index.html",
+					"set/privacyPolicy.html",
+					"set/feedback.html",
+					"order/search.html",
+					"set/copyrightinfo.html",
+					"set/imprint.html",
+					"cheats/search.html",
+					"uploads/tp3.jpg",
+					"uploads/tp1.jpg",
+					"uploads/tp16.jpg",
+					"uploads/tp11.jpg",
+					"uploads/tp13.jpg",
+					"uploads/tp2.jpg",
+					"uploads/tp14.jpg",
+					"uploads/tp15.jpg",
+					"uploads/tp8.jpg",
+					"uploads/tp9.jpg",
+					"uploads/tp6.jpg",
+					"uploads/tp10.jpg",
+					"uploads/tp7.jpg",
+					"uploads/tp5.jpg",
+					"uploads/tp12.jpg",
+					"uploads/tp4.jpg",
+					"cheats/cheats_details.html"
+				],
+				"refer": [
+					"newdrawals/index.html"
+				],
+				"priority": 0
+			},
+			"test/index.html": {
+				"resources": [
+					"test/css/kitchen-sink.css",
+					"js/config.js",
+					"css/framework7.material.colors.min.css",
+					"css/framework7.material.min.css",
+					"test/about.html",
+					"img/i-f7-material.png",
+					"test/accordion.html",
+					"js/framework7.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"about.html": {
+				"resources": [
+					"index.html",
+					"img/logo.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"index.new.html": {
+				"resources": [
+					"css/t.global.css",
+					"fonts/t-fxfont.woff",
+					"css/framework7.ios.min.css",
+					"css/t.global.new.css",
+					"img/index/test.jpg"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"postal/index.html": {
+				"resources": [
+					"css/framework7.ios.css",
+					"css/t.global.css",
+					"fonts/t-fxfont.woff",
+					"css/t.postal.css",
+					"js/framework7.min.js",
+					"js/mui.min.js",
+					"js/config.js",
+					"js/h5p.plugins.js",
+					"postal/addbank.html",
+					"index.html",
+					"postal/writeinfo.html",
+					"postal/writecode.html",
+					"js/main.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"order/index.html": {
+				"resources": [
+					"css/framework7.ios.css",
+					"js/framework7.min.js",
+					"css/t.global.css",
+					"css/t.postal.css",
+					"fonts/t-fxfont.woff",
+					"js/config.js",
+					"js/h5p.plugins.js",
+					"img/icon-xl.png",
+					"js/main.js",
+					"js/mui.min.js",
+					"img/seach1.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"my/fans.html": {
+				"resources": [
+					"my/index.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"fenxiao/cheats.html": {
+				"resources": [
+					"fenxiao/index.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"cheats/index.html": {
+				"resources": [
+					"css/framework7.ios.css",
+					"js/framework7.min.js",
+					"css/t.global.css",
+					"css/t.postal.css",
+					"fonts/t-fxfont.woff",
+					"js/config.js",
+					"js/h5p.plugins.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"fans/index.html": {
+				"resources": [
+					"img/member.jpg",
+					"css/framework7.ios.css",
+					"js/framework7.min.js",
+					"css/t.global.css",
+					"css/t.postal.css",
+					"fonts/t-fxfont.woff",
+					"js/config.js",
+					"js/h5p.plugins.js",
+					"img/member.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"my/distributor.html": {
+				"resources": [
+					"my/index.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"distributor/index.html": {
+				"resources": [
+					"img/member.jpg",
+					"css/framework7.ios.css",
+					"js/framework7.min.js",
+					"css/t.global.css",
+					"css/t.postal.css",
+					"js/config.js",
+					"js/h5p.plugins.js",
+					"fonts/t-fxfont.woff",
+					"js/main.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"literature/index.html": {
+				"resources": [
+					"img/pic_1.jpg",
+					"img/icons.png",
+					"css/framework7.ios.css",
+					"js/framework7.min.js",
+					"css/t.global.css",
+					"css/t.postal.css",
+					"fonts/t-fxfont.woff",
+					"js/config.js",
+					"js/h5p.plugins.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"commission/index.html": {
+				"resources": [
+					"css/framework7.ios.css",
+					"js/framework7.min.js",
+					"css/t.global.css",
+					"css/t.postal.css",
+					"fonts/t-fxfont.woff",
+					"js/config.js",
+					"js/h5p.plugins.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"fenxiao/platformdynamics.html": {
+				"resources": [
+					"fenxiao/index.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"fenxiao/Newdrawals.html": {
+				"resources": [
+					"fenxiao/index.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"set/index.html": {
+				"resources": [
+					"js/main.js",
+					"css/framework7.ios.css",
+					"js/framework7.min.js",
+					"css/t.global.css",
+					"css/t.postal.css",
+					"fonts/t-fxfont.woff",
+					"js/config.js",
+					"js/h5p.plugins.js",
+					"set/accountmanage.html",
+					"img/member.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"my/balance.html": {
+				"resources": [
+					"js/main.js",
+					"css/framework7.ios.css",
+					"js/framework7.min.js",
+					"css/t.global.css",
+					"fonts/t-fxfont.woff",
+					"js/config.js",
+					"js/h5p.plugins.js",
+					"img/yetop_1.jpg"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"newdrawals/index.html": {
+				"resources": [
+					"js/main.js",
+					"css/framework7.ios.css",
+					"js/framework7.min.js",
+					"css/t.global.css",
+					"fonts/t-fxfont.woff",
+					"js/config.js",
+					"js/h5p.plugins.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"mymateriel/index.html": {
+				"resources": [
+					"js/main.js",
+					"css/framework7.ios.css",
+					"js/framework7.min.js",
+					"css/t.global.css",
+					"fonts/t-fxfont.woff",
+					"js/config.js",
+					"js/h5p.plugins.js"
+				],
+				"refer": [],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": []
+		}
+	},
+	"fullscreen": false
+}

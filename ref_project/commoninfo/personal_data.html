@@ -1,0 +1,81 @@
+<div class="navbar nav-index">
+    <div class="navbar-inner">
+        <div class="left sliding">
+            <a href="" class="back link icon-only"><i class="icon-t-back fa "></i></a>
+        </div>
+        <div class="center"><span>个人资料</span></div>
+        <div class="right"><a href="commoninfo/edit_personal_data.html"><span class="member-icon personal-data"></span></a></div>
+    </div>
+</div>
+<div class="pages navbar-through toolbar-through">
+    <div data-page="personal_data" class="page no-toolbar personal_data">
+        <div class="page-content">
+            <div class="list-block">
+            <ul id="userinfo">
+            <script type="text/template7" id="tmpuserinfo">
+                <li class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title">头像</div>
+                    <div class="item-after">
+                        <a href="">
+                          <img src="img/member/default_personal_avator.png">
+                          <span class="member-icon arrow-left"></span>
+                        </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title">登录账号</div>
+                    <div class="item-after">
+                        {{username}}
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title">昵称</div>
+                    <div class="item-after">{{nickname}}</div>
+                  </div>
+                </li>
+                <li class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">真实姓名</div>
+                        <div class="item-after">{{consignee}}</div>    
+                    </div>
+                </li>  
+                <li class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title">性别</div>
+                    <div class="item-after">{{gender==1?"男":"女"}}</div>
+                  </div>
+                </li>
+                <li class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title">出生日期</div>
+                    <div class="item-after">{{birthday}}</div>
+                  </div>
+                </li>
+                <li class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title">手机号</div>
+                    <a href="commoninfo/edit_phone.html">
+                        <div class="item-after">{{phone}} &nbsp;&nbsp;修改<span class="member-icon arrow-right2"></span></div>
+                    </a>
+                  </div>
+                </li>
+                <li class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title">身份证号</div>
+                    <div class="item-after">{{idcard}}</div>
+                  </div>
+                </li>
+                </script>
+              </ul>
+              <div class="content-block">
+                  <a href="#" class="button button-big warning loginout">退出登录</a>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

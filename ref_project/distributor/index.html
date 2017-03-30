@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="theme-color" content="#2196f3">
+		<base href="../index.html">
+		<title>张网旅游 APP</title>
+		<link rel="stylesheet" href="css/framework7.ios.css">
+		<!--<link rel="stylesheet" href="css/framework7.material.css">-->
+		<link rel="stylesheet" href="css/t.global.css">
+		<!--<link href="css/t.postal.css" rel="stylesheet" />-->
+		<!--<link rel="stylesheet" href="css/order.css" />-->
+		<!--<link rel="stylesheet" href="css/t.index.css">
+        <link rel="stylesheet" href="css/t.my.css">-->
+	</head>
+
+	<body>
+		<div class="statusbar-overlay"></div>
+		<div class="panel-overlay"></div>
+		<!-- Views -->
+		<div class="views">
+			<!-- Your main view, should have "view-main" class -->
+			<div class="view view-main navbar-through toolbar-through">
+				<div class="navbar nav-index">
+					<div class="navbar-inner">
+						<div class="left sliding">
+							<a href="index.html" class="back link icon-only"><i class="fa icon-t-back c-666"></i><span class="w20"></span></a>
+						</div>
+						<div class="center"><span>我的分销商</span></div>
+						<!--<div class="right sliding">
+							<a href="#" class="open-panel link icon-only"><i class="fa icon-t-search c-FFFFFF"></i></a>
+						</div>-->
+					</div>
+				</div>
+				<div data-page="distributor" class="page no-toolbar">
+					<div class="subnavbar tabs-line2">
+						<div class="buttons-row">
+							<a href="#tab-directly" class="button tab-link mlr2 active">直属下级</a>
+							<a href="#tab-subjection" class="button tab-link mlr2">隶属下级</a>
+						</div>
+					</div>
+					<div class="page-content distributor" id="contentDisributorList">
+						<div class="tabs-animated-wrap">
+							<div class="tabs">
+								<div id="tab-directly" class="tab active infinite-scroll" data-distance="100" data-distribuor-type="1" style="overflow-y: auto;">
+									<!--	<div class="list-block media-list">
+										<ul class="ulList" id="directlyul">
+
+										</ul>
+									</div>-->
+								</div>
+								<div id="tab-subjection" class="tab infinite-scroll" data-distance="100" data-distribuor-type="2" style="overflow-y: auto;">
+									<!--			<div class="list-block media-list">
+										<ul class="ulList" id="subjectionul">
+
+										</ul>
+									</div>-->
+								</div>
+							</div>
+						</div>
+						<script id="tmpMemberList" type="text/template7">
+							<div class="list-block media-list">
+								<ul class="ulList">
+									{{#each list}}
+									<li>
+										<div class="item-content">
+											<div class="item-media"><img src="{{litpic}}" width="50"></div>
+											<div class="item-inner">
+												<div class="item-title-row">
+													<div class="item-title c-555555">{{nickname}}</div>
+													<div class="item-after c-555555">+{{totalcommision}}
+														<div class="c-999999"><span class="c-F37171">{{totalamount}}</span>个订单</div>
+													</div>
+												</div>
+												<div class="item-text c-999999">{{jointime}}</div>
+											</div>
+										</div>
+									</li>
+									{{else}}
+									<div class="error-no">
+										<div class="img"><img src="img/seach1.png"></div>
+										<div class="f12c999">暂时没有找到任何数据</div>
+										<!--<div class="refresh">
+											<a href="javascript:;" id="orderRefresh">点击刷新~{{statusname}}</a>
+										</div>-->
+									</div>
+									{{/each}}
+								</ul>
+							</div>
+						</script>
+					</div>
+				</div>
+			</div>
+
+			<!--<script type="text/javascript" src="js/mui.min.js"></script>-->
+			<script type="text/javascript" src="js/framework7.min.js"></script>
+			<script type="text/javascript" src="js/h5p.plugins.js"></script>
+			<script type="text/javascript" src="js/main.js"></script>
+			<script type="text/javascript" src="js/config.js"></script>
+	</body>
+
+</html>

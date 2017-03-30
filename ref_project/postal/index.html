@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="theme-color" content="#2196f3">
+		<base href="../index.html">
+		<title>张网旅游 APP</title>
+		<link rel="stylesheet" href="css/framework7.ios.css">
+		<!--<link rel="stylesheet" href="css/framework7.material.css">-->
+		<link rel="stylesheet" href="css/t.global.css">
+	</head>
+
+	<body>
+		<div class="statusbar-overlay"></div>
+		<div class="panel-overlay"></div>
+		<!-- Views -->
+		<div class="views">
+			<!-- Your main view, should have "view-main" class -->
+			<div class="view view-main navbar-through toolbar-through">
+				<div class="navbar nav-index">
+					<div class="navbar-inner">
+						<div class="left sliding">
+							<a href="index.html" class="back link icon-only"><i class="icon-t-back fa c-666"></i><span class="w20"></span></a>
+						</div>
+						<div class="center"><span>提现</span></div>
+						<div class="right sliding">
+							<a href="postal/addbank.html" class="open-panel link icon-only"><i class="fa icon-t-add c-FFFFFF"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="pages navbar-through toolbar-through">
+					<div data-page="withdrawals" class="page no-toolbar">
+						<style type="text/css">
+							.navbar .navbar-inner.navbar-on-center .center {
+								color: #FFFFFF;
+								font-size: 14px;
+							}
+						</style>
+						<div class="page-content">
+							<div id="withdrawal">
+								<div class="list-block bank">
+									<a class="item-link  smart-select" data-back-on-select="true" id="postala" data-back-text="取消" data-page-title="选择银行卡" data-open-in="popup"  href="#">
+										<script id="tmpwithdrawal" type="text/template7">
+											<select name="select-banks" id="select-banks" class="update-icon">
+												{{#each group}}
+												<option value="{{this.id}}" {{#js_compare "this.bankname=='光大银行'"}} data-option-icon="icon iconfont icon-guangdayinxing fs26 c-e5a600" {{/js_compare}} {{#js_compare "this.bankname=='农业银行'"}} data-option-icon="icon iconfont icon-nongye fs26 c-319c8b" {{/js_compare}} {{#js_compare "this.bankname=='农村信用社'"}} data-option-icon="icon iconfont icon-guangzhoushinongcunxinyonghezuoshe fs26 c-00923f" {{/js_compare}} {{#js_compare "this.bankname=='广发银行'"}} data-option-icon="icon iconfont icon-guangfayinxing fs26 c-c5030c" {{/js_compare}} {{#js_compare "this.bankname=='中信银行'"}} data-option-icon="icon iconfont icon-zhongxinyinxing fs26 c-c5030c" {{/js_compare}} {{#js_compare "this.bankname=='兴业银行'"}} data-option-icon="icon iconfont icon-xingyeyinxing fs26 c-00367a" {{/js_compare}} {{#js_compare "this.bankname=='浦发银行'"}} data-option-icon="icon iconfont icon-pufayinxing1 fs26 c-00367a" {{/js_compare}} {{#js_compare "this.bankname=='华夏银行'"}} data-option-icon="icon iconfont icon-huaxiayinxing fs26 c-c5030c" {{/js_compare}} {{#js_compare "this.bankname=='邮政银行'"}} data-option-icon="icon iconfont icon-youzheng fs26 c-007349" {{/js_compare}} {{#js_compare "this.bankname=='中国银行'"}} data-option-icon="icon iconfont icon-zhongguoyinxing fs26 c-c5030c" {{/js_compare}} {{#js_compare "this.bankname=='建设银行'"}} data-option-icon="icon iconfont icon-jiansheyinxing fs26 c-00367a" {{/js_compare}} {{#js_compare "this.bankname=='交通银行'"}} data-option-icon="icon iconfont icon-jiaotongyinxing fs26 c-00367a" {{/js_compare}} {{#js_compare "this.bankname=='工商银行'"}} data-option-icon="icon iconfont icon-gongshangyinxing fs26 c-c5030c" {{/js_compare}} {{#js_compare "this.bankname=='招商银行'"}} data-option-icon="icon iconfont icon-iconfontzhaoshangyinxing fs26 c-c5030c" {{/js_compare}} {{#js_compare "this.bankname=='民生银行'"}} data-option-icon="icon iconfont icon-minshengyinxing fs26 c-0072bc" {{/js_compare}} {{#js_compare "this.default==1"}}selected{{/js_compare}}>
+													{{this.bankname}}尾号{{this.cardno}}{{this.cardtype}}
+												</option>
+												{{/each}}
+
+											</select>
+											<div class="item-content">
+
+												<div class="item-media" id="iconbank">
+													<i id="icon-img" class="fa icon-t-defaultbank fs18 c-FF9966"></i>
+												</div>
+												<div class="item-inner">
+													<div class="item-title" style="display: none;">1</div>
+													<div class="item-after" id="bankcade">
+														
+													</div>
+												</div>
+											</div>
+
+										</script>
+									</a>
+								</div>
+								<div class="content-block postal-main">
+									<div class="content-block-inner">
+										<span>提现金额</span>
+										<div class="postal-serch"><span class="postal-money">¥</span><input type="text" class="input-money" name="price" id="price" /></div>
+										<span id="blance">	
+										<!--{{#price}}-->
+										可用余额<span id="canuseprice" class="first-hide">{{remainamount}}</span>元
+										<!--{{/price}}-->
+										</span>
+									</div>
+								</div>
+								<p class="pay">
+									<a class="button button-big button-fill" id="pay" href="#"><span>确认提现</span></a>
+								</p>
+								<a class="explain link" href="postal/withdrawalinfo.html">提现说明</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		<!--<script type="text/javascript" src="js/mui.min.js"></script>-->
+		<script type="text/javascript" src="js/framework7.min.js"></script>
+		<script type="text/javascript" src="js/h5p.plugins.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/config.js"></script>
+	</body>
+
+</html>
