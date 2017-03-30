@@ -14,7 +14,7 @@
 @media only screen and (width:320px ) and (height:568px) {
 	
 	.swiper-container {
-	    height: 122px;
+	    height: 145px;
 	}
 	
 }
@@ -24,7 +24,7 @@
 @media screen and (max-width:320px) {
 	
 	.swiper-container {
-	    height: 128px;
+	    height: 142px;
 	}
 	
 }
@@ -34,7 +34,7 @@
 @media screen and (min-width:360px ) {
 	
     .swiper-container {
-	    height: 138px;
+	    height: 160px;
 	}
 	
 }
@@ -43,7 +43,7 @@
 @media screen and (min-width:400px ) {
 	
     .swiper-container {
-	    height: 150px;
+	    height: 178px;
 	}
 	
 }

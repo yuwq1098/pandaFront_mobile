@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>聚焦牛股</title>
+    
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <!-- 您的自定义应用程序样式-->
+    <link rel="stylesheet" href="css/my-app.css">
+    <!-- 应用程序的响应式布局样式 -->
+    <link rel="stylesheet" href="css/app-responsive.css">
+    <!-- iconfont引用 -->
+    <link rel="stylesheet" href="font/iconfont.css">
+
+  </head>
+  <body>
+    <!-- 状态栏覆盖为全屏模式-->
+    <div class="statusbar-overlay"></div>
+    <!-- 面板覆盖（遮罩层）-->
+    <div class="panel-overlay"></div>
+    <!-- 侧边栏右侧面板-->
+    <div class="panel panel-left panel-reveal">
+      <div class="content-block">
+        <p>侧边栏（左）</p>
+      </div>
+    </div>
+    <!-- 侧边栏右侧面板-->
+    <div class="panel panel-right panel-cover">
+      <div class="content-block">
+        <p>侧边栏（右）</p>
+      </div>
+    </div>
+
+    <!-- 视图区-->
+    <!-- 页面选项卡,这个选项卡是由“views”包裹 -->
+    <div class="views tabs toolbar-fixed">
+        <!-- 默认显示首页视图 -->
+        <div id="home" class="view tab view-main active" data-page="home">
+            <!-- 去除默认导航的位置 -->
+            <div class="navbar navbar-hidden"></div>
+
+            <div class="pages index-box">
+                <div data-page="home" class="page no-navbar">
+                    <div class="index-navbar">
+                        <div class="navbar-inner">
+                            <div class="pull-left">
+                                <a href="pages/discover.html" class="item-link">发现</a>
+                                <a href="pages/dynamic.html" class="item-link">动态</a>
+                            </div>
+                            <div class="pull-right">
+                                <a href="pages/helpDocument.html" class="item-link">新手指引</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-content">
+                        <!-- 滑块容器, 首页广告区  -->
+                        <div class="swiper-container">
+                            <!-- 幻灯片包 -->
+                            <div class="swiper-wrapper">
+                                <!-- 幻灯片 -->
+                                <div class="swiper-slide">
+                                    <a href="javascript:;">
+                                        <img src="img/figure01_mobile.jpg" alt="轮播图一">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="javascript:;">
+                                        <img src="img/figure02_mobile.jpg" alt="轮播图二">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="javascript:;">
+                                        <img src="img/figure03_mobile.jpg" alt="轮播图三">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="javascript:;">
+                                        <img src="img/figure04_mobile.jpg" alt="轮播图四">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="javascript:;">
+                                        <img src="img/figure04_mobile.jpg" alt="轮播图五">
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- 分页器 -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        
+                        <!-- 块级内容, 主功能link区  -->
+                        <div class="content-block content-function">
+                            <!-- “no-gutter”类，去除栅格的15px间隙 -->
+                            <div class="row">
+                                <!-- Each "cell" has col-[widht in percents] class -->
+                                <div class="col-25 infinite-scroll-preloader">
+                                    <a href="pages/successRate.html" class="item-link item-content">
+                                        <i class="icon success-rate"></i>
+                                        <span class="tabbar-label">成功率高</span>
+                                    </a>
+                                </div>
+                                <div class="col-25 infinite-scroll-preloader">
+                                    <a href="pages/earningsDay.html" class="item-link item-content">
+                                        <i class="icon earnings-day"></i>
+                                        <span class="tabbar-label">日收益高</span>
+                                    </a>
+                                </div>
+                                <div class="col-25 infinite-scroll-preloader">
+                                    <a href="pages/earningsAll.html" class="item-link item-content">
+                                        <i class="icon earnings-all"></i>
+                                        <span class="tabbar-label">累计收益高</span>
+                                    </a>
+                                </div>
+                                <div class="col-25 infinite-scroll-preloader">
+                                    <a href="pages/prefectureRree.html" class="item-link item-content">
+                                        <i class="icon prefecture-free"></i>
+                                        <span class="tabbar-label">0元专区</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>   
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 关注页面 -->
+        <div id="attention" class="view tab" data-page="attention">
+            <div class="navbar">
+                <div class="navbar-inner">
+                  <div class="center">关注</div>
+                </div>
+            </div>
+            <div class="pages navbar-fixed">
+                <div data-page="attention" class="page">
+                    <div class="page-content">
+                        <div class="content-block">
+                            <p>这里是我的关注大咖列表页</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 写笔记页面 -->
+        <div id="write" class="view tab" data-page="write">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="center">写笔记</div>
+                </div>
+            </div>
+            <div class="pages navbar-fixed">
+                <div data-page="write" class="page">
+                    <div class="page-content">
+                        <div class="content-block">
+                            <p>这里是写笔记的页面</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 周榜 -->
+        <div id="ranking" class="view tab" data-page="ranking">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="center">周榜</div>
+                </div>
+            </div>
+            <div class="pages navbar-fixed">
+                <div data-page="ranking" class="page">
+                    <div class="page-content">
+                        <div class="content-block">
+                            <p>股牛周榜</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 我的个人中心 -->
+        <div id="personal" class="view tab" data-page="personal">
+            <!-- 顶部导航条-->
+            <div class="navbar navbar-hidden"></div>
+            <!-- 不加navbar-through，就是nav穿透，是页面内容与导航条分开，去除则是nav和page-content衔接 -->
+            <div class="pages">
+                <div data-page="personal" class="page no-navbar">
+                    <div class="page-content">
+                        <div class="list-block media-list info-block">
+                            <ul>
+                                <li>
+                                    <a href="pages/userInfo.html" class="item-link item-content">
+                                        <div class="item-media"><img src="img/yuwq-icon.png" class="radius-img"></div>
+                                        <div class="item-inner">
+                                            <div class="item-title-row">
+                                                <div class="item-title">Geek.Yu</div>
+                                                <div class="item-after"></div>
+                                            </div>
+                                            <div class="item-subtitle">
+                                                要成功就不要有借口，要借口就不可能成功。
+                                            </div>
+                                            <div class="item-text">
+                                                <span>关注<em>216</em></span>
+                                                <span>粉丝<em>18020</em></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 块级内容, 主功能link区  -->
+                        <div class="content-block content-function">
+                            <!-- “no-gutter”类，去除栅格的15px间隙 -->
+                            <div class="row">
+                                <!-- Each "cell" has col-[widht in percents] class -->
+                                <div class="col-33 infinite-scroll-preloader">
+                                    <a href="#successRate" class="item-link item-content">
+                                        <h4>1023篇</h4>
+                                        <p>历史笔记</p>
+                                    </a>
+                                </div>
+                                <div class="col-33 infinite-scroll-preloader">
+                                    <a href="#earningsDay" class="item-link item-content">
+                                        <h4>60%</h4>
+                                        <p>近10篇达标</p>
+                                    </a>
+                                </div>
+                                <div class="col-33 infinite-scroll-preloader">
+                                    <a href="#earningsAll" class="item-link item-content">
+                                        <h4>286%</h4>
+                                        <p>累计收益</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>   
+                        <div class="content-block">
+                            <p>这是我的个人中心</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tab bar with tab links -->
+        <div class="toolbar tabbar tabbar-labels">
+            <div class="toolbar-inner">
+                <a href="#home" class="tab-link active">
+                    <i class="icon iconfont icon-ziyuan1"></i>
+                    <span class="tabbar-label">首页</span>
+                </a>
+                <a href="#attention" class="tab-link">
+                    <i class="icon iconfont icon-mimakejian"></i>
+                    <span class="tabbar-label">订单</span>
+                </a>
+                <a href="#write" class="tab-link">
+                    <i class="icon iconfont icon-qiandao"></i>
+                    <span class="tabbar-label">本地游</span>
+                </a>
+                <a href="#ranking" class="tab-link"> 
+                    <i class="icon iconfont icon-ziyuan13"></i>
+                    <span class="tabbar-label">周边</span>
+                </a>
+                <a href="#personal" class="tab-link"> 
+                    <i class="icon iconfont icon-iconwonor"></i>
+                    <span class="tabbar-label">我的</span>
+                </a>
+            </div>
+        </div>
+     
+    </div>
+    <!-- 加载 Framework7 脚本-->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <!-- 加载 我的应用程序 脚本-->
+    <script type="text/javascript" src="js/my-app.js"></script>
+  </body>
+</html>
