@@ -2,19 +2,17 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="flexible" content="initial-dpr=2" />
-
-    <meta content="yes" name="apple-mobile-web-app-capable" />
-    <meta content="yes" name="apple-touch-fullscreen" />
-    <meta content="telephone=no,email=no" name="format-detection" />
-    <meta content="maximum-dpr=2" name="flexible" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>熊猫旅行</title>
     
     <!-- 调用弹性布局的js -->
     <script src="js/flexible.js"></script>
+
     <!-- Path to Framework7 Library CSS-->
-    <link rel="stylesheet" href="css/framework7.ios.css">
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
     <!-- iconfont引用 -->
     <link rel="stylesheet" href="fonts/iconfont.css">
     <!-- 您的自定义应用程序样式-->
@@ -22,7 +20,6 @@
     <!-- 应用程序的响应式布局样式 -->
     <link rel="stylesheet" href="css/app-responsive.css">
 
-    
     
 
   </head>
@@ -53,7 +50,7 @@
             <div class="navbar navbar-hidden"></div>
 
             <div class="pages">
-                <div data-page="home" class="page no-navbar">
+                <div data-page="home" class="page">
                     <div class="index-navbar">
                         <div class="navbar-inner">
                             <div class="pull-left">
@@ -117,7 +114,7 @@
                                     </a>
                                 </div>
                                 <div class="col-25 infinite-scroll-preloader">
-                                    <a href="pages/earningsDay.html" class="item-link item-content">
+                                    <a href="pages/aboutinfo.html" class="item-link item-content">
                                         <i class="icon func_02"></i>
                                         <span class="tabbar-label">当地酒店</span>
                                     </a>

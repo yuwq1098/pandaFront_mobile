@@ -10,7 +10,6 @@ var mySwiper = myApp.swiper('.swiper-container', {
     autoplay: 3500,                                //可选选项，自动滑动
     autoplayDisableOnInteraction : false,          //用户操作后，不禁止自动滑动
     width : window.innerWidth,                     //你的slide宽度,全屏写法
-    effect : 'fade',                               //切换动画
     touchAngle : 20,                               //滑动角度
     speed:400,                                     //速度
     loop : true,                                   //环路
