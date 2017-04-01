@@ -7,16 +7,24 @@ var $$ = Dom7;
 // Init滑块和它的实例存储在mySwiper变量
 var mySwiper = myApp.swiper('.swiper-container', {
 
-    spaceBetween: 30,                       /*间距*/
-    pagination : '.swiper-pagination',       /*获取轮播容器*/
-    paginationType : 'bullets',              /*点分页显示*/
-    loop: true,                              /*开启循环*/
-    loopAdditionalSlides : 1,                /*从第几张图开始显示*/
-    autoplay: 2500,                          /*每次轮播间隔3秒时间*/
-    autoplayDisableOnInteraction : false,    /*用户操作后,继续开启autoplay,默认true为关闭*/
-    preloadImages: true,                     /*是否强制加载所有图片*/
-    width : window.innerWidth,               /*你的slide宽度,全屏写法*/
-    speed : 350,                             /*动画效果时间*/
+    autoplay: 3500,                                //可选选项，自动滑动
+    autoplayDisableOnInteraction : false,          //用户操作后，不禁止自动滑动
+    width : window.innerWidth,                     //你的slide宽度,全屏写法
+    effect : 'fade',                               //切换动画
+    touchAngle : 20,                               //滑动角度
+    speed:400,                                     //速度
+    loop : true,                                   //环路
+    loopAdditionalSlides : 1,                      //从第几张图开始显示
+    pagination : '.swiper-pagination',             //分页器
+    paginationType : 'bullets',                    //点分页显示
+    // 关闭淡出，保留淡入
+    fade: {
+      crossFade: false,
+    },
+    // 如果滑动停了，那么重新开启它
+    onAutoplayStop: function(swiper){
+        mySwiper.startAutoplay();
+    },
 });
 
 // 添加视图

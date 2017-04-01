@@ -7,32 +7,384 @@
 	创建时间： 2017-03-18 11:34
 	主要用途： 新增framework7css框架样式及  覆盖部分样式
 
+    介绍： 布局以宽640px的页面为原型，initial-dpr=2,默认像素比是2, 写两倍
+
 ************************************************/
 
-/*公共组件*/
-body{
-	color: #222;
+
+/* ==========================================================================
+   基础样式
+   ========================================================================== */
+@charset "utf-8";
+
+html {
+    background: #fff;
+    color: #313536;
+    line-height: 1.4;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
+html * {
+  outline: none;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+html,
+body {
+  font-family: sans-serif, Arial, 'Microsoft Yahei';
+}
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+}
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+/* 去掉各 Table  cell 的边距并让其边重合 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* 去除默认边框 */
+fieldset,
+img {
+  border: 0;
+}
+/* 去掉 firefox 下此元素的边框 */
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+/* 一致的 del 样式 */
+del {
+  text-decoration: line-through;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+  font-style: normal;
+  font-weight: 500;
+}
+/* 去掉列表前的标识, li 会继承 */
+ol,
+ul {
+  list-style: none;
+}
+/* 对齐是排版最重要的因素, 别让什么都居中 */
+caption,
+th {
+  text-align: left;
+}
+/* 来自 yahoo, 让标题都自定义, 适应多个系统应用 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: 500;
+}
+q:before,
+q:after {
+  content: '';
+}
+/* 统一上标和下标 */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+
+/* 默认不显示下划线，保持页面简洁 */
+ins,
+a {
+  text-decoration: none;
+}
+
+
+/*
+ * 美化字体间隔
+ */
+
+.spacing-tiny {
+    text-indent: .05em;
+    letter-spacing: .05em;
+}
+.spacing-small {
+    text-indent: .12em;
+    letter-spacing: .12em;
+}
+.spacing-medium {
+    text-indent: .3em;
+    letter-spacing: .3em;
+}
+.spacing-large {
+    text-indent: .8em;
+    letter-spacing: .8em;
+}
+
+/*字体图标*/
+.icon-tiny {
+    font-size: 1.15em;
+}
+.icon-small {
+    font-size: 1.5em;
+}
+.icon-medium {
+    font-size: 1.75em;
+}
+.icon-large {
+    font-size: 2.2em;
+}
+.icon-13 { font-size: 13px; }
+.icon-16 { font-size: 16px; }
+.icon-18 { font-size: 18px; }
+.icon-22 { font-size: 22px }
+.icon-25 { font-size: 25px }
+.icon-29 { font-size: 29px }
+.icon-50 { font-size: 50px }
+
+/*
+ * 对齐及浮动
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.clearfix:after {
+    clear: both;
+}
+
+.top,
+.left,
+.bottom,
+.right{
+    position: absolute;
+} 
+.top{
+    top: 0;
+}
+.left{
+    left: 0;
+}
+.bottom{
+    left: 0;
+}
+.right{
+    right: 0;
+}
+
+.pull-left{
+    float: left;
+}
+.pull-right{
+    float: right;
+}
+
+
+/*
+ * 垂直布局 和 完全居中布局
+ */
+.vertical-layout{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.complete-center{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+/*
+ * 启用硬件加速
+ */
+.will-accelerate{
+    /*提醒浏览器提前准备硬件加速,兼容性不行*/
+    will-change: transform;
+    /*触发硬件加速 CPU 转 GPU*/
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+/*
+ * 禁止用户选中文字
+ */
+.user-unselect{
+    -moz-user-select: none; /*火狐*/
+    -webkit-user-select: none; /*webkit浏览器*/
+    -ms-user-select: none; /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;
+}
+
+/*
+ * 调整以下元素使他们之间的差距减小，
+ * audio、canvas、iframes、images、videos和底部的容器。
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * 删除默认控件组风格。
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * 只允许垂直方向的textarea的调整。
+ */
+
+textarea {
+    resize: vertical;
+}
+
+
+/*
+ * DOM元素的显隐
+ */
+
+.domShow{
+    display: block;
+}
+.domHide{
+    display: none;
+}
+
+
+/* ==========================================================================
+   熊猫旅行移动端的主要样式
+   ========================================================================== */
+
+
+
 a{
-	color: #f34;
+	color: inherit;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
-.size-13, i.size-13 { font-size: 13px; }
-.size-16, i.size-16 { font-size: 16px; }
-.size-18, i.size-18 { font-size: 18px; }
-.size-22, i.size-22 { font-size: 22px }
-.size-25, i.size-25 { font-size: 25px }
-.size-29, i.size-29 { font-size: 29px }
-.size-50, i.size-50 { font-size: 50px }
-em{ font-style: normal; margin: 0 3px; }
+
+p,h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+button{
+    cursor: pointer;
+}
+button,input{ 
+    outline: none; 
+}
+ul,li{
+    margin: 0; 
+    padding: 0; 
+    list-style: none;
+}
+section,div,span,em,i,p,h1,h2,h3,h4,h5,h6{
+    cursor: default;
+}
+a,a *{
+    cursor: pointer;
+}
+em,i{
+    font-style: normal;
+}
+em{ margin: 0 0.25em; }
+
+.imgWrap img{
+    width: 100%;
+    height: 100%;
+}
+.unit-money::before{
+    content: "￥";
+    font-size: .8em;
+}
+
+
+/*导航条样式*/
+
 .navbar a{
-	color: #222;
+	color: #313536;
 }
 .button{
     border: 1px solid #f34;
     color: #f34;
 }
 .panel { color: #313536; }
-.radius-img{ border-radius: 4px; }
+.radius-img{ border-radius: .35em; }
 
 .bg-red, .button.button-fill.bg-red, .list-block .swipeout-actions-left a.bg-red, .list-block .swipeout-actions-right a.bg-red, a.bg-red{
 	background-color: #f34;
@@ -53,7 +405,7 @@ em{ font-style: normal; margin: 0 3px; }
   box-sizing: border-box;
 }
 .swiper-container {
-  height: 150px;
+  height: 4.45rem;
 }
 .swiper-slide img{
 	width: 100%;
@@ -62,17 +414,17 @@ em{ font-style: normal; margin: 0 3px; }
 .swiper-slide span {
     text-align:center;
     display:block;
-    font-size:21px;
+    font-size: 21px;
 }
 .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
-	bottom: 8px;
+	bottom: 20px;
 }
 .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
-    margin: 0 4px;
+    margin: 0 8px;
 }
 .swiper-pagination-bullet{
-	width:7px;
-	height:7px;
+	width: 14px; 
+	height: 14px;
 	background-color: rgba(0,0,0,.30);
 	opacity: 1;
 }
@@ -82,13 +434,13 @@ em{ font-style: normal; margin: 0 3px; }
 
 /*首页导航nav*/
 .index-navbar{
-	background-color: #313536;
+	background-color: rgba(49,53,54,.35);
 	border: none;
 	width: 100%;
-	height: 38px;
-	line-height: 38px;
+	height: 1.1rem;
+	line-height: 1.1rem;
 	color: #f7f7f7;
-	font-size: 14px;
+	font-size: 1em;
 	letter-spacing: .15em;
 	text-indent: .15em;
 	position: fixed;
@@ -107,15 +459,16 @@ em{ font-style: normal; margin: 0 3px; }
 }
 .index-navbar a{
 	color: #f7f7f7;
+    font-size: 1.15em;
 }
 .index-navbar .pull-left a{
-	margin-right: 8px;
+	margin-right: 15px;
 }
 .index-navbar .pull-right a{
-	margin-left: 8px;
+	margin-left: 15px;
 }
 .pages.index-box .page-content{
-    padding-top: 38px;
+    padding-top: 76px;
 }
 
 /*功能导航区*/
@@ -124,9 +477,10 @@ em{ font-style: normal; margin: 0 3px; }
 	padding: 10px 15px;
 	background-color: #fff;
 }
-.content-functiitem{
-	padding-top: 4px;
-	padding-bottom: 4px;
+.content-function .row:not(:last-child){
+	margin-bottom: 5px;
+}
+.content-function .item-content{
 	height: 100%;
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
@@ -154,23 +508,31 @@ em{ font-style: normal; margin: 0 3px; }
 	width: 42px;
 	height: 42px;
 	margin: 0 auto;
-	background:url(../img/content-function.png) no-repeat;
-	background-size: auto 40px;  
+	
+	
 	height:40px;width:40px;
 	background-position: 0 0;
 	margin-bottom: 8px;
 }
-.content-function a.item-link i.success-rate{
-	background-position: -81px 0;
+.content-function a.item-link i.func_01{
+	background:url(../img/msite_flight.png) no-repeat;
+	background-size: 40px 40px;  
 }
-.content-function a.item-link i.earnings-day{
-	background-position: -122px 0;
+.content-function a.item-link i.func_02{
+	background:url(../img/msite_vacation.png) no-repeat;
+	background-size: 40px 40px;  
 }
-.content-function a.item-link i.earnings-all{
-	background-position: 0 0;
+.content-function a.item-link i.func_03{
+	background:url(../img/msite_hotel.png) no-repeat;
+	background-size: 40px 40px;  
 }
-.content-function a.item-link i.prefecture-free{
-	background-position: -40.5px 0;
+.content-function a.item-link i.func_04{
+	background:url(../img/msite_ship.png) no-repeat;
+	background-size: 40px 40px;  
+}
+.content-function a.item-link i.func_05{
+	background:url(../img/msite_ticket.png) no-repeat;
+	background-size: 40px 40px;  
 }
 
 .content-function a.item-link span{
@@ -189,29 +551,41 @@ em{ font-style: normal; margin: 0 3px; }
 	white-space: nowrap;
 }
 
+
+
 /*底部导航*/
 .toolbar{
-	background-color: #313536;
-	font-size: 18px;
+	border-top: 1px solid #e2e2e2;
+	background-color: #FFF;
 }
 .tabbar-labels{
-	height: 54px;
+	height: 108px;
 }
 .toolbar a{
-	color: #c2c2c2;
+	color: #545454;
 }
 .toolbar a.active{
 	color: #349039;
 }
 .toolbar-inner{
-	padding: 0 10px;
+	padding: 0 18px;
 }
 .tabbar-labels a.link, .tabbar-labels a.tab-link{
-	padding-top: 7px;
-	padding-bottom: 7px;
+	padding-top: 16px;
+	padding-bottom: 16px;
 }
 .f7-icons .badge, .framework7-icons .badge, .icon .badge{
 	box-shadow: -1px 1px 1px rgba(0,0,0,.2);
+}
+.toolbar-inner i.icon{
+    font-size: 40px;
+    height: 40px;
+    line-height: 40px;
+}
+.toolbar-inner span.tabbar-label{
+    font-size: 28px;
+    letter-spacing: 4px;
+    text-align: 4px;
 }
 
 
@@ -228,7 +602,3 @@ em{ font-style: normal; margin: 0 3px; }
 	height: 58px;
 
 }
-
-
-
-

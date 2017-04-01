@@ -2,20 +2,28 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>聚焦牛股</title>
+    <meta name="flexible" content="initial-dpr=2" />
+
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta content="maximum-dpr=2" name="flexible" />
+
+    <title>熊猫旅行</title>
     
+    <!-- 调用弹性布局的js -->
+    <script src="js/flexible.js"></script>
     <!-- Path to Framework7 Library CSS-->
-    <link rel="stylesheet" href="css/framework7.ios.min.css">
-    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="css/framework7.ios.css">
+    <!-- iconfont引用 -->
+    <link rel="stylesheet" href="fonts/iconfont.css">
     <!-- 您的自定义应用程序样式-->
     <link rel="stylesheet" href="css/my-app.css">
     <!-- 应用程序的响应式布局样式 -->
     <link rel="stylesheet" href="css/app-responsive.css">
-    <!-- iconfont引用 -->
-    <link rel="stylesheet" href="font/iconfont.css">
+
+    
+    
 
   </head>
   <body>
@@ -41,22 +49,27 @@
     <div class="views tabs toolbar-fixed">
         <!-- 默认显示首页视图 -->
         <div id="home" class="view tab view-main active" data-page="home">
+            <!-- 去除默认导航的位置 -->
             <div class="navbar navbar-hidden"></div>
-            
+
             <div class="pages">
                 <div data-page="home" class="page no-navbar">
-                    <div class="page-content">
-                        <div class="index-navbar">
-                            <div class="navbar-inner">
-                                <div class="pull-left">
-                                    <a href="pages/discover.html" class="item-link">发现</a>
-                                    <a href="pages/dynamic.html" class="item-link">动态</a>
-                                </div>
-                                <div class="pull-right">
-                                    <a href="pages/helpDocument.html" class="item-link">新手指引</a>
-                                </div>
+                    <div class="index-navbar">
+                        <div class="navbar-inner">
+                            <div class="pull-left">
+                                <a href="pages/discover.html" id="siteCut" class="item-link">南昌站<i class="icon iconfont icon-iosarrowdown"></i></a>
+                            </div>
+                            <div class="pull-right">
+                                <a href="pages/helpDocument.html" class="item-link">
+                                    <i class="icon iconfont icon-small icon-31erweima"></i>
+                                </a>
+                                <a href="pages/helpDocument.html" class="item-link">
+                                    <i class="icon iconfont icon-small icon-xinxi"></i>
+                                </a>
                             </div>
                         </div>
+                    </div>
+                    <div class="page-content">
                         <!-- 滑块容器, 首页广告区  -->
                         <div class="swiper-container">
                             <!-- 幻灯片包 -->
@@ -64,12 +77,27 @@
                                 <!-- 幻灯片 -->
                                 <div class="swiper-slide">
                                     <a href="javascript:;">
-                                        <img src="img/banner_01.jpg" alt="奥运争霸赛">
+                                        <img src="img/figure01_mobile.jpg" alt="轮播图一">
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="javascript:;">
-                                        <img src="img/banner_02.jpg" alt="老司机带你玩转新版首页">
+                                        <img src="img/figure02_mobile.jpg" alt="轮播图二">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="javascript:;">
+                                        <img src="img/figure03_mobile.jpg" alt="轮播图三">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="javascript:;">
+                                        <img src="img/figure04_mobile.jpg" alt="轮播图四">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="javascript:;">
+                                        <img src="img/figure04_mobile.jpg" alt="轮播图五">
                                     </a>
                                 </div>
                             </div>
@@ -84,26 +112,53 @@
                                 <!-- Each "cell" has col-[widht in percents] class -->
                                 <div class="col-25 infinite-scroll-preloader">
                                     <a href="pages/successRate.html" class="item-link item-content">
-                                        <i class="icon success-rate"></i>
-                                        <span class="tabbar-label">成功率高</span>
+                                        <i class="icon func_01"></i>
+                                        <span class="tabbar-label">必游景点</span>
                                     </a>
                                 </div>
                                 <div class="col-25 infinite-scroll-preloader">
                                     <a href="pages/earningsDay.html" class="item-link item-content">
-                                        <i class="icon earnings-day"></i>
-                                        <span class="tabbar-label">日收益高</span>
+                                        <i class="icon func_02"></i>
+                                        <span class="tabbar-label">当地酒店</span>
                                     </a>
                                 </div>
                                 <div class="col-25 infinite-scroll-preloader">
                                     <a href="pages/earningsAll.html" class="item-link item-content">
-                                        <i class="icon earnings-all"></i>
-                                        <span class="tabbar-label">累计收益高</span>
+                                        <i class="icon func_03"></i>
+                                        <span class="tabbar-label">热门周边</span>
                                     </a>
                                 </div>
                                 <div class="col-25 infinite-scroll-preloader">
                                     <a href="pages/prefectureRree.html" class="item-link item-content">
-                                        <i class="icon prefecture-free"></i>
-                                        <span class="tabbar-label">0元专区</span>
+                                        <i class="icon func_04"></i>
+                                        <span class="tabbar-label">地道美食</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <!-- Each "cell" has col-[widht in percents] class -->
+                                <div class="col-25 infinite-scroll-preloader">
+                                    <a href="pages/earningsDay.html" class="item-link item-content">
+                                        <i class="icon func_04"></i>
+                                        <span class="tabbar-label">国内游</span>
+                                    </a>
+                                </div>
+                                <div class="col-25 infinite-scroll-preloader">
+                                    <a href="pages/prefectureRree.html" class="item-link item-content">
+                                        <i class="icon func_05"></i>
+                                        <span class="tabbar-label">导游</span>
+                                    </a>
+                                </div>
+                                <div class="col-25 infinite-scroll-preloader">
+                                    <a href="pages/earningsAll.html" class="item-link item-content">
+                                        <i class="icon func_03"></i>
+                                        <span class="tabbar-label">租车</span>
+                                    </a>
+                                </div>
+                                <div class="col-25 infinite-scroll-preloader">
+                                    <a href="pages/successRate.html" class="item-link item-content">
+                                        <i class="icon func_01"></i>
+                                        <span class="tabbar-label">特产</span>
                                     </a>
                                 </div>
                             </div>
@@ -228,101 +283,28 @@
             </div>
         </div>
         
-        <!-- Framework7 demo -->
-        <div id="example" class="view tab" data-page="example">
-            <!-- 顶部导航条-->
-            <div class="navbar">
-                <div class="navbar-inner">
-                    <!-- 我们家没有留下链接导航-->
-                    <div class="center sliding">Framework7 实例</div>
-                    <div class="right">
-                        <!-- Right link contains only icon - additional "icon-only" class-->
-                        <a href="#" class="link icon-only open-panel">
-                            <i class="icon iconfont size-22 icon-leimu"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- 页面,因为我们需要固定在导航工具栏,它有额外的适当的类-->
-            <div class="pages navbar-through">
-                <!-- 页面,数据页包含页面的名字-->
-                <div data-page="example" class="page page-on-center">
-                    <!-- 可滚动页面内容-->
-                    <div class="page-content">
-                        <div class="content-block-title">Geek.Yu</div>
-                        <div class="content-block">
-                            <div class="content-block-inner">
-                              <p>这是个不一样的世界,因我的代码太棒了!</p>
-                              <p>Duis sed erat ac eros ultrices pharetra id ut tellus. Praesent rhoncus enim ornare ipsum aliquet ultricies. Pellentesque sodales erat quis elementum sagittis.</p>
-                            </div>
-                        </div>
-                        <div class="content-block-title">如何进行简单的导航?</div>
-                        <div class="list-block">
-                            <ul>
-                                <li><a href="pages/example/about.html" class="item-link">
-                                    <div class="item-content">
-                                      <div class="item-inner"> 
-                                        <div class="item-title">关于我们</div>
-                                      </div>
-                                    </div></a></li>
-                                <li><a href="pages/example/services.html" class="item-link">
-                                    <div class="item-content"> 
-                                      <div class="item-inner">
-                                        <div class="item-title">服务条款</div>
-                                      </div>
-                                    </div></a></li>
-                                <li><a href="pages/example/form.html" class="item-link">
-                                    <div class="item-content"> 
-                                      <div class="item-inner">
-                                        <div class="item-title">表单样式</div>
-                                      </div>
-                                    </div></a></li>
-                            </ul>
-                        </div>
-                        <div class="content-block-title">侧边栏</div>
-                        <div class="content-block">
-                            <div class="row">
-                                <div class="col-50">
-                                    <a href="#" data-panel="left" class="button open-panel">触发侧边栏（左）</a>
-                                </div>
-                                <div class="col-50">
-                                    <a href="#" data-panel="right" class="button open-panel">触发侧边栏（右）</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tab bar with tab links -->
+        <!-- 底部标签栏 -->
         <div class="toolbar tabbar tabbar-labels">
             <div class="toolbar-inner">
                 <a href="#home" class="tab-link active">
-                    <i class="icon iconfont icon-ziyuan1"></i>
+                    <i class="icon iconfont icon-shouye1"></i>
                     <span class="tabbar-label">首页</span>
                 </a>
                 <a href="#attention" class="tab-link">
-                    <i class="icon iconfont icon-mimakejian"></i>
-                    <span class="tabbar-label">关注</span>
+                    <i class="icon iconfont icon-dingdan8"></i>
+                    <span class="tabbar-label">订单</span>
                 </a>
                 <a href="#write" class="tab-link">
-                    <i class="icon iconfont icon-qiandao">
-                        <span class="badge bg-red">4</span>
-                    </i>
-                    <span class="tabbar-label">写笔记</span>
+                    <i class="icon iconfont icon-zhoubian3"></i>
+                    <span class="tabbar-label">本地游</span>
                 </a>
                 <a href="#ranking" class="tab-link"> 
-                    <i class="icon iconfont icon-ziyuan13"></i>
-                    <span class="tabbar-label">周榜</span>
+                    <i class="icon iconfont icon-yonghuzhinan"></i>
+                    <span class="tabbar-label">周边</span>
                 </a>
                 <a href="#personal" class="tab-link"> 
-                    <i class="icon iconfont icon-iconwonor"></i>
+                    <i class="icon iconfont icon-wode4"></i>
                     <span class="tabbar-label">我的</span>
-                </a>
-                <a href="#example" class="tab-link"> 
-                    <i class="icon iconfont icon-qiapianxingshi"></i>
-                    <span class="tabbar-label">实例</span>
                 </a>
             </div>
         </div>

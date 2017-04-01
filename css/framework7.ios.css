@@ -1102,7 +1102,7 @@ html.android .page-from-center-to-right:before {
   top: 0;
   width: 100%;
   height: 100%;
-  padding: 0 8px;
+  padding: 0 18px;
   box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1541,7 +1541,7 @@ html.pixel-ratio-3 .toolbar:before {
   padding: 0 8px;
   background-color: #fff;
 }
-@media all and (min-width: 768px) {
+@media all and (min-width: 1536px) {   
   .tabbar .toolbar-inner {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
@@ -1727,7 +1727,7 @@ html.pixel-ratio-3 .toolbar:before {
 .tabbar-labels-through .page-content {
   padding-bottom: 50px;
 }
-@media all and (min-width: 768px) {
+@media all and (min-width: 1536px) {
   .tabbar-labels-fixed .page-content,
   .tabbar-labels-through .page-content {
     padding-bottom: 56px;
