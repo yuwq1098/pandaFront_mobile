@@ -1,5 +1,7 @@
 // 初始化 应用程序 framework7
-var myApp = new Framework7({});
+var myApp = new Framework7({
+    init: false,
+});
 
 // 出口选择器引擎定义
 var $$ = Dom7;
@@ -29,18 +31,43 @@ var mySwiper = myApp.swiper('.swiper-container', {
 // 添加视图
 var mainView = myApp.addView('.view-main', {
     // 因为我们使用固定通过导航条我们可以启用动态导航
-    dynamicNavbar: true
+    dynamicNavbar: true,
+
 });
 
-//给app首页启动动态导航
+//添加视图home
 var homeView = myApp.addView('#home', {
-    // Because we use fixed-through navbar we can enable dynamic navbar
-    dynamicNavbar: true
+    // 启用底部动态导航
+    dynamicNavbar: true,
 });
+
+//给首页添加了效果后再初始化F7 app
+myApp.onPageInit('home', function (page) {
+
+    var $$el = $$(page.container);
+    // 首页顶部输入框
+    var $$searchDom = $$el.find(".search-box input");
+    // 首页顶部站点切换
+    var $$sitePosition = $$el.find("#siteCut");
+
+    // 动态的搜索页
+    $$searchDom.on('click', function () {
+        var popupHTML = '<div class="popup">'+
+                            '<div class="content-block">'+
+                                  '<p>搜索输入页</p>'+
+                                  '<p><a href="#" class="close-popup">关闭</a></p>'+
+                                '</div>'+
+                        '</div>'
+        myApp.popup(popupHTML);
+    });          
+});
+
+//初始化app
+myApp.init({});
 
 //给个人中心启动动态导航
-var homeView = myApp.addView('#personal', {
-    // Because we use fixed-through navbar we can enable dynamic navbar
+var userView = myApp.addView('#personal', {
+    // 启用底部动态导航
     dynamicNavbar: true,
     // 禁用侧滑返回效果
     swipeBackPage: false,
