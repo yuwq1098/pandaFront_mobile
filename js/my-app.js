@@ -7,8 +7,8 @@ var myApp = new Framework7({
 var $$ = Dom7;
 
 // Init滑块和它的实例存储在mySwiper变量
-var mySwiper = myApp.swiper('.swiper-container', {
-
+var mySwiper = myApp.swiper('#index-swiper', {
+    touchMoveStopPropagation : false,              //阻止事件冒泡
     autoplay: 3500,                                //可选选项，自动滑动
     autoplayDisableOnInteraction : false,          //用户操作后，不禁止自动滑动
     width : window.innerWidth,                     //你的slide宽度,全屏写法
@@ -28,11 +28,27 @@ var mySwiper = myApp.swiper('.swiper-container', {
     },
 });
 
+// 初始化
+var boxSwiper01 = myApp.swiper('#swiper-box01', {
+    touchMoveStopPropagation : false,              //阻止事件冒泡
+    slidesPerView: 'auto',
+    spaceBetween : 0,                              // slide间隔 
+    slidesPerGroup: 1,                             // 2个slide为一组 
+    touchAngle : 20,                               // 滑动角度
+    freeMode: true,
+    speed:400,                                     // 速度
+    onTouchEnd: function(swiper){
+        if(swiper.activeIndex>=swiper.slides.length-2){
+            console.log("我要跳了");                   // 滑到最后一个，再继续滑我就跳转
+        }
+        
+    },
+});
+
 // 添加视图
 var mainView = myApp.addView('.view-main', {
     // 因为我们使用固定通过导航条我们可以启用动态导航
     dynamicNavbar: true,
-
 });
 
 //添加视图home
@@ -61,9 +77,6 @@ myApp.onPageInit('home', function (page) {
         myApp.popup(popupHTML);
     });          
 });
-
-//初始化app
-myApp.init({});
 
 //给个人中心启动动态导航
 var userView = myApp.addView('#personal', {
@@ -112,3 +125,6 @@ myApp.onPageInit('userinfo', function (page) {
         e.preventDefault();
     });
 });
+
+//初始化app
+myApp.init({});

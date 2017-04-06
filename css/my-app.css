@@ -211,7 +211,7 @@ a {
     content: "";
     display: block;
     z-index: 1;
-    background: #000;
+    background: #f0f0f0;
     position: absolute;
 }
 .box-border-top::before,
@@ -458,18 +458,26 @@ em{ margin: 0 3px; }
     width: 100%;
     height: 100%;
 }
-.unit-money::before{
+.unit-money em::before{
     content: "￥";
     font-size: .8em;
+    color: inherit;
 }
 
 .page {
     background: #f5f5f5;
 }
 
+/*更改f7默认样式*/
 .list-block {
     margin: 0;
     font-size: inherit;
+}
+.content-block {
+    margin: 0;
+    padding: 0;
+    color: #313536;
+    box-sizing: border-box;
 }
 
 /*导航条样式*/
@@ -603,7 +611,7 @@ em{ margin: 0 3px; }
     padding: 0 5px;
 }
 .index-navbar .search-box input::-webkit-input-placeholder{
-    color: rgba(0,0,0,.45);
+    color: rgba(0,0,0,.75);
 }
 .index-navbar .search-box input{
     border: none;
@@ -625,7 +633,7 @@ em{ margin: 0 3px; }
 .index-navbar .other-links::before{
     content: "";
     display: block;
-    background-color: rgba(0,0,0,.45);
+    background-color: rgba(0,0,0,.75);
     width: 1px;
     height: 14px;
     position: absolute;
@@ -634,18 +642,7 @@ em{ margin: 0 3px; }
     bottom: 0;
     margin: auto;
 }
-/*.index-navbar a{
-	color: #313536;
-}
-.index-navbar .pull-left a{
-	margin-right: 8px;
-}
-.index-navbar .pull-right a{
-	margin-left: 8px;
-}
-.pages.index-box .page-content{
-    padding-top: 38px;
-}*/
+
 
 /*页面内容的下边距，根据底部导航计算*/
 .padding-toolbar{
@@ -765,12 +762,13 @@ em{ margin: 0 3px; }
     background-color: #fff;
     padding: 0 10px;
 }
+/*图片列表盒子的标题*/
 .box-list-content .box-title{
     text-align: center;
     font-size: 17px;
-    height: 43px;
-    line-height: 43px;
-    margin-top: 5px;
+    height: 49px;
+    line-height: 49px;
+    margin-top: 8px;
     position: relative;
 }
 .box-list-content .box-title::before{
@@ -797,21 +795,188 @@ em{ margin: 0 3px; }
     background-color: #fff;
     z-index: 1;
 }
+/*图片列表盒子的列表内容*/
+/*必游景点*/
+.box-list-content{
+    padding-bottom: .25rem;
+    margin-bottom: 0.25rem;
+}
 
-.box-layout span.vital {
+.box-list-content .vital-image-view{
+    width: 100%;
+    height: 4rem;
+    margin-bottom: .25rem;
+    position: relative;
+}
+.vital-image-view .imgWrap{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.vital-image-view img{
+    width: 100%;
+    height: auto;
+}
+.vital-image-view .view-info{
+    width: 2.8rem;
+    height: 2.8rem;
+    background-color: rgba(0,0,0,.45);
+    border-radius: 50%; 
+    color: #f5f5f5;
+    text-align: center;
+}
+.vital-image-view .view-info > *{
+    line-height: .8rem;
+    display: block;
+}
+.vital-image-view .view-info > em{
+    margin-top: .65rem;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-indent: 2px;
+}
+.vital-image-view .view-info span{
+    font-size: 12px;
+    line-height: .7rem;
+}
+.vital-image-view span.vital em{
+    margin-left: 0; 
+    margin-right: 5px;
+    font-size: 20px;  
+    color: #f43;
+    font-weight: 700;
+    display: inline-block;
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);
+}
+
+.swiper-image-view{
+    width: 100%;
+    height: 2.5rem;
+}
+
+.swiper-image-view .swiper-slide{
+    width: 2.7rem;
+    height: 2.5rem;
+}
+
+.swiper-image-view .swiper-slide:not(:last-child){
+    margin-right: .20rem;
+}
+.swiper-image-view .imgWrap{
+    width: 100%;
+    height: 1.8rem;
+    position: relative;
+    overflow: hidden;
+}
+.swiper-image-view .imgWrap img{
+    height: 100%;
+    width: auto;
     position: absolute;
-    right: 10px;
-    color: #fb3e3e;
-    height: 48px;
-    line-height: 48px;
-    font-size: 14px;
-    letter-spacing: .05em;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
 }
-.unit-money::before {
-    content: "￥";
-    font-size: 0.8em;
+.swiper-image-view p{
+    line-height: .7rem;
+    height: .7rem;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 0 3px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-indent: 1px;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
+.swiper-image-view .more{
+    width: 1.4rem;
+    position: relative;
+}
+
+.swiper-image-view .more i,
+.swiper-image-view .more p{
+    display: block;
+    width: 20px;
+    text-align: center;
+    position: absolute;
+    color: #313536;
+}
+.swiper-image-view .more i{
+    left: 3px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 20px;
+    color: #959595;
+}
+.swiper-image-view .more p{
+    right: 8px;
+    height: 64px;
+    line-height: 16px;
+}
+
+/*当地酒店*/
+.box-image-item section.col-50{
+    width: -webkit-calc((100% - .25rem*1)/ 2);
+    width: calc((100% - .25rem*1)/ 2);
+}
+.box-image-item section.col-50:nth-child(n+3){
+    margin-top: .25rem;
+}
+
+.box-list-content .box-image-item01 .img-content{
+    position: relative;
+    height: 4rem;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.box-image-item01 .imgWrap{
+    height: 3.3rem;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.box-image-item01 .vital{
+    position: absolute;
+    top: 2.4rem;
+    background-color: rgba(0,0,0,.45);
+    line-height: 24px;
+    height: 24px;
+    padding: 0 .3rem 0 .05rem; 
+    -webkit-border-radius: 0 6px 6px 0;
+    border-radius: 0 6px 6px 0;
+    color: #f5f5f5;
+    font-size: 11px;
+}
+.box-image-item01 .vital em{
+    font-size: 15px;
+    color: #f43;
+    margin-right: 5px;
+    display: inline-block;
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+}
+.box-image-item01 .info{
+    height: 0.7rem;
+    line-height: 0.7rem;
+    overflow: hidden;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-indent: 1px;
+}
+.box-image-item01 .more{
+    line-height: .75rem;
+    height: .75rem;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-indent: 3px;
+    text-align: center;
+    margin-top: .20rem;
+}
 
 
 /*底部导航*/

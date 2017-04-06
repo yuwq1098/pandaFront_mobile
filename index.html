@@ -65,10 +65,10 @@
                                     <input type="text" readonly="readonly" placeholder="请输入目的地、主题或关键字"/>
                                 </div>
                                 <section class="other-links">
-                                    <a href="pages/helpDocument.html" class="item-link">
+                                    <a href="pages/module/allFunctions.html" class="item-link">
                                         <i class="icon iconfont icon-medium icon-31erweima"></i>
                                     </a>
-                                    <a href="pages/helpDocument.html" class="item-link">
+                                    <a href="pages/module/message.html" class="item-link">
                                         <i class="icon iconfont icon-medium icon-xinxi"></i>
                                     </a>   
                                 </section>
@@ -78,7 +78,7 @@
                     </div>
                     <div class="page-content padding-toolbar">
                         <!-- 滑块容器, 首页广告区  -->
-                        <div class="swiper-container">
+                        <div class="swiper-container" id="index-swiper">
                             <!-- 幻灯片包 -->
                             <div class="swiper-wrapper">
                                 <!-- 幻灯片 -->
@@ -180,105 +180,226 @@
                         </div>
 
                         <!-- 必游景点 -->
-                        <div class="box-list-content border-top-solid box-sizing">
+                        <div class="box-list-content border-top-solid border-bottom-solid
+                         box-sizing">
                             <section class="box-title">
                                 <h3 class="spacing-medium">必游景点</h3>
                             </section>
                             <section class="list-content">
-                                <div class="">
+                                <div class="vital-image-view">
                                     <a href="javascript:;" class="">
-                                        <section></section>
-                                        <div>
-                                            <em>滕王阁</em><br/>
+                                        <section class="imgWrap complete-center">
+                                            <img src="img/hot-spots_01.jpg" class="complete-center" alt="滕王阁" />
+                                        </section>
+                                        <div class="view-info complete-center">
+                                            <em>滕王阁</em>
                                             <span class="vital unit-money"><em>1443</em>起</span>
                                         </div>    
                                     </a>
-                                </div>
-                                <div>
-                                    <ul>
-                                        <li>
+                                </div><!-- 主要图片视区 -->
+                                <div class="swiper-image-view swiper-container" id="swiper-box01">
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide">
                                             <a href="javascript:;" class="">
                                                 <div class="imgWrap">
-                                                    <img src="" alt=""/> 
+                                                    <img src="img/hot-spots_02.jpg" alt="八一起义"/> 
                                                 </div>
                                                 <p>八一起义</p>
                                             </a>
                                         </li>
-                                        <li>
+                                        <li class="swiper-slide">
                                             <a href="javascript:;" class="">
                                                 <div class="imgWrap">
-                                                    <img src="" alt=""/> 
+                                                    <img src="img/hot-spots_03.jpg" alt="八大山人"/> 
                                                 </div>
                                                 <p>八大山人</p>
                                             </a>
                                         </li>
-                                        <li>
+                                        <li class="swiper-slide">
                                             <a href="javascript:;" class="">
                                                 <div class="imgWrap">
-                                                    <img src="" alt=""/> 
+                                                    <img src="img/hot-spots_04.jpg" alt="梅岭主峰"/> 
                                                 </div>
                                                 <p>梅岭主峰</p>
                                             </a>
                                         </li>
-                                        <li>
+                                        <li class="swiper-slide">
                                             <a href="javascript:;" class="">
                                                 <div class="imgWrap">
-                                                    <img src="" alt=""/> 
+                                                    <img src="img/hot-spots_05.jpg" alt="天香园"/> 
                                                 </div>
                                                 <p>天香园</p>
                                             </a>
                                         </li>
-                                        <li>
+                                        <li class="swiper-slide">
                                             <a href="javascript:;" class="">
                                                 <div class="imgWrap">
-                                                    <img src="" alt=""/> 
+                                                    <img src="img/hot-spots_06.jpg" alt="艾溪湖湿地公园"/> 
                                                 </div>
                                                 <p>艾溪湖湿地公园</p>
                                             </a>
                                         </li>
-                                        <li>
+                                        <li class="swiper-slide">
                                             <a href="javascript:;" class="">
                                                 <div class="imgWrap">
-                                                    <img src="" alt=""/> 
+                                                    <img src="img/hot-spots_07.jpg" alt="厚田沙漠"/> 
                                                 </div>
                                                 <p>厚田沙漠</p>
                                             </a>
                                         </li>
+                                        <li class="swiper-slide">
+                                            <a href="javascript:;" class="">
+                                                <div class="imgWrap">
+                                                    <img src="img/hot-spots_02.jpg" alt="八一起义"/> 
+                                                </div>
+                                                <p>八一起义</p>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="javascript:;" class="">
+                                                <div class="imgWrap">
+                                                    <img src="img/hot-spots_03.jpg" alt="八大山人"/> 
+                                                </div>
+                                                <p>八大山人</p>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="javascript:;" class="">
+                                                <div class="imgWrap">
+                                                    <img src="img/hot-spots_04.jpg" alt="梅岭主峰"/> 
+                                                </div>
+                                                <p>梅岭主峰</p>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="javascript:;" class="">
+                                                <div class="imgWrap">
+                                                    <img src="img/hot-spots_05.jpg" alt="天香园"/> 
+                                                </div>
+                                                <p>天香园</p>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="javascript:;" class="">
+                                                <div class="imgWrap">
+                                                    <img src="img/hot-spots_06.jpg" alt="艾溪湖湿地公园"/> 
+                                                </div>
+                                                <p>艾溪湖湿地公园</p>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="javascript:;" class="">
+                                                <div class="imgWrap">
+                                                    <img src="img/hot-spots_07.jpg" alt="厚田沙漠"/> 
+                                                </div>
+                                                <p>厚田沙漠</p>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide more">
+                                            <a href="javascript:;" class="">
+                                                <i class="icon iconfont icon-jiantoupinghuashang vertical-layout"></i>
+                                                <p class="vertical-layout">查<br/>看<br/>更<br/>多</p>
+                                            </a>
+                                        </li>
                                     </ul>
-                                </div>
+                                </div><!-- 滑动图片视区 -->
                             </section>
                         </div>
 
                         <!-- 当地酒店 -->
-                        <div class="">
-                            
+                        <div class="box-list-content border-top-solid border-bottom-solid box-sizing">
+                            <section class="box-title">
+                                <h3 class="spacing-medium">当地酒店</h3>
+                            </section>
+                            <div class="box-image-item box-image-item01 row" data-box="local-hotel">
+                                <section class="col-50 img-content">
+                                    <div class="imgWrap">
+                                        <img src="img/local-hotel_01.jpg" alt="香格里拉大酒店"/>
+                                    </div>
+                                    <span class="vital unit-money"><em>1200.00</em>起</span>
+                                    <p class="info">香格里拉大酒店</p>
+                                </section>
+                                <section class="col-50 img-content">
+                                    <div class="imgWrap">
+                                        <img src="img/local-hotel_02.jpg" alt="凯莱大酒店"/>
+                                    </div>
+                                    <span class="vital unit-money"><em>1443.00</em>起</span>
+                                    <p class="info">凯莱大酒店</p>
+                                </section>
+                                <section class="col-50 img-content">
+                                    <div class="imgWrap">
+                                        <img src="img/local-hotel_03.jpg" alt="唐宁ONE酒店"/>
+                                    </div>
+                                        <span class="vital unit-money"><em>688.00</em>起</span>
+                                        <p class="info">唐宁ONE酒店</p>
+                                </section>
+                                <section class="col-50 img-content">
+                                    <div class="imgWrap">
+                                        <img src="img/local-hotel_04.jpg" alt="全球嘉华酒店"/>
+                                    </div>
+                                    <span class="vital unit-money"><em>1200.00</em>起</span>
+                                    <p class="info">全球嘉华酒店</p>
+                                </section>
+                                <section class="col-100 more">
+                                    <a href="javascript:;">查看更多<i class="icon iconfont icon-fanhui6"></i></a>
+                                </section>
+                            </div> 
                         </div>
 
                         <!-- 热门周边 -->
-                        <div class="">
-                            
+                        <div class="box-list-content border-top-solid border-bottom-solid box-sizing">
+                            <section class="box-title">
+                                <h3 class="spacing-medium">热门周边</h3>
+                            </section>
                         </div>
 
                         <!-- 地道美食 -->
-                        <div class="">
-                            
+                        <div class="box-list-content border-top-solid border-bottom-solid box-sizing">
+                            <section class="box-title">
+                                <h3 class="spacing-medium">地道美食</h3>
+                            </section>
                         </div>
-
 
 
                     </div>
                 </div>
             </div>
+
+            <!-- 底部标签栏 -->
+            <div class="toolbar tabbar tabbar-labels border-top-solid">
+                <div class="toolbar-inner">
+                    <a href="#home" class="tab-link active">
+                        <i class="icon iconfont icon-shouye1"></i>
+                        <span class="tabbar-label">首页</span>
+                    </a>
+                    <a href="#orders" class="tab-link">
+                        <i class="icon iconfont icon-dingdan8"></i>
+                        <span class="tabbar-label">订单</span>
+                    </a>
+                    <a href="#local-travel" class="tab-link">
+                        <i class="icon iconfont icon-zhoubian3"></i>
+                        <span class="tabbar-label">本地游</span>
+                    </a>
+                    <a href="#around" class="tab-link"> 
+                        <i class="icon iconfont icon-yonghuzhinan"></i>
+                        <span class="tabbar-label">周边</span>
+                    </a>
+                    <a href="#personal" class="tab-link"> 
+                        <i class="icon iconfont icon-wode4"></i>
+                        <span class="tabbar-label">我的</span>
+                    </a>
+                </div>
+            </div>
         </div>
         <!-- 订单页面 -->
-        <div id="attention" class="view tab" data-page="attention">
+        <div id="orders" class="view tab" data-page="orders">
             <div class="navbar">
                 <div class="navbar-inner">
                   <div class="center">订单</div>
                 </div>
             </div>
             <div class="pages navbar-fixed">
-                <div data-page="attention" class="page">
+                <div data-page="orders" class="page">
                     <div class="page-content">
                         <div class="content-block">
                             <p>这里是订单列表页</p>
@@ -286,16 +407,41 @@
                     </div>
                 </div>
             </div>
+            <!-- 底部标签栏 -->
+            <div class="toolbar tabbar tabbar-labels border-top-solid">
+                <div class="toolbar-inner">
+                    <a href="#home" class="tab-link">
+                        <i class="icon iconfont icon-shouye1"></i>
+                        <span class="tabbar-label">首页</span>
+                    </a>
+                    <a href="#orders" class="tab-link active">
+                        <i class="icon iconfont icon-dingdan8"></i>
+                        <span class="tabbar-label">订单</span>
+                    </a>
+                    <a href="#local-travel" class="tab-link">
+                        <i class="icon iconfont icon-zhoubian3"></i>
+                        <span class="tabbar-label">本地游</span>
+                    </a>
+                    <a href="#around" class="tab-link"> 
+                        <i class="icon iconfont icon-yonghuzhinan"></i>
+                        <span class="tabbar-label">周边</span>
+                    </a>
+                    <a href="#personal" class="tab-link"> 
+                        <i class="icon iconfont icon-wode4"></i>
+                        <span class="tabbar-label">我的</span>
+                    </a>
+                </div>
+            </div>
         </div>
         <!-- 本地游页面 -->
-        <div id="write" class="view tab" data-page="write">
+        <div id="local-travel" class="view tab" data-page="local-travel">
             <div class="navbar">
                 <div class="navbar-inner">
                     <div class="center">本地游</div>
                 </div>
             </div>
             <div class="pages navbar-fixed">
-                <div data-page="write" class="page">
+                <div data-page="local-travel" class="page">
                     <div class="page-content">
                         <div class="content-block">
                             <p>这里是本地游的页面</p>
@@ -303,21 +449,71 @@
                     </div>
                 </div>
             </div>
+            <!-- 底部标签栏 -->
+            <div class="toolbar tabbar tabbar-labels border-top-solid">
+                <div class="toolbar-inner">
+                    <a href="#home" class="tab-link">
+                        <i class="icon iconfont icon-shouye1"></i>
+                        <span class="tabbar-label">首页</span>
+                    </a>
+                    <a href="#orders" class="tab-link">
+                        <i class="icon iconfont icon-dingdan8"></i>
+                        <span class="tabbar-label">订单</span>
+                    </a>
+                    <a href="#local-travel" class="tab-link active">
+                        <i class="icon iconfont icon-zhoubian3"></i>
+                        <span class="tabbar-label">本地游</span>
+                    </a>
+                    <a href="#around" class="tab-link"> 
+                        <i class="icon iconfont icon-yonghuzhinan"></i>
+                        <span class="tabbar-label">周边</span>
+                    </a>
+                    <a href="#personal" class="tab-link"> 
+                        <i class="icon iconfont icon-wode4"></i>
+                        <span class="tabbar-label">我的</span>
+                    </a>
+                </div>
+            </div>
         </div>
         <!-- 周边 -->
-        <div id="ranking" class="view tab" data-page="ranking">
+        <div id="around" class="view tab" data-page="around">
             <div class="navbar">
                 <div class="navbar-inner">
                     <div class="center">周边</div>
                 </div>
             </div>
             <div class="pages navbar-fixed">
-                <div data-page="ranking" class="page">
+                <div data-page="around" class="page">
                     <div class="page-content">
                         <div class="content-block">
                             <p>周边热门</p>
                         </div>
                     </div>
+                </div>
+            </div>
+            <!-- 底部标签栏 -->
+            <div class="toolbar tabbar tabbar-labels border-top-solid">
+                <div class="toolbar-inner">
+                    <a href="#home" class="tab-link">
+                        <i class="icon iconfont icon-shouye1"></i>
+                        <span class="tabbar-label">首页</span>
+                    </a>
+                    <a href="#orders" class="tab-link">
+                        <i class="icon iconfont icon-dingdan8"></i>
+                        <span class="tabbar-label">订单</span>
+                    </a>
+                    <a href="#local-travel" class="tab-link">
+                        <i class="icon iconfont icon-zhoubian3"></i>
+                        <span class="tabbar-label">本地游</span>
+                    </a>
+                    <a href="#around" class="tab-link active"> 
+                        <i class="icon iconfont icon-yonghuzhinan"></i>
+                        <span class="tabbar-label">周边</span>
+                    </a>
+                    <a href="#personal" class="tab-link"> 
+                        <i class="icon iconfont icon-wode4"></i>
+                        <span class="tabbar-label">我的</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -383,34 +579,33 @@
                     
                 </div>
             </div>
-        </div>
-        
-        <!-- 底部标签栏 -->
-        <div class="toolbar tabbar tabbar-labels border-top-solid">
-            <div class="toolbar-inner">
-                <a href="#home" class="tab-link active">
-                    <i class="icon iconfont icon-shouye1"></i>
-                    <span class="tabbar-label">首页</span>
-                </a>
-                <a href="#attention" class="tab-link">
-                    <i class="icon iconfont icon-dingdan8"></i>
-                    <span class="tabbar-label">订单</span>
-                </a>
-                <a href="#write" class="tab-link">
-                    <i class="icon iconfont icon-zhoubian3"></i>
-                    <span class="tabbar-label">本地游</span>
-                </a>
-                <a href="#ranking" class="tab-link"> 
-                    <i class="icon iconfont icon-yonghuzhinan"></i>
-                    <span class="tabbar-label">周边</span>
-                </a>
-                <a href="#personal" class="tab-link"> 
-                    <i class="icon iconfont icon-wode4"></i>
-                    <span class="tabbar-label">我的</span>
-                </a>
+            <!-- 底部标签栏 -->
+            <div class="toolbar tabbar tabbar-labels border-top-solid">
+                <div class="toolbar-inner">
+                    <a href="#home" class="tab-link">
+                        <i class="icon iconfont icon-shouye1"></i>
+                        <span class="tabbar-label">首页</span>
+                    </a>
+                    <a href="#orders" class="tab-link">
+                        <i class="icon iconfont icon-dingdan8"></i>
+                        <span class="tabbar-label">订单</span>
+                    </a>
+                    <a href="#local-travel" class="tab-link">
+                        <i class="icon iconfont icon-zhoubian3"></i>
+                        <span class="tabbar-label">本地游</span>
+                    </a>
+                    <a href="#around" class="tab-link"> 
+                        <i class="icon iconfont icon-yonghuzhinan"></i>
+                        <span class="tabbar-label">周边</span>
+                    </a>
+                    <a href="#personal" class="tab-link active"> 
+                        <i class="icon iconfont icon-wode4"></i>
+                        <span class="tabbar-label">我的</span>
+                    </a>
+                </div>
             </div>
+
         </div>
-     
     </div>
     <!-- 加载 Framework7 脚本-->
     <script type="text/javascript" src="js/framework7.min.js"></script>
