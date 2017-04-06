@@ -695,23 +695,35 @@ em{ margin: 0 3px; }
 	margin-bottom: 8px;
 }
 .content-function a.item-link i.func_01{
-	background:url(../img/msite_flight.png) no-repeat;
+	background:url(../img/msite_scenic.png) no-repeat;
 	background-size: 40px 40px;  
 }
 .content-function a.item-link i.func_02{
-	background:url(../img/msite_vacation.png) no-repeat;
-	background-size: 40px 40px;  
-}
-.content-function a.item-link i.func_03{
 	background:url(../img/msite_hotel.png) no-repeat;
 	background-size: 40px 40px;  
 }
+.content-function a.item-link i.func_03{
+	background:url(../img/msite_around.png) no-repeat;
+	background-size: 40px 40px;  
+}
 .content-function a.item-link i.func_04{
-	background:url(../img/msite_ship.png) no-repeat;
+	background:url(../img/msite_food.png) no-repeat;
 	background-size: 40px 40px;  
 }
 .content-function a.item-link i.func_05{
-	background:url(../img/msite_ticket.png) no-repeat;
+	background:url(../img/msite_china.png) no-repeat;
+	background-size: 40px 40px;  
+}
+.content-function a.item-link i.func_06{
+	background:url(../img/msite_guide.png) no-repeat;
+	background-size: 40px 40px;  
+}
+.content-function a.item-link i.func_07{
+	background:url(../img/msite_car.png) no-repeat;
+	background-size: 40px 40px;  
+}
+.content-function a.item-link i.func_08{
+	background:url(../img/msite_specialty.png) no-repeat;
 	background-size: 40px 40px;  
 }
 
