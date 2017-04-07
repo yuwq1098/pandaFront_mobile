@@ -3,14 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <!-- 禁用苹果默认样式 -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- 版权信息 -->
+    <meta name="copyright" content="Copyright (c) 2006-2017 Mafengwo.">
+    <!-- 禁止ios自动识别手机号和邮箱 -->
+    <meta name="format-detection" content="telephone=no,address=no">
+    <!-- 熊猫旅行网站关键词 -->
+    <meta name="keywords" content="旅游一体化,舒适便捷,熊猫旅行">
+    <!-- 熊猫旅行网站描述 -->
+    <meta name="description" content="熊猫旅行网(m.pandaFront.com)靠谱的旅游攻略,最佳的自由行,自助游分享社区,海量旅游景点图片、游记、交通、美食、购物等旅游攻略自由行信息.">
+
     <title>熊猫旅行</title>
-    
+
     <!-- 调用弹性布局的js -->
     <script src="js/flexible.js"></script>
-
-    <!-- Path to Framework7 Library CSS-->
+    <!-- Framework7 CSS-->
     <link rel="stylesheet" href="css/framework7.ios.min.css">
     <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
     <!-- iconfont引用 -->
@@ -19,8 +28,6 @@
     <link rel="stylesheet" href="css/my-app.css">
     <!-- 应用程序的响应式布局样式 -->
     <link rel="stylesheet" href="css/app-responsive.css">
-
-    
 
   </head>
   <body>
@@ -48,7 +55,6 @@
         <div id="home" class="view tab view-main active" data-page="home">
             <!-- 去除默认导航的位置 -->
             <div class="navbar navbar-hidden"></div>
-
             <div class="pages">
                 <div data-page="home" class="page">
                     <div class="index-navbar box-sizing" id="index-navbar">
@@ -112,12 +118,12 @@
                             <!-- 分页器 -->
                             <div class="swiper-pagination"></div>
                         </div>
-                        
+                        <!-- 首页广告区 => end -->
+
                         <!-- 块级内容, 主功能link区  -->
                         <div class="content-block content-function">
                             <!-- “no-gutter”类，去除栅格的15px间隙 -->
                             <div class="row">
-                                <!-- Each "cell" has col-[widht in percents] class -->
                                 <div class="col-25 infinite-scroll-preloader">
                                     <a href="pages/scenic/mustSee.html" class="item-link item-content">
                                         <i class="icon func_01"></i>
@@ -144,7 +150,6 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <!-- Each "cell" has col-[widht in percents] class -->
                                 <div class="col-25 infinite-scroll-preloader">
                                     <a href="pages/scenic/domesticTravel.html" class="item-link item-content">
                                         <i class="icon func_05"></i>
@@ -171,7 +176,8 @@
                                 </div>
                             </div>
                         </div>   
-                        
+                        <!-- 主功能link区 => end -->
+
                         <!-- 天气信息 -->
                         <div class="clearfix line-info-box border-top-solid border-bottom-solid box-sizing">
                             <section class="pull-left">实时天气：晴</section>
@@ -179,6 +185,7 @@
                             <section class="pull-left">东风2级</section>
                             <section class="pull-left">湿度：31%</section>
                         </div>
+                        <!-- 天气信息 => end -->
 
                         <!-- 必游景点 -->
                         <div class="box-list-content border-top-solid border-bottom-solid
@@ -297,7 +304,7 @@
                                             </a>
                                         </li>
                                         <li class="swiper-slide more">
-                                            <a href="javascript:;" class="">
+                                            <a href="pages/scenic/mustSee.html" class="item-link">
                                                 <i class="icon iconfont icon-jiantoupinghuashang vertical-layout"></i>
                                                 <p class="vertical-layout">查<br/>看<br/>更<br/>多</p>
                                             </a>
@@ -306,6 +313,7 @@
                                 </div><!-- 滑动图片视区 -->
                             </section>
                         </div>
+                        <!-- 必游景点 => end -->
 
                         <!-- 当地酒店 -->
                         <div class="box-list-content border-top-solid border-bottom-solid box-sizing">
@@ -342,10 +350,11 @@
                                     <p class="info">全球嘉华酒店</p>
                                 </section>
                                 <section class="col-100 more">
-                                    <a href="javascript:;">查看更多<i class="icon iconfont icon-fanhui6"></i></a>
+                                    <a href="pages/hotel/localHotel.html" class="item-link">查看更多<i class="icon iconfont icon-fanhui6"></i></a>
                                 </section>
                             </div> 
                         </div>
+                        <!-- 当地酒店 => end -->
 
                         <!-- 热门周边 -->
                         <div class="box-list-content border-top-solid border-bottom-solid box-sizing">
@@ -410,10 +419,11 @@
                                     </div>
                                 </section>
                                 <section class="more">
-                                    <a href="javascript:;">查看更多<i class="icon iconfont icon-fanhui6"></i></a>
+                                    <a href="pages/scenic/hotAround.html" class="item-link">查看更多<i class="icon iconfont icon-fanhui6"></i></a>
                                 </section>
                             </div> 
                         </div>
+                        <!-- 热门周边 => end -->
 
                         <!-- 地道美食 -->
                         <div class="box-list-content border-top-solid border-bottom-solid box-sizing">
@@ -426,7 +436,7 @@
                                         <li class="swiper-slide">
                                             <a href="javascript:;" class="">
                                                 <div class="imgWrap">
-                                                    <img src="img/authentic-food_01.jpg" alt="八一起义"/> 
+                                                    <img src="img/authentic-food_01.jpg" alt="经典赣菜"/> 
                                                 </div>
                                                 <section class="subtitle complete-center">经典赣菜</section>
                                             </a>
@@ -434,7 +444,7 @@
                                         <li class="swiper-slide">
                                             <a href="javascript:;" class="">
                                                 <div class="imgWrap">
-                                                    <img src="img/authentic-food_02.jpg" alt="八大山人"/> 
+                                                    <img src="img/authentic-food_02.jpg" alt="风味烤卤"/> 
                                                 </div>
                                                 <section class="subtitle complete-center">风味烤卤</section>
                                             </a>
@@ -442,7 +452,7 @@
                                         <li class="swiper-slide">
                                             <a href="javascript:;" class="">
                                                 <div class="imgWrap">
-                                                    <img src="img/authentic-food_03.jpg" alt="梅岭主峰"/> 
+                                                    <img src="img/authentic-food_03.jpg" alt="特色小吃"/> 
                                                 </div>
                                                 <section class="subtitle complete-center">特色小吃</section>
                                             </a>
@@ -450,7 +460,7 @@
                                         <li class="swiper-slide">
                                             <a href="javascript:;" class="">
                                                 <div class="imgWrap">
-                                                    <img src="img/authentic-food_04.jpg" alt="天香园"/> 
+                                                    <img src="img/authentic-food_04.jpg" alt="经典赣菜"/> 
                                                 </div>
                                                 <section class="subtitle complete-center">经典赣菜</section>
                                             </a>
@@ -458,7 +468,7 @@
                                         <li class="swiper-slide">
                                             <a href="javascript:;" class="">
                                                 <div class="imgWrap">
-                                                    <img src="img/authentic-food_05.jpg" alt="艾溪湖湿地公园"/> 
+                                                    <img src="img/authentic-food_05.jpg" alt="劲爆川菜"/> 
                                                 </div>
                                                 <section class="subtitle complete-center">劲爆川菜</section>
                                             </a>
@@ -466,7 +476,7 @@
                                         <li class="swiper-slide">
                                             <a href="javascript:;" class="">
                                                 <div class="imgWrap">
-                                                    <img src="img/authentic-food_06.jpg" alt="厚田沙漠"/> 
+                                                    <img src="img/authentic-food_06.jpg" alt="高档粤菜"/> 
                                                 </div>
                                                 <section class="subtitle complete-center">高档粤菜</section>
                                             </a>
@@ -474,7 +484,7 @@
                                         <li class="swiper-slide">
                                             <a href="javascript:;" class="">
                                                 <div class="imgWrap">
-                                                    <img src="img/authentic-food_07.jpg" alt="八一起义"/> 
+                                                    <img src="img/authentic-food_07.jpg" alt="经典赣菜"/> 
                                                 </div>
                                                 <section class="subtitle complete-center">经典赣菜</section>
                                             </a>
@@ -482,7 +492,7 @@
                                         <li class="swiper-slide">
                                             <a href="javascript:;" class="">
                                                 <div class="imgWrap">
-                                                    <img src="img/authentic-food_08.jpg" alt="八大山人"/> 
+                                                    <img src="img/authentic-food_08.jpg" alt="风味烤卤"/> 
                                                 </div>
                                                 <section class="subtitle complete-center">风味烤卤</section>
                                             </a>
@@ -490,7 +500,7 @@
                                         <li class="swiper-slide">
                                             <a href="javascript:;" class="">
                                                 <div class="imgWrap">
-                                                    <img src="img/authentic-food_09.jpg" alt="梅岭主峰"/> 
+                                                    <img src="img/authentic-food_09.jpg" alt="特色小吃"/> 
                                                 </div>
                                                 <section class="subtitle complete-center">特色小吃</section>
                                             </a>
@@ -498,7 +508,7 @@
                                         <li class="swiper-slide">
                                             <a href="javascript:;" class="">
                                                 <div class="imgWrap">
-                                                    <img src="img/authentic-food_10.jpg" alt="天香园"/> 
+                                                    <img src="img/authentic-food_10.jpg" alt="经典赣菜"/> 
                                                 </div>
                                                 <section class="subtitle complete-center">经典赣菜</section>
                                             </a>
@@ -506,7 +516,7 @@
                                         <li class="swiper-slide">
                                             <a href="javascript:;" class="">
                                                 <div class="imgWrap">
-                                                    <img src="img/authentic-food_11.jpg" alt="艾溪湖湿地公园"/> 
+                                                    <img src="img/authentic-food_11.jpg" alt="劲爆川菜"/> 
                                                 </div>
                                                 <section class="subtitle complete-center">劲爆川菜</section>
                                             </a>
@@ -514,7 +524,7 @@
                                         <li class="swiper-slide">
                                             <a href="javascript:;" class="">
                                                 <div class="imgWrap">
-                                                    <img src="img/authentic-food_12.jpg" alt="厚田沙漠"/> 
+                                                    <img src="img/authentic-food_12.jpg" alt="高档粤菜"/> 
                                                 </div>
                                                 <section class="subtitle complete-center">高档粤菜</section>
                                             </a>
@@ -522,10 +532,8 @@
                                     </ul>
                                 </div><!-- 滑动图片视区 -->
                             </section>
-
                         </div>
-
-
+                        <!-- 地道美食 => end -->
                     </div>
                 </div>
             </div>
@@ -555,7 +563,12 @@
                     </a>
                 </div>
             </div>
+            <!-- 底部标签栏 => end -->
+
         </div>
+        <!-- 首页视图 => end -->
+
+
         <!-- 订单页面 -->
         <div id="orders" class="view tab" data-page="orders">
             <div class="navbar">
@@ -598,6 +611,9 @@
                 </div>
             </div>
         </div>
+        <!-- 订单页面 => end -->
+
+
         <!-- 本地游页面 -->
         <div id="local-travel" class="view tab" data-page="local-travel">
             <div class="navbar">
@@ -640,6 +656,9 @@
                 </div>
             </div>
         </div>
+        <!-- 本地游页面 => end -->
+
+
         <!-- 周边 -->
         <div id="around" class="view tab" data-page="around">
             <div class="navbar">
@@ -682,7 +701,10 @@
                 </div>
             </div>
         </div>
-        <!-- 我的个人中心 -->
+        <!-- 周边 => end -->
+
+
+        <!-- 个人中心 -->
         <div id="personal" class="view tab" data-page="personal">
             <!-- 顶部导航条-->
             <div class="navbar navbar-hidden"></div>
@@ -769,8 +791,10 @@
                     </a>
                 </div>
             </div>
-
         </div>
+        <!-- 个人中心 => end -->
+
+
     </div>
 
     <!-- 加载 Framework7 脚本-->

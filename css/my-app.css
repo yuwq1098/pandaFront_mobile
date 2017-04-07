@@ -566,8 +566,8 @@ em{ margin: 0 3px; }
     width: 100%;
     background-color: #313536;
     opacity: 0;
-    -webkit-transition: opacity .2s ease-in;
-    transition: opacity .2s ease-in;
+    -webkit-transition: opacity .05s cubic-bezier(0.26, 0.8, 0.67, 0.98);
+    transition: opacity .05s cubic-bezier(0.26, 0.8, 0.67, 0.98);
 }
 .index-navbar::after{
 	display: none;
@@ -1094,23 +1094,26 @@ em{ margin: 0 3px; }
 	padding: 0 10px;
 }
 .tabbar-labels a.link, .tabbar-labels a.tab-link{
-	padding-top: 6px;
-	padding-bottom: 6px;
+	padding-top: 7px;
+    padding-bottom: 7px;
+    position: relative;
+    display: block;
+    text-align: center;
 }
 .f7-icons .badge, .framework7-icons .badge, .icon .badge{
 	box-shadow: -1px 1px 1px rgba(0,0,0,.2);
 }
 .toolbar i.icon {
-    height: 17px;
+    height: 20px;
     font-size: 17px;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
 }
 .toolbar span.tabbar-label{
     font-size: 12px;
+    height: 16px;
+    line-height: 16px;
     letter-spacing: 2px;
     text-indent: 2px;
-    -webkit-transform: translateY(-2px);
-    transform: translateY(-2px);
 }
 /*个人中心*/
 .info-block{
