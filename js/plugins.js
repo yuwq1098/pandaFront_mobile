@@ -86,5 +86,58 @@
             $toolbarDoms.find("a[href='"+currentHref+"']").addClass("active").siblings("a").removeClass("active");
         });
     }  
+
+    // 返回顶部
+    $.fn.backToTOP = function(option){
+        var $el,                      // 所指定的$DOM
+            bodyHeight,               // 一屏的高度
+            defaults,                 // 默认配置
+            setting,                  // 实际的配置
+            backDOM,                  // 返回顶部按钮的DOM
+            $P,                       // 获得侦听滚动事件的DOM区域
+            p_scrollTop;              // 定义win滚动条高度
+        
+        $el = $(this);
+        $P = $el.find(".page-content");
+        p_scrollTop = $P.scrollTop();
+        bodyHeight = $("body")[0].offsetHeight;
+        defaults = {
+            showRatio : 1.2,          // 高度比例（相对于一屏的高度）
+        };
+        // 参数继承
+        setting = $.extend(defaults,option);
+
+        $el.append("<div class='backTo-top'><i class='icon iconfont icon-huidaodingbu'></i><span>顶部</span></div>"); 
+        backDOM = $el.find(".backTo-top");
+        // 初始化调用scrollFunc
+        scrollFunc();
+        // 页面滚动触发相应事件
+        $P.on("scroll",scrollFunc);
+        
+        // 页面滚动回调
+        function scrollFunc(){
+            p_scrollTop = $P.scrollTop();
+            if(p_scrollTop >= bodyHeight * setting.showRatio){
+                oShow();
+            }else{
+                oHide();
+            }
+        }
+        
+        // 移动端返回顶部，移动端不需要页面滚动过渡效果
+        backDOM.on("touchstart",function(){
+            $P.scrollTop(0);
+        })
+        
+        // 显示返回顶部按钮
+        function oShow(){
+            backDOM.fadeIn(250);
+        }
+        // 隐藏返回顶部按钮
+        function oHide(){
+            backDOM.fadeOut(150);
+        }
+
+    }  
   
 })(jQuery);  

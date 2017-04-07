@@ -85,6 +85,9 @@ myApp.onPageInit('home', function (page) {
     _indexSwiperY = Math.floor($$indexSwiper[0].offsetHeight);
 
     // 先把dom7转成zepto对象,然后再调用首页顶部导航的方法
+    $("#home").backToTOP();
+
+    // 先把dom7转成zepto对象,然后再调用首页顶部导航的方法
     $($$topNavDom[0]).indexTopNav({
         maxScrollY : _indexSwiperY,     
     });

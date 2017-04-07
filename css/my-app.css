@@ -1119,6 +1119,39 @@ em{ margin: 0 3px; }
     letter-spacing: 2px;
     text-indent: 2px;
 }
+
+/*返回顶部*/
+.backTo-top{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: rgba(49,53,54,.80);
+    position: fixed;
+    bottom: 2rem;
+    right: .4rem;
+    color: #f5f5f5;
+    text-align: center;
+    display: none;
+}
+.backTo-top > *{
+    display: block;
+}
+.backTo-top i{
+    font-size: .75rem;
+    height: .75rem;
+    line-height: .75rem;
+    margin-top: .2rem;
+}
+.backTo-top span{
+    font-size: 13px;
+    text-indent: 3px;
+    letter-spacing: 3px;
+    height: .4rem;
+    line-height: .4rem;
+    -webkit-transform: -webkit-translateY(-0.06rem);
+    transform: translateY(-0.06rem);
+}
+
 /*个人中心*/
 .info-block{
 	margin: 0;
@@ -1130,7 +1163,6 @@ em{ margin: 0 3px; }
 .info-block li .item-media img{
 	width: 58px;
 	height: 58px;
-
 }
 
 
