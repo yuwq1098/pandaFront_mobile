@@ -6,6 +6,9 @@ var myApp = new Framework7({
 // 出口选择器引擎定义
 var $$ = Dom7;
 
+// 同步五个底部导航的高亮
+$("[data-id='index-toolbar']").indexToolbar();
+
 // 添加视图
 var mainView = myApp.addView('.view-main', {
     // 因为我们使用固定通过导航条我们可以启用动态导航
@@ -100,7 +103,7 @@ myApp.onPageInit('home', function (page) {
 
 // 必游景点效果
 myApp.onPageInit('must_see', function (page) {
-
+    
 });
 
 //给个人中心启动动态导航

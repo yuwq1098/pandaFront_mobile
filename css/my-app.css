@@ -534,8 +534,8 @@ em{ margin: 0 3px; }
     border-radius: 3px;
 	background-color: rgba(0,0,0,.30);
 	opacity: 1; 
-    -webkit-transition: all .20s (0.22, 0.53, 0.01, 1.11);
-    transition: all .20s (0.22, 0.53, 0.01, 1.11); 
+    -webkit-transition: all .20s cubic-bezier(0.22, 0.53, 0.01, 1.11);
+    transition: all .20s cubic-bezier(0.22, 0.53, 0.01, 1.11); 
 }
 .swiper-pagination-bullet-active{
     width: 8px;
@@ -566,8 +566,8 @@ em{ margin: 0 3px; }
     width: 100%;
     background-color: #313536;
     opacity: 0;
-    -webkit-transition: opacity .05s cubic-bezier(0.26, 0.8, 0.67, 0.98);
-    transition: opacity .05s cubic-bezier(0.26, 0.8, 0.67, 0.98);
+    -webkit-transition: opacity .03s cubic-bezier(0.26, 0.8, 0.67, 0.98);
+    transition: opacity .03s cubic-bezier(0.26, 0.8, 0.67, 0.98);
 }
 .index-navbar::after{
 	display: none;
@@ -582,6 +582,10 @@ em{ margin: 0 3px; }
 	border-radius: 3px;
 	padding: 0 0 0 85px;
     z-index: 0;
+}
+.index-navbar .navbar-inner > *{
+    -webkit-transition: background-color .03s cubic-bezier(0.26, 0.8, 0.67, 0.98);
+    transition: background-color .03s cubic-bezier(0.26, 0.8, 0.67, 0.98);
 }
 .index-navbar .navbar-inner .nav-left{
     position: absolute;

@@ -5,7 +5,7 @@
  */
 
 (function($){ 
-    
+
     // 首页顶部条样式随滚动条高度变化
     $.fn.indexTopNav = function(option){
 
@@ -50,7 +50,7 @@
             par  = maxY/100;
             // 当滚动条高度超出规定值
             if(p_scrollTop>maxY+scroll_start){
-                $navbar_bg.css("opacity",".909");
+                $navbar_bg.css("opacity",".8");
                 $navbar_child.css("backgroundColor","rgba(255,255,255,1)");
                 return false;
             }
@@ -63,7 +63,7 @@
             if(p_scrollTop>scroll_start&&p_scrollTop<=maxY+scroll_start){
                 var Y =  p_scrollTop - scroll_start;
                 //调整导航条的背景色
-                proportionA = ((Y/par)/110).toFixed(4).toString();
+                proportionA = ((Y/par)/125).toFixed(4).toString();
                 $navbar_bg.css("opacity",proportionA);
                 //调整导航条子元素的背景色
                 proportionB = parseFloat(((Y/par)/100/4.2).toFixed(4))+0.75;
@@ -72,4 +72,19 @@
         }
     }
 
-})(Zepto);  
+    // 同步五个底部导航的高亮
+    $.fn.indexToolbar = function(option){
+        var $el,                      // 所指定的$DOM
+            $toolbarDoms,             // 获取底部导航栏所有的taps dom
+            currentHref;              // 用户点击的底部导航标签挂载的href属性值
+
+        $el = $(this);
+        $toolbarDoms = $el.find(".toolbar-inner");
+        // 点击标签高亮其标签，touchstart比click事件更优，解决移动端单击事件300ms延迟的BUG
+        $toolbarDoms.find("a").on("touchstart",function(e){
+            currentHref =  $(this).attr("href");
+            $toolbarDoms.find("a[href='"+currentHref+"']").addClass("active").siblings("a").removeClass("active");
+        });
+    }  
+  
+})(jQuery);  
