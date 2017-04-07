@@ -84,8 +84,10 @@ myApp.onPageInit('home', function (page) {
     
     _indexSwiperY = Math.floor($$indexSwiper[0].offsetHeight);
 
-    // 先把dom7转成zepto对象,然后再调用首页顶部导航的方法
-    $("#home").backToTOP();
+    // 给首页添加返回顶部效果
+    $("#home").backToTOP({
+        showRatio : 1.2,          // 高度比例（相对于一屏的高度）
+    });
 
     // 先把dom7转成zepto对象,然后再调用首页顶部导航的方法
     $($$topNavDom[0]).indexTopNav({

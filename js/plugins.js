@@ -102,7 +102,7 @@
         p_scrollTop = $P.scrollTop();
         bodyHeight = $("body")[0].offsetHeight;
         defaults = {
-            showRatio : 1.2,          // 高度比例（相对于一屏的高度）
+            showRatio : 1.5,          // 高度比例（相对于一屏的高度）
         };
         // 参数继承
         setting = $.extend(defaults,option);
