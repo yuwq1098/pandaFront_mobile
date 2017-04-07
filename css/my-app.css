@@ -838,8 +838,10 @@ em{ margin: 0 3px; }
     text-align: center;
 }
 .vital-image-view .view-info > *{
+    height: .8rem;
     line-height: .8rem;
     display: block;
+    overflow: hidden;
 }
 .vital-image-view .view-info > em{
     margin-top: .65rem;
@@ -1132,6 +1134,7 @@ em{ margin: 0 3px; }
     color: #f5f5f5;
     text-align: center;
     display: none;
+    z-index: 100;
 }
 .backTo-top > *{
     display: block;

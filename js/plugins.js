@@ -107,8 +107,8 @@
         // 参数继承
         setting = $.extend(defaults,option);
 
-        $el.append("<div class='backTo-top'><i class='icon iconfont icon-huidaodingbu'></i><span>顶部</span></div>"); 
-        backDOM = $el.find(".backTo-top");
+        $P.append("<div class='backTo-top'><i class='icon iconfont icon-huidaodingbu'></i><span>顶部</span></div>"); 
+        backDOM = $P.find(".backTo-top");
         // 初始化调用scrollFunc
         scrollFunc();
         // 页面滚动触发相应事件

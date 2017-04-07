@@ -85,7 +85,7 @@ myApp.onPageInit('home', function (page) {
     _indexSwiperY = Math.floor($$indexSwiper[0].offsetHeight);
 
     // 给首页添加返回顶部效果
-    $("#home").backToTOP({
+    $("[data-page='home']").backToTOP({
         showRatio : 1.2,          // 高度比例（相对于一屏的高度）
     });
 
@@ -104,6 +104,11 @@ myApp.onPageInit('home', function (page) {
                         '</div>'
         myApp.popup(popupHTML);
     });          
+});
+
+// 加载任意一个页面执行函数
+myApp.onPageInit('*', function (page) {
+
 });
 
 // 必游景点效果
