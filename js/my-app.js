@@ -6,6 +6,18 @@ var myApp = new Framework7({
 // 出口选择器引擎定义
 var $$ = Dom7;
 
+// 添加视图
+var mainView = myApp.addView('.view-main', {
+    // 因为我们使用固定通过导航条我们可以启用动态导航
+    dynamicNavbar: true,
+});
+
+//添加视图home
+var homeView = myApp.addView('#home', {
+    // 启用底部动态导航
+    dynamicNavbar: true,
+});
+
 // Init滑块和它的实例存储在mySwiper变量
 var mySwiper = myApp.swiper('#index-swiper', {
     touchMoveStopPropagation : false,              //阻止事件冒泡
@@ -28,43 +40,51 @@ var mySwiper = myApp.swiper('#index-swiper', {
     },
 });
 
-// 初始化
+// 初始化必游景点滑动图片集
 var boxSwiper01 = myApp.swiper('#swiper-box01', {
     touchMoveStopPropagation : false,              //阻止事件冒泡
     slidesPerView: 'auto',
-    spaceBetween : 0,                              // slide间隔 
-    slidesPerGroup: 1,                             // 2个slide为一组 
-    touchAngle : 20,                               // 滑动角度
-    freeMode: true,
-    speed:400,                                     // 速度
+    touchAngle : 30,                               // 滑动角度
+    freeMode : true,
+    freeModeMomentumRatio : 3,                     // 释放滑动时的惯性驱动距离debilitate
     onTouchEnd: function(swiper){
         if(swiper.activeIndex>=swiper.slides.length-2){
-            console.log("我要跳了");                   // 滑到最后一个，再继续滑我就跳转
+            homeView.router.loadPage("pages/scenic/mustSee.html");     // 滑到最后一个，再继续滑我就跳转
         }
         
     },
 });
 
-// 添加视图
-var mainView = myApp.addView('.view-main', {
-    // 因为我们使用固定通过导航条我们可以启用动态导航
-    dynamicNavbar: true,
+// 初始化地道美食滑动图片集
+var boxSwiper02 = myApp.swiper('#swiper-box02', {
+    touchMoveStopPropagation : false,              //阻止事件冒泡
+    slidesPerView: 'auto',
+    touchAngle : 30,                               // 滑动角度
+    freeMode: true,
+    freeModeMomentumRatio : 3,                     // 释放滑动时的惯性驱动距离的比例
 });
 
-//添加视图home
-var homeView = myApp.addView('#home', {
-    // 启用底部动态导航
-    dynamicNavbar: true,
-});
-
-//给首页添加了效果后再初始化F7 app
+//首页效果
 myApp.onPageInit('home', function (page) {
+    var $$el,
+        $$topNavDom,             // 首页顶部导航条
+        $$searchDom,             // 首页顶部输入框
+        $$sitePosition,          // 首页顶部站点切换
+        $$indexSwiper,           // 首页轮播区
+        _indexSwiperY;           // 首页轮播区的高度
 
-    var $$el = $$(page.container);
-    // 首页顶部输入框
-    var $$searchDom = $$el.find(".search-box input");
-    // 首页顶部站点切换
-    var $$sitePosition = $$el.find("#siteCut");
+    $$el = $$(page.container);
+    $$topNavDom = $$el.find("#index-navbar");
+    $$searchDom = $$el.find(".search-box input");
+    $$sitePosition = $$el.find("#siteCut");
+    $$indexSwiper = $$el.find("#index-swiper");
+    
+    _indexSwiperY = Math.floor($$indexSwiper[0].offsetHeight);
+
+    // 先把dom7转成zepto对象,然后再调用首页顶部导航的方法
+    $($$topNavDom[0]).indexTopNav({
+        maxScrollY : _indexSwiperY,     
+    });
 
     // 动态的搜索页
     $$searchDom.on('click', function () {
@@ -76,6 +96,11 @@ myApp.onPageInit('home', function (page) {
                         '</div>'
         myApp.popup(popupHTML);
     });          
+});
+
+// 必游景点效果
+myApp.onPageInit('must_see', function (page) {
+
 });
 
 //给个人中心启动动态导航
