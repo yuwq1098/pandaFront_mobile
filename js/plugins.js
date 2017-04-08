@@ -183,8 +183,8 @@
             { e: $ballFont, p: {  scale: [0,1], transformOriginY: ["85%","50%"] }, o: {  delay: 0, duration:250, easing: [ 0, 0, 0.2, 1 ] } },
             { e: $el, p: { opacity: 0 }, o: { delay: 120, duration: 350, easing: [ 0, 0, 0.2, 1 ] , sequenceQueue: false } },
             { e: $menuBoxDOM, p: { opacity: 1 }, o: { delay: 0, duration: 350 , display: "block" , sequenceQueue: false} },
-            { e: $closeDOM, p: { scale: .5 , bottom: "0.75rem" }, o: { delay: 0, duration: 0 , sequenceQueue: false} },
-            { e: $closeDOM, p: { scale: [1,.5], rotateZ: ["0deg","-135deg"], bottom: ["1.25rem","0.75rem"], }, o: { delay: 100, duration: 300 , sequenceQueue: false} },
+            { e: $closeDOM, p: { scale: .5 , bottom: "0.5rem" }, o: { delay: 0, duration: 0 , sequenceQueue: false} },
+            { e: $closeDOM, p: { scale: [1,.5], rotateZ: ["0deg","-135deg"], bottom: ["1rem","0.5rem"], }, o: { delay: 100, duration: 300 , sequenceQueue: false} },
             { e: $contentDOM, p: { scale: 0 }, o: { delay: 0, duration: 0 , sequenceQueue: false } },
             { e: $contentDOM, p: { scale: [1,.3], opacity: 1 }, o: { delay: 100, duration: 300, easing: [ .2,1.14,.65,1.5 ], display: "block",  sequenceQueue: false} },
         ];

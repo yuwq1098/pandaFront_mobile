@@ -1267,12 +1267,12 @@ em{ margin: 0 3px; }
 
 
 .floating-ball-box .box-close{
-    width: .8rem;
-    height: .8rem;
-    line-height: .8rem;
+    width: 1.3rem;
+    height: 1.3rem;
+    line-height: 1.3rem;
     text-align: center;
     top: auto;
-    bottom: 1.25rem;
+    bottom: 1rem;
     -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
 }
