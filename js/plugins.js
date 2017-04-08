@@ -107,8 +107,7 @@
         // 参数继承
         setting = $.extend(defaults,option);
 
-        $P.append("<div class='backTo-top'><i class='icon iconfont icon-huidaodingbu'></i><span>顶部</span></div>"); 
-        backDOM = $P.find(".backTo-top");
+        backDOM = $el.find(".backTo-top");
         // 初始化调用scrollFunc
         scrollFunc();
         // 页面滚动触发相应事件
@@ -131,11 +130,11 @@
         
         // 显示返回顶部按钮
         function oShow(){
-            backDOM.fadeIn(250);
+            backDOM.show().addClass("active");
         }
         // 隐藏返回顶部按钮
         function oHide(){
-            backDOM.fadeOut(150);
+            backDOM.hide().removeClass("active");
         }
 
     }  

@@ -1127,14 +1127,23 @@ em{ margin: 0 3px; }
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 50%;
-    background-color: rgba(49,53,54,.80);
+    background-color: rgba(49,53,54,0);
     position: fixed;
-    bottom: 2rem;
+    bottom: 2.6rem;
     right: .4rem;
     color: #f5f5f5;
     text-align: center;
     display: none;
-    z-index: 100;
+    z-index: 999;
+    -webkit-transform: scale(.5);
+    transform: scale(.5);
+    -webkit-transition: all .3s cubic-bezier(0.26, 0.8, 0.67, 0.98);
+    transition: all .3s cubic-bezier(0.26, 0.8, 0.67, 0.98);
+}
+.backTo-top.active{
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    background-color: rgba(49,53,54,.80);
 }
 .backTo-top > *{
     display: block;
