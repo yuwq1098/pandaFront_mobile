@@ -89,6 +89,7 @@
 
     // 返回顶部
     $.fn.backToTOP = function(option){
+
         var $el,                      // 所指定的$DOM
             bodyHeight,               // 一屏的高度
             defaults,                 // 默认配置
@@ -138,5 +139,78 @@
         }
 
     }  
+
+    // 悬浮球菜单
+    $.fn.floatingMenu = function(option){
+        
+        var $el,                      // 所指定的$DOM
+            $ballFont,                // 悬浮球上的字
+            defaults,                 // 默认配置
+            setting,                  // 实际的配置
+            $menuBoxDOM,              // 悬浮球菜单内容的DOM
+            $linkItem,                // 菜单内容的link元素
+            $contentDOM,              // 菜单link区域的DOM
+            $closeDOM;                // 关闭按钮的DOM区域
+
+        $el = $(this);
+        $ballFont = $el.find("span");
+        defaults = {
+            parentDOM : null,          // 高度比例（相对于一屏的高度）
+        };
+
+        // 参数继承
+        setting = $.extend(defaults,option);
+        $menuBoxDOM = setting.parentDOM?$(setting.parentDOM).find("[data-box='floating-menu']"):$("[data-box='floating-menu']");
+        $linkItem =  $menuBoxDOM.find(".link-item");
+        $contentDOM = $menuBoxDOM.find(".box-content");
+        $closeDOM = $menuBoxDOM.find(".box-close");
+        
+        // 用户点击悬浮球
+        $el.on('touchstart',openBOX);
+
+        // 用户触发关闭按钮
+        $closeDOM.on('touchstart',closeBOX);
+
+        // 将$ .Velocity.mock设置为任意乘数，以加快或减慢页面上的所有动画
+        $.Velocity.mock = 1;
+
+        $linkItem.on("touchstart",function(){
+            $(this).addClass("active").siblings().removeClass("active");
+        })
+        
+        // 定义打开菜单的序列函数方法
+        var openMeun = [
+            { e: $ballFont, p: {  scale: [0,1], transformOriginY: ["85%","50%"] }, o: {  delay: 0, duration:250, easing: [ 0, 0, 0.2, 1 ] } },
+            { e: $el, p: { opacity: 0 }, o: { delay: 120, duration: 350, easing: [ 0, 0, 0.2, 1 ] , sequenceQueue: false } },
+            { e: $menuBoxDOM, p: { opacity: 1 }, o: { delay: 0, duration: 350 , display: "block" , sequenceQueue: false} },
+            { e: $closeDOM, p: { scale: .5 , bottom: "0.75rem" }, o: { delay: 0, duration: 0 , sequenceQueue: false} },
+            { e: $closeDOM, p: { scale: [1,.5], rotateZ: ["0deg","-135deg"], bottom: ["1.25rem","0.75rem"], }, o: { delay: 100, duration: 300 , sequenceQueue: false} },
+            { e: $contentDOM, p: { scale: 0 }, o: { delay: 0, duration: 0 , sequenceQueue: false } },
+            { e: $contentDOM, p: { scale: [1,.3], opacity: 1 }, o: { delay: 100, duration: 300, easing: [ .2,1.14,.65,1.5 ], display: "block",  sequenceQueue: false} },
+        ];
+
+        // 定义关闭菜单的序列函数方法
+        var closenMeun = [
+            { e: $contentDOM, p: "reverse", o: { delay: 0, duration: 300 } },
+            { e: $closeDOM, p: "reverse", o: { delay: 0, duration: 300,sequenceQueue: false } },
+            { e: $menuBoxDOM, p: "reverse", o: { delay: 120, duration: 200 , display: "none", sequenceQueue: false} },
+            { e: $el, p: "reverse", o: { delay: 0, duration: 200, sequenceQueue: false } },
+            { e: $ballFont, p: "reverse", o: {  delay: 120, duration: 200, sequenceQueue: false } },
+        ];
+        
+        // 显示菜单内容的方法
+        function openBOX(){
+            // 每次打开菜单的时候去除所有link的高亮
+            $linkItem.removeClass("active");
+            $.Velocity.RunSequence(openMeun);
+        }
+        // 关闭菜单内容的方法
+        function closeBOX(){
+            $.Velocity.RunSequence(closenMeun);
+            // 每次关闭菜单的时候去除所有link的高亮
+            $linkItem.removeClass("active");
+        }
+
+    }
   
 })(jQuery);  

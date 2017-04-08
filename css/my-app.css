@@ -807,6 +807,7 @@ em{ margin: 0 3px; }
     background-color: #fff;
     z-index: 1;
 }
+
 /*图片列表盒子的列表内容*/
 /*必游景点*/
 .box-list-content{
@@ -980,6 +981,7 @@ em{ margin: 0 3px; }
     letter-spacing: 1px;
     text-indent: 1px;
 }
+
 /*更多*/
 .box-image-item .more{
     line-height: .75rem;
@@ -1122,6 +1124,166 @@ em{ margin: 0 3px; }
     text-indent: 2px;
 }
 
+/*首页悬浮球菜单*/
+.floating-ball{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: rgba(49,53,54,.80);
+    position: fixed;
+    right: .4rem;
+    bottom: 38vh;
+    color: #f5f5f5;
+    text-align: center;
+    z-index: 999;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all .3s cubic-bezier(0.26, 0.8, 0.67, 0.98);
+    transition: all .3s cubic-bezier(0.26, 0.8, 0.67, 0.98);
+}
+.floating-ball span{
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: 14px;
+    text-indent: 4px;
+    letter-spacing: 4px;
+    display: block;
+}
+
+/*悬浮球菜单内容*/
+.floating-ball-box{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(49,53,54,.92);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 10000;
+}
+.floating-ball-box .box-content{
+    width: 8rem;
+    height: 105vw;
+    bottom: 1.5rem;
+    text-align: center;
+    display: none;
+}
+.floating-ball-box .box-subtitle{
+    height: 2.4rem;
+    line-height: 2.4rem;
+    color: #ededed;
+    position: relative;
+    text-align: center;
+}
+.floating-ball-box .box-subtitle::before,
+.floating-ball-box .box-subtitle::after{
+    display: block;
+    content: "";
+    width: 2rem;
+    height: 1px;
+    background: rgba(215,246,230,.25);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+.floating-ball-box .box-subtitle::before{
+    right: -webkit-calc(50% + 1.2rem);
+    right: calc(50% + 1.5rem);
+}
+.floating-ball-box .box-subtitle::after{
+    left: -webkit-calc(50% + 1.2rem);
+    left: calc(50% + 1.5rem);
+}
+.floating-ball-box .box-subtitle h3{
+    display: inline-block;
+    color: #ededed;
+    font-weight: normal;
+    position: relative;
+    padding: 0 8px;
+    font-size: 18px;
+    letter-spacing: 4px;
+    text-indent: 4px;
+    z-index: 1;
+}
+.floating-ball-box .box-link .link-item{
+    height: 2.2rem;
+    width: 25%;
+    width: -webkit-calc((100% - 5px*3)/ 4);
+    width: calc((100% - 5px*3)/ 4);
+    margin-bottom: .25rem;
+    display: block;
+    float: left;
+    position: relative;
+}
+.floating-ball-box .box-link .link-item:not(:nth-child(4n)){
+    margin-right: 5px;
+}
+.floating-ball-box .link-item a{
+    display: block;
+}
+.floating-ball-box .link-item div.icon-wrap,
+.floating-ball-box .link-item div.icon-wrap >*{
+    -webkit-transition: all .05s;
+    transition: all .05s; 
+}
+.floating-ball-box .link-item div.icon-wrap{
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 1px solid rgba(215,246,230,.25);
+    margin: 0 auto;
+}
+.floating-ball-box .link-item:active div.icon-wrap,
+.floating-ball-box .link-item.active div.icon-wrap{
+    border: 1px solid #f5f5f5;
+    background-color: #f5f5f5;
+}
+.floating-ball-box .link-item:active div.icon-wrap i,
+.floating-ball-box .link-item.active div.icon-wrap i,
+.floating-ball-box .link-item:active p.name,
+.floating-ball-box .link-item.active p.name{
+    color: #349039;
+}
+.floating-ball-box div.icon-wrap i{
+    line-height: 1.25rem;
+    color: #82a695;
+    font-size: .7rem;
+}
+.floating-ball-box .link-item p.name{
+    text-align: center;
+    line-height: .65rem;
+    height: .7rem;
+    color: #ededed;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-indent: 2px;
+    margin-top: .10rem;
+}
+
+
+.floating-ball-box .box-close{
+    width: .8rem;
+    height: .8rem;
+    line-height: .8rem;
+    text-align: center;
+    top: auto;
+    bottom: 1.25rem;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+.floating-ball-box .box-close i{
+    font-size: .8rem;
+    color: #ededed;
+}
+
+
+
+
 /*返回顶部*/
 .backTo-top{
     width: 1.5rem;
@@ -1129,7 +1291,7 @@ em{ margin: 0 3px; }
     border-radius: 50%;
     background-color: rgba(49,53,54,0);
     position: fixed;
-    bottom: 2.6rem;
+    bottom: 14vh;
     right: .4rem;
     color: #f5f5f5;
     text-align: center;

@@ -82,13 +82,17 @@ myApp.onPageInit('home', function (page) {
     $$sitePosition = $$el.find("#siteCut");
     $$indexSwiper = $$el.find("#index-swiper");
     
-    _indexSwiperY = Math.floor($$indexSwiper[0].offsetHeight);
+    // 悬浮球菜单
+    $("#floating-menu").floatingMenu({
+        parentDOM : "#home",          // 指定悬浮球菜单属于哪个page,默认是全局
+    });
 
     // 给首页添加返回顶部效果
     $("[data-page='home']").backToTOP({
         showRatio : 1.2,          // 高度比例（相对于一屏的高度）
     });
-
+    
+    _indexSwiperY = Math.floor($$indexSwiper[0].offsetHeight);
     // 先把dom7转成zepto对象,然后再调用首页顶部导航的方法
     $($$topNavDom[0]).indexTopNav({
         maxScrollY : _indexSwiperY,     
