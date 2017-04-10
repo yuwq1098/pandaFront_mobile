@@ -5,6 +5,12 @@
  */
 
 (function($){ 
+    
+    // 调用非f7框架的href跳转方法
+    $(".xm-href").on("touchstart",function(){
+        // <a class="xm-hreg" xm-href="{url}">
+        window.location.href= $(this).attr("xm-href"); 
+    })
 
     // 首页顶部条样式随滚动条高度变化
     $.fn.indexTopNav = function(option){
