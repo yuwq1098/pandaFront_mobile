@@ -154,6 +154,20 @@ a {
   text-decoration: none;
 }
 
+/*快捷边框线类*/
+.border-top-solid{
+    border-top: 1px solid #f0f0f0;
+}
+.border-right-solid{
+    border-right: 1px solid #f0f0f0;
+}
+.border-bottom-solid{
+    border-bottom: 1px solid #f0f0f0;
+}
+.border-left-solid{
+    border-left: 1px solid #f0f0f0;
+}
+
 /*
  * 对齐及浮动
  */
@@ -288,10 +302,12 @@ em{ margin: 0 3px; }
     box-sizing: border-box;
 }
 
+
+
 /*支付成功*/
 .prompt-title-box{
     height: 4.2rem;
-    background-color: #59b553;
+    background-color: #349039;
     color: #f5f5f5;
     text-align: center;
 }
@@ -320,12 +336,108 @@ em{ margin: 0 3px; }
     padding: .25rem .35rem;
 }
 .prompt-info-content .info-list{
-
+    margin-bottom: 1rem;
+    margin-top: .25rem;
 }
 .info-list section.info-item{
-    
+    height: .8rem;
+    line-height: .8rem;
+}
+.info-list section.info-item > *{
+    display: inline-block;
+    letter-spacing: 1px;
+    text-indent: 1px;
+}
+.info-list section.info-item span{
+    width: 72px;
+    text-align: right;
+    font-size: 12px;
+    color: #959595;
+}
+.info-list section.info-item p.value{
+    font-size: 14px;
+}
+.info-list em{
+    margin: 0;
+}
+.prompt-info-content .botton-box{
+    padding: 0 .2rem;
+    margin-bottom: .4rem;
+}
+.botton-box a.col-50{
+    width: 50%;
+    width: -webkit-calc((100% - 0.35rem*1)/ 2);
+    width: calc((100% - .35rem*1)/ 2);
+    height: 1.1rem;
+    line-height: 1.1rem;
+    border: 1px solid #e2e2e2;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 4px;
+    text-indent: 4px;
+    -webkit-transition: all .08s;
+    transition: all .08s;
+}
+.botton-box a.btn-01{
+    border: 1px solid rgba(52,144,57,.35);
+    color: #349039;
+}
+.botton-box a.btn-01:active{
+    border: 1px solid #349039;
+    color: #fff;
+    background-color: #349039;
+}
+.botton-box a.btn-02{
+    color: #777;
+}
+.botton-box a.btn-02:active{
+    color: #313536;
 }
 
+/*温馨提示*/
 .warm-tips-box{
-    
+    position: relative;
+    padding-left: .75rem; 
+}
+.warm-tips-box .content-inner{
+    padding-top: .4rem;
+}
+
+.warm-tips-box i.icon{
+    position: absolute;
+    left: .35rem;
+    top: .35rem;
+    font-size: .55rem;
+    color: #349039;
+}
+.warm-tips-box section.info{
+    line-height: .5rem;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #777;
+}
+
+/*系统提示*/
+.sys-prompt-info{
+    line-height: 1rem;
+    height: 1rem;
+    font-size: 12px;
+    color: #777;
+    padding: 0 .25rem;
+    overflow: hidden;
+}
+
+.sys-prompt-info em{
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-indent: 1px;
+    color: #f43;
+    margin: 0 3px;
+}
+
+/*支付信息框*/
+.fold-group-box{
+    background-color: #fff;
 }
