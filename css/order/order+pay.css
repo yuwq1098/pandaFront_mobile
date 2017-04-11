@@ -295,6 +295,10 @@ em{ margin: 0 3px; }
     font-size: .8em;
     color: inherit;
 }
+em.unit-money::before{
+    content: "￥";
+}
+
 
 /*盒子布局，border-box移动端精准布局模式*/
 .box-sizing,
@@ -423,7 +427,7 @@ em{ margin: 0 3px; }
 .sys-prompt-info{
     line-height: 1rem;
     height: 1rem;
-    font-size: 12px;
+    font-size: 11px;
     color: #777;
     padding: 0 .25rem;
     overflow: hidden;
@@ -440,4 +444,171 @@ em{ margin: 0 3px; }
 /*支付信息框*/
 .fold-group-box{
     background-color: #fff;
+}
+.fold-group-box .group-head{
+    height: 1.4rem;
+    line-height: 1.3rem;
+    padding: 0 .45rem;
+    position: relative;
+    overflow: hidden;
+}
+.group-head .info{
+    color: #313536;
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 1.25rem;
+}
+.group-head .info span{
+    display: inline-block;
+    font-size: 21px;
+    margin-left: .2rem;
+    color: #f43;
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+}
+.group-head span.unit-money em::before{
+    font-size: .6em;
+}
+.group-head >i{
+    width: 19px;
+    height: 19px;
+    line-height: 19px;
+    font-size: 20px;
+    right: .4rem;
+    position: absolute;
+    color: #b8b8b8;
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+    -webkit-transition: .15s cubic-bezier(0, 0, 0.09, 0.64);
+    transition: .15s cubic-bezier(0, 0, 0.09, 0.64);
+}
+.fold-group-box.active .group-head >i{
+    -webkit-transform: rotateZ(180deg);
+    transform: rotateZ(180deg);
+}
+
+/*选择支付方式*/
+.checked-list-content{
+    margin-top: 0.25rem;
+    background: #fff;
+}
+.checked-list-content .item-list{
+    padding: .15rem;
+}
+.item-list .info-item{
+    line-height: .95rem;
+    height: .95rem;
+    position: relative;
+    padding-right: .8rem;
+}
+.item-list .info-item:not(:last-child){
+    margin-bottom: .1rem;
+}
+.item-list section.info-title{
+    position: relative;
+    padding-left: .85rem;
+}
+.item-list section.info-title i{
+    position: absolute;
+    left: 0;
+    font-size: 25px;
+}
+.item-list section.info-title span{
+    font-size: 13px;
+    color: #313536;
+    letter-spacing: 1px;
+}
+.item-list .alipay i{
+    color: #01aaef;
+}
+.item-list .wechat i{
+    color: #00cd0c;
+}
+.item-list .balance i{
+    color: #f2bd4c;
+}
+.info-item i.radio{
+    width: 21px;
+    height: 21px;
+    line-height: 21px;
+    font-size: 21px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    color: #b2b2b2;
+}
+.item-list i.radio:before{
+    content: "\e6e4";
+}
+.info-item.active i.radio{
+    color: #349039;
+}
+.info-item.active i.radio:before{
+    content: "\e6e1";
+}
+.checked-list-content .more{
+    text-align: center;
+    line-height: .75rem;
+    height: .75rem;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-indent: 1px;
+}
+.checked-list-content .more i{
+    font-size: 18px;
+    display: inline-block;
+    margin: 0 3px;
+    -webkit-transform: translateY(-1px);
+    transform: translateY(-1px);
+}
+/*熊猫旅行--门票预订*/
+.head-info-content{
+    background: #fff;
+}
+
+/*底部支付信息栏*/
+.page-content.toolbar-fixed{
+    padding-bottom: 46px;
+}
+.foot-box{
+    width: 100%;
+    height: 46px;
+    position: fixed;
+    background: #fff;
+    bottom: 0;
+    padding-right: 3.35rem;
+    z-index: 999;
+}
+.foot-box .box-info{
+    padding-left: .35rem;
+    line-height: 45px;
+    font-size: 14px;
+    position: relative;
+}
+.foot-box .box-info em{
+    margin: 0 4px;
+    font-size: 16px;
+    color: #f43;
+}
+.foot-box .agree-btn{
+    width: 3.2rem;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    background: #349039;
+    color: #fff;
+    letter-spacing: 3px;
+    text-indent: 3px;
+    font-size: 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: -1px;
+    -webkit-transition: all .05s;
+    transition: all .05s; 
+}
+.foot-box .agree-btn:active{
+    background: #48ad4e;
 }
