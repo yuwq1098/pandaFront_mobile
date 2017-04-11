@@ -3,31 +3,31 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-    <!-- ����ƻ��Ĭ����ʽ -->
+    <!-- 禁用苹果默认样式 -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <!-- ������Ϣ -->
+    <!-- 作者信息 -->
     <meta name="author" content="name:Geek.Yu,email:1098654043@qq.com">
-    <!-- ��Ȩ��Ϣ -->
+    <!-- 版权信息 -->
     <meta name="copyright" content="Copyright (c) 2006-2017 Mafengwo.">
-    <!-- ��ֹios�Զ�ʶ���ֻ��ź����� -->
+    <!-- 禁止ios自动识别手机号和邮箱 -->
     <meta name="format-detection" content="telephone=no,address=no">
-    <!-- ��è������վ�ؼ��� -->
-    <meta name="keywords" content="����һ�廯,���ʱ��,��è����">
-    <!-- ��è������վ���� -->
-    <meta name="description" content="��è������(m.pandaFront.com)���׵����ι���,��ѵ�������,�����η�������,�������ξ���ͼƬ���μǡ���ͨ����ʳ����������ι�����������Ϣ.">
+    <!-- 熊猫旅行网站关键词 -->
+    <meta name="keywords" content="旅游一体化,舒适便捷,熊猫旅行">
+    <!-- 熊猫旅行网站描述 -->
+    <meta name="description" content="熊猫旅行网(m.pandaFront.com)靠谱的旅游攻略,最佳的自由行,自助游分享社区,海量旅游景点图片、游记、交通、美食、购物等旅游攻略自由行信息.">
 
-    <title>��è����--����֧��</title>
+    <title>熊猫旅行--订单支付</title>
 
-    <!-- ���õ��Բ��ֵ�js -->
+    <!-- 调用弹性布局的js -->
     <script src="../../js/flexible.js"></script>
     <!-- Framework7 CSS-->
     <link rel="stylesheet" href="../../css/framework7.ios.min.css">
-    <!-- iconfont���� -->
+    <!-- iconfont引用 -->
     <link rel="stylesheet" href="../../fonts/iconfont.css">
-    <!-- order��ʽ���� -->
+    <!-- order样式引用 -->
     <link rel="stylesheet" href="../../css/order/order+pay.css">
-    <!-- Ӧ�ó������Ӧʽ������ʽ -->
+    <!-- 应用程序的响应式布局样式 -->
     <link rel="stylesheet" href="../../css/app-responsive.css">
 
   </head>
@@ -38,12 +38,12 @@
             <div class="page">
                 <div class="page-content box-sizing toolbar-fixed">
                     <section class="sys-prompt-info">
-                        <p>����<em>29��48��</em>�����֧��������ϵͳ��ȡ�����ζ���</p>
-                    </section><!-- ϵͳ��ʾ -->
+                        <p>请在<em>29分48秒</em>内完成支付，否则系统将取消本次订单</p>
+                    </section><!-- 系统提示 -->
                     <section class="fold-group-box active" id="pay-info">
                         <div class="group-head border-top-solid border-bottom-solid">
                             <section class="info">
-                                ����֧��<span class="unit-money"><em>248</em></span>
+                                在线支付<span class="unit-money"><em>248</em></span>
                             </section>
                             <i class="icon iconfont icon-31xiala vertical-layout"></i>
                         </div>
@@ -51,72 +51,72 @@
                             <div class="content-inner">
                                 <div class="info-list">
                                     <section class="info-item">
-                                        <span>��Ʒ���ƣ�</span>
-                                        <p class="value">�ϲ����������԰����ͨƱ</p>
+                                        <span>产品名称：</span>
+                                        <p class="value">南昌万达主题乐园三日通票</p>
                                     </section>
                                     <section class="info-item">
-                                        <span>�������ڣ�</span>
+                                        <span>出行日期：</span>
                                         <p class="value">2017-04-18</p>
                                     </section>
                                     <section class="info-item">
-                                        <span>������</span>
+                                        <span>订单金额：</span>
                                         <p class="value"><em class="unit-money">2401</em></p>
                                     </section>
                                     <section class="info-item">
-                                        <span>���ս�</span>
+                                        <span>保险金额：</span>
                                         <p class="value"><em class="unit-money">10</em></p>
                                     </section>
-                                </div><!-- ������Ϣ -->
+                                </div><!-- 订单信息 -->
                             </div>
                         </div>
-                    </section><!-- ֧����Ϣ�� -->
+                    </section><!-- 支付信息框 -->
 
                     <div class="checked-list-content" id="payment-checked">
                         <div class="content-inner">
                             <section class="item-list">
                                 <div class="info-item">
                                     <section class="info-title alipay">
-                                        <i class="icon iconfont icon-zhifubao"></i><span>֧����</span>
+                                        <i class="icon iconfont icon-zhifubao"></i><span>支付宝</span>
                                     </section>
                                     <i class="icon iconfont radio"></i>
                                 </div>
                                 <div class="info-item">
                                     <section class="info-title wechat">
-                                        <i class="icon iconfont icon-weixin-copy"></i><span>΢��֧��</span>
+                                        <i class="icon iconfont icon-weixin-copy"></i><span>微信支付</span>
                                     </section>
                                     <i class="icon iconfont radio"></i>
                                 </div>
                                 <div class="info-item">
                                     <section class="info-title balance">
-                                        <i class="icon iconfont icon-yue"></i><span>���֧��</span>
+                                        <i class="icon iconfont icon-yue"></i><span>余额支付</span>
                                     </section>
                                     <i class="icon iconfont radio"></i>
                                 </div>
                                 <div class="more">
-                                    ����֧����ʽ<i class="icon iconfont icon-fanhui8"></i>
+                                    更多支付方式<i class="icon iconfont icon-fanhui8"></i>
                                 </div>
                             </section>
                         </div>
-                    </div><!-- ѡ��֧����ʽ -->
+                    </div><!-- 选择支付方式 -->
                 </div>
                 <div class="foot-box border-top-solid box-sizing">
-                    <section class="box-info">ʵ����<em class="unit-money">248</em></section>
-                    <a href="javascript:;" class="agree-btn">ȷ��֧��</a>
-                </div><!-- �ײ�֧����Ϣ�� -->
+                    <section class="box-info">实付金额：<em class="unit-money">248</em></section>
+                    <a href="javascript:;" class="agree-btn">确认支付</a>
+                </div><!-- 底部支付信息栏 -->
             </div>
         </div>
-    </div><!-- ����֧��ҳ -->
+    </div><!-- 订单支付页 -->
     
-    <!-- ���� Framework7 �ű�-->
+    <!-- 加载 Framework7 脚本-->
     <script type="text/javascript" src="../../js/framework7.min.js"></script>
-    <!-- ���� jq-->
+    <!-- 加载 jq-->
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
-    <!-- ���� �ҵ�Ӧ�ó��� ���ص����в���ű�-->
+    <!-- 加载 我的应用程序 搭载的所有插件脚本-->
     <script type="text/javascript" src="../../js/plugins.js"></script>
 
     <script type="text/javascript">
         $(function(){
-            // ������Ϣ����
+            // 订单信息显隐
             var payInfo = $("#pay-info");
             var groupHead = payInfo.find(".group-head");
             var groupContent = payInfo.find(".group-content");
@@ -130,7 +130,7 @@
                 }
             });
 
-            // ��Ϣ֧��ѡ��
+            // 信息支付选择
             var paymentDOM = $("#payment-checked");
             var linkItem = paymentDOM.find(".info-item");
             linkItem.on("touchstart",function(){

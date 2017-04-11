@@ -567,6 +567,172 @@ em.unit-money::before{
 .head-info-content{
     background: #fff;
 }
+.head-info-content h3.subtitle{
+    margin: .1rem 0 .2rem 0;
+    line-height: .7rem;
+    font-size: 14px;
+    letter-spacing: 1px;
+    max-height: 2.1rem;
+    overflow: hidden;
+}
+.head-info-content p.info{
+    color: #959595;
+    font-size: 12px;
+    letter-spacing: 1px;
+    line-height: 18px;
+    height: 22px;
+}
+.head-info-content span.unit-money{
+    margin-right: .2rem;
+}
+.head-info-content span.unit-money em{
+    font-size: 22px;
+    color: #f43;
+    display: inline-block;
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);
+}
+.head-info-content span.unit-money em::before{
+    font-size: 11px;
+}
+.head-info-content p.info a >i.icon{
+    font-size: 15px;
+}
+.form-group.mb-10{
+    margin-bottom: .25rem;
+}
+
+/*列表信息*/
+.form-group{
+    background: #fff;
+}
+.form-group .content-inner{
+    padding: .1rem .35rem;
+}
+.form-group .group-item{
+    height: 1.3rem;
+    line-height: 1.3rem;
+    width: 100%;
+    position: relative;
+}
+.form-group .group-item span.subtitle{
+    left: .1rem;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+.form-group .group-item section{
+    right: .1rem;
+}
+.form-group em{ margin: 0; }
+.form-group section.time-selection-box{
+    height: 1rem;
+}
+/* 时间选择容器 */
+section.time-selection-box div.time-block{
+    display: block;
+    width: 1.5rem;
+    position: relative;
+    text-align: center;
+    -webkit-border-radius: .1rem;
+    border-radius: .1rem;
+    color: #959595;
+}
+section.time-selection-box div.time-block.active{
+    color: #f43;
+    border: 1px solid rgba(255,68,51,.35);
+}
+section.time-selection-box div.time-block:not(.more){
+    margin-right: .15rem;      
+}
+section.time-selection-box div.time-block:not(.more) > *{
+    display: block;
+    font-size: 12px;
+    line-height: 14px;
+    height: 14px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+section.time-selection-box div.time-block:not(.more) > span{
+    top: 50%;
+    margin-top: -12px;
+}
+section.time-selection-box div.time-block:not(.more) > em{
+    bottom: 50%;
+    margin-bottom: -15px;
+}
+section.time-selection-box div.more{
+    position: relative;
+}
+section.time-selection-box div.more > *{
+    top: 2px;
+}
+section.time-selection-box div.more span{
+    width: 28px;
+    height: 28px;
+    letter-spacing: 2px;
+    line-height: 14px;
+    font-size: 12px;
+    right: 50%;
+    margin-right: -0.25rem;
+}
+section.time-selection-box div.more i{
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    position: absolute;
+    display: block;
+    left: 50%;
+    margin-left: .15rem;
+    font-size: 17px;
+}
+/* 时间选择容器 */
+section.adder-subtractor{
+    width: 2.2rem;
+    height: .7rem;
+    line-height: .7rem;
+    padding: 0 .7rem;
+}
+section.adder-subtractor em.number{
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-indent: 2px;
+}
+section.adder-subtractor span{
+    width: .7rem;
+    height: .7rem;
+    line-height: .7rem;
+    text-align: center;
+    border-radius: 50%;
+}
+section.adder-subtractor span >i.icon{
+    height: .45rem;
+    line-height: .45rem;
+    width: .45rem;
+    font-size: .45rem;
+    color: inherit;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+section.adder-subtractor span.subtract{
+    left: 0;
+    border: 1px solid #b2b2b2;
+    color: #959595;
+}
+section.adder-subtractor span.add{
+    right: 0;
+    background: #349039;
+    color: #fff;
+}
 
 /*底部支付信息栏*/
 .page-content.toolbar-fixed{
