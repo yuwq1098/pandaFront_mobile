@@ -1,10 +1,10 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1491819865920'); /* IE9*/
-  src: url('iconfont.eot?t=1491819865920#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1491819865920') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1491819865920') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1491819865920#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1491898867250'); /* IE9*/
+  src: url('iconfont.eot?t=1491898867250#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1491898867250') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1491898867250') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1491898867250#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -392,6 +392,8 @@
 .icon-b_qianzheng:before { content: "\e6be"; }
 
 .icon-yue:before { content: "\e6a1"; }
+
+.icon-lianxiren:before { content: "\e614"; }
 
 .icon-yonghuzhinan:before { content: "\e690"; }
 

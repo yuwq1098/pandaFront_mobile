@@ -614,6 +614,7 @@ em.unit-money::before{
     line-height: 1.3rem;
     width: 100%;
     position: relative;
+    padding-left: 1.9rem;
 }
 .form-group .group-item span.subtitle{
     left: .1rem;
@@ -732,6 +733,36 @@ section.adder-subtractor span.add{
     right: 0;
     background: #349039;
     color: #fff;
+}
+
+.form-group .group-item section.item-info{
+    width: 100%;
+    right: auto;
+    position: relative;
+    padding-right: .6rem;
+}
+.form-group input::webkit-input-placeholder{
+    color: #b2b2b2;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+.form-group .group-item section.item-info input{
+    height: 1.29rem;
+    line-height: 1.29rem;
+    width: 100%;
+    border: none;
+    color: #313536;
+    font-size: 13px;
+    letter-spacing: 1px;
+    -webkit-transform: translateY(-0.01rem);
+    transform: translateY(-0.01rem);
+}
+.form-group .group-item section.item-info i.extra{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 20px;
+    color: #959595;
 }
 
 /*底部支付信息栏*/
