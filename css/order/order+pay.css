@@ -306,7 +306,10 @@ em.unit-money::before{
     box-sizing: border-box;
 }
 
-
+/*正常的页面*/
+.natural-page{
+    background: #fff;
+}
 
 /*支付成功*/
 .prompt-title-box{

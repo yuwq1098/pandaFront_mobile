@@ -212,5 +212,43 @@
         }
 
     }
+
+    // 加减（数量）选择器
+    $.fn.choicesNUM = function(option){
+        var $el,                      // 所指定的$DOM
+            $addDom,                  // 加号DOM
+            $subtractDom,             // 减号DOM
+            $numDom,                  // number值区
+            _number,                  // 当前的数值  
+            defaults,                 // 默认配置
+            setting;                  // 实际的配置
+
+        $el = $(this);
+        $addDom = $el.find("span.add");
+        $subtractDom = $el.find("span.subtract");
+        $numDom = $el.find(".number");
+        _number = $numDom.text();
+        
+        // 触发加数量方法
+        $addDom.on("touchstart",function(){
+            add();
+        });
+        // 触发减数量方法
+        $subtractDom.on("touchstart",function(){
+            sbu();
+        });
+        
+        // 数值自增1
+        function add(){
+            _number++;
+            $numDom.text(_number);
+        }
+        // 数值自减1
+        function sbu(){
+            _number>0?_number--:0;
+            $numDom.text(_number);
+        }
+
+    }
   
 })(jQuery);  

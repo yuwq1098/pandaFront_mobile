@@ -6,10 +6,6 @@ var myApp = new Framework7({
 // 出口选择器引擎定义
 var $$ = Dom7;
 
-$(".xm-href").on("touchstart",function(){
-    window.location.href= $(this).attr("xm-href"); 
-})
-
 // 同步五个底部导航的高亮
 $("[data-id='index-toolbar']").indexToolbar();
 
@@ -173,4 +169,4 @@ myApp.onPageInit('userinfo', function (page) {
 });
 
 //初始化app
-myApp.init({});
+myApp.init();
