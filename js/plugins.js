@@ -227,28 +227,190 @@
         $addDom = $el.find("span.add");
         $subtractDom = $el.find("span.subtract");
         $numDom = $el.find(".number");
-        _number = $numDom.text();
+        _number = parseInt($numDom.text())||0;
+          
+        defaults = {
+            isLongPress : true,                // 是否开启长按
+            longPressTime : 400,               // 长按的默认时间
+            maximum : 999,                     // 数值选择器的最大数值
+            maxPrompt: "已达上限哟~~",         // 选择器达上限的提示语
+            minPrompt: "数量不能低于0呦~~",    // 选择器达下限的提示语
+        };
+        // 参数继承
+        setting = $.extend(defaults,option);
         
         // 触发加数量方法
         $addDom.on("touchstart",function(){
+            var longPress,
+                timer;
             add();
+
+            if(_number>=setting.maximum){
+                // 调用提示方法
+                $.XMreminder({
+                    promptText : setting.maxPrompt,       // 提示语
+                });
+            }
+            // 是否启用长按
+            if(!setting.isLongPress||_number>=setting.maximum){
+                return false;
+            }else{
+                longPress();
+            }
+            /*长按的方法*/
+            function longPress(){
+                longPress = setTimeout(function(){
+                    timer = setInterval(function(){
+                        if(_number >= setting.maximum){
+                            // 调用提示方法
+                            $.XMreminder({
+                                promptText : setting.maxPrompt,       // 提示语
+                            });
+                            clearTimeout(longPress);
+                            clearInterval(timer);
+                            return false;
+                        }
+                        add();
+                    },100);
+                },setting.longPressTime);
+                $(this).on("touchend",function(){
+                    clearTimeout(longPress);
+                    clearInterval(timer);
+                });
+            }
+            
         });
         // 触发减数量方法
         $subtractDom.on("touchstart",function(){
+            var longPress,
+                timer;
             sbu();
+            
+            if(_number<=0){
+                // 调用提示方法
+                $.XMreminder({
+                    promptText : setting.minPrompt,       // 提示语
+                });
+            }
+            if(!setting.isLongPress||_number<=0){
+                return false;
+            }else{
+                longPress();
+            }
+            /*长按的方法*/
+            function longPress(){
+                longPress = setTimeout(function(){
+                    timer = setInterval(function(){
+                        if(_number<=0){
+                            // 调用提示方法
+                            $.XMreminder({
+                                promptText : setting.minPrompt,       // 提示语
+                            });
+                            clearTimeout(longPress);
+                            clearInterval(timer);
+                            return false;
+                        }
+                        sbu();
+                    },100);
+                },setting.longPressTime);
+                $(this).on("touchend",function(){
+                    clearTimeout(longPress);
+                    clearInterval(timer);
+                });
+            }
         });
         
         // 数值自增1
         function add(){
-            _number++;
+            _number < setting.maximum ? _number++ : setting.maximum;
             $numDom.text(_number);
         }
         // 数值自减1
         function sbu(){
-            _number>0?_number--:0;
+            _number > 0 ? _number-- : 0;
             $numDom.text(_number);
         }
+    }
 
+    // 熊猫的提示
+    $.XMreminder = function(option){
+        var $promptDom,               // 指向新增提示框的Dom
+            cid,                      // 唯一标识
+            defaults,                 // 默认配置
+            setting;                  // 实际的配置
+        
+        defaults = {
+            className : "reminderBox",           // 生成提示的类名 
+            animationTime : 300,                 // 动画时间
+            boxBg : "rgba(49,53,54,.88)",        // 背景色
+            promptText : "我是默认提示语",       // 默认提示语
+        };
+        // 参数继承
+        setting = $.extend(defaults,option);
+        
+        /*创建一个reminderDom*/
+        createPrompt();
+
+        // 生成 Prompt
+        function createPrompt(){
+            // 唯一标识
+            cid = $.GenerateGuid({
+                digit : 4,         // 随机数位数 
+            });
+            $("body").append('<div class="'+setting.className+'" data-id="'+cid+'">'+setting.promptText+'</div>');
+            var $promptDom = $("[data-id="+cid+"]");
+            $promptDom.css({
+                backgroundColor: setting.boxBg,
+                width: "72vw",
+                height: ".9rem",
+                lineHeight: ".9rem",
+                color: "#f5f5f5",
+                position: "fixed",
+                left: "0",
+                right: "0",
+                bottom: "2.6rem",
+                fontSize: "12px",
+                letterSpacing: '.05rem',
+                textIndent: '.05rem',
+                margin: "auto",
+                zIndex: "9999",
+                textAlign: "center",
+                borderRadius: ".45rem",
+            });
+
+            // 定义显示提示框的方法
+            var openPrompt = [
+                { e: $promptDom, p: { scale: .5, opacity:0, }, o: { display: "none", delay: 0, duration:0 } },
+                { e: $promptDom, p: { scale: [1,.5] }, o: { display: "block", delay: 0, duration:150, easing: [ 0, 0, 0.2, 1 ], sequenceQueue: false} },
+                { e: $promptDom, p: { opacity: [1,.2], translateY: [0,"1rem"]  }, o: {  delay: 0, duration:250, easing: [ 0, 0, 0.2, 1 ], sequenceQueue: false} },
+                { e: $promptDom, p: { opacity: [0,1] }, o: {display: "none", delay: 500, duration:150 } },
+            ];
+            setTimeout(function(){
+                $promptDom.remove();
+            },1050);
+            $.Velocity.RunSequence(openPrompt);
+        }
+    }
+
+    // 生成唯一标识
+    $.GenerateGuid = function(option){
+        var GUID = "",                     // 存储唯一标识值
+            defaults,                      // 默认配置
+            setting;                       // 实际的配置
+
+        defaults = {
+            digit : 8,                     // 随机数位数 
+        };
+        // 参数继承
+        setting = $.extend(defaults,option);
+        // 一个随机数
+        function Guid(){
+            return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+        }
+        for(var i = 0; i<setting.digit; i++){
+            GUID = GUID + Guid();
+        }
+        return GUID;
     }
   
 })(jQuery);  

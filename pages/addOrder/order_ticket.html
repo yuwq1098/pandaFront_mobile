@@ -148,6 +148,9 @@
     <script type="text/javascript" src="../../js/framework7.min.js"></script>
     <!-- 加载 jq-->
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <!-- 加载 velocity 动画序列库-->
+    <script type="text/javascript" src="../../js/vendor/velocity.min.js"></script>
+    <script type="text/javascript" src="../../js/vendor/velocity.ui.min.js"></script>
     <!-- 加载 我的应用程序 搭载的所有插件脚本-->
     <script type="text/javascript" src="../../js/plugins.js"></script>
 
@@ -172,7 +175,12 @@
             $$addSubDom = $$el.find("#adder-subtractor");
             
             // 调用加减计算方法
-            $("#adder-subtractor").choicesNUM();
+            $("#adder-subtractor").choicesNUM({
+                longPressTime : 250,         // 触发长按的时间
+                maximum : 25,                // 数值选择器的最大数值
+                maxPrompt: "已达上限哟~~",         // 选择器达上限的提示语
+                minPrompt: "数量不能低于0呦~~",    // 选择器达下限的提示语
+            });
 
         });
 
