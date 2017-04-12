@@ -375,6 +375,7 @@
                 margin: "auto",
                 zIndex: "9999",
                 textAlign: "center",
+                webkitBorderRadius: ".45rem",
                 borderRadius: ".45rem",
             });
 
