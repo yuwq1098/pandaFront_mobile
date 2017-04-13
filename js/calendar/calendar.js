@@ -22,12 +22,13 @@
 
 ( function( root, factory ) {
     if ( typeof define === 'function' ) {
-        define( 'calendar', [ 'jqmobi' ], function( $ ) {
+        define( 'calendar', [ 'jQuery' ], function( $ ) {
             return factory( root, $ );
         } );
     } else {
         root.calendar = factory( root, root.$ );
     }
+    
 } )( window, function( root, $ ) {
 
     var util = {
@@ -149,6 +150,10 @@
             date: [ util.formatDate( new Date( +new Date() + 86400000 ) ) ]
         },
         {
+            name: '平安夜',
+            date: [ '2017-12-24', '2018-12-24', '2019-12-24', '2020-12-24', '2021-12-24', '2022-12-24' ]
+        },
+        {
             name: '圣诞节',
             date: [ '2017-12-25', '2018-12-25', '2019-12-25', '2020-12-25', '2021-12-25', '2022-12-25' ]
         },
@@ -173,24 +178,84 @@
             date: [ '2018-03-02', '2019-02-19', '2020-02-18', '2021-02-26', '2022-02-15', '2023-02-05' ]
         },
         {
+            name: '妇女节',
+            date: [ '2017-03-08', '2018-03-08', '2019-03-08', '2020-03-08', '2021-03-08', '2022-03-08' ]
+        },
+        {
+            name: '植树节',
+            date: [ '2017-03-12', '2018-03-12', '2019-03-12', '2020-03-12', '2021-03-12', '2022-03-12' ]
+        },
+        {
+            name: '愚人节',
+            date: [ '2017-04-01', '2018-04-01', '2019-04-01', '2020-04-01', '2021-04-01', '2022-04-01' ]
+        },
+        {
             name: '清明节',
             date: [ '2017-04-04', '2018-04-05', '2019-04-05', '2020-04-04', '2021-04-04', '2022-04-05' ]
         },
         {
-            name: '五一',
+            name: '地球日',
+            date: [ '2017-04-22', '2018-04-22', '2019-04-22', '2020-04-22', '2021-04-22', '2022-04-22' ]
+        },
+        {
+            name: '劳动节',
             date: [ '2017-05-01', '2018-05-01', '2019-05-01', '2020-05-01', '2021-05-01', '2022-05-01' ]
+        },
+        {
+            name: '青年节',
+            date: [ '2017-05-04', '2018-05-04', '2019-05-04', '2020-05-04', '2021-05-04', '2022-05-04' ]
+        },
+        {
+            name: '儿童节',
+            date: [ '2017-06-01', '2018-06-01', '2019-06-01', '2020-06-01', '2021-06-01', '2022-06-01' ]
         },
         {
             name: '端午节',
             date: [ '2017-05-30', '2018-06-18', '2019-06-07', '2020-06-25', '2021-06-14', '2022-06-03' ]
         },
         {
+            name: '建党节',
+            date: [ '2017-07-01', '2018-07-01', '2019-07-01', '2020-07-01', '2021-07-01', '2022-07-01' ]
+        },
+        {
+            name: '七夕节',
+            date: [ '2017-08-28', '2018-08-17', '2019-08-07', '2020-08-25', '2021-08-14', '2022-08-04' ]
+        },
+        {
+            name: '建军节',
+            date: [ '2017-08-01', '2018-08-01', '2019-08-01', '2020-08-01', '2021-08-01', '2022-08-01' ]
+        },
+        {
+            name: '教师节',
+            date: [ '2017-09-10', '2018-09-10', '2019-09-10', '2020-09-10', '2021-09-10', '2022-09-10' ]
+        },
+        {
             name: '中秋节',
             date: [ '2017-10-04', '2018-09-24', '2019-09-13', '2020-10-01', '2021-09-21', '2022-09-10'  ]
         },
         {
+            name: '粮食日',
+            date: [ '2017-10-16', '2018-10-16', '2019-10-16', '2020-10-16', '2021-10-16', '2022-10-16' ]
+        },
+        {
+            name: '万圣节',
+            date: [ '2017-10-31', '2018-10-31', '2019-10-31', '2020-10-31', '2021-10-31', '2022-10-31' ]
+        },
+        {
+            name: '重阳节',
+            date: [ '2017-10-28', '2018-10-17', '2019-10-07', '2020-10-25', '2021-10-14', '2022-10-04'  ]
+        },
+        {
             name: '国庆节',
             date: [ '2017-10-01', '2018-10-01', '2019-10-01', '2020-10-01', '2021-10-01', '2022-10-01' ]
+        },
+        {
+            name: '光棍节',
+            date: [ '2017-11-11', '2018-11-11', '2019-11-11', '2020-11-11', '2021-11-11', '2022-11-11' ]
+        },
+        {
+            name: '感恩节',
+            date: [ '2017-11-30', '2018-11-29', '2019-11-28', '2020-11-26', '2021-11-25', '2022-11-24' ]
         }
     ];
 
@@ -321,6 +386,7 @@
                 config = this.config;
 
             this.el.delegate( 'ul.day li', 'click', function( event ) {
+
                 var curItem = $( this ),
                     date = curItem.data( 'date' ),
                     dateName = $( curItem.find( 'i' )[ 1 ] ).text();
@@ -329,7 +395,9 @@
                 me.selectDate = date;
 
                 if ( !curItem.hasClass( 'iv' ) ) {
-                    $.trigger( me, 'afterSelectDate', [ {
+                    me.afterSelectDate(me.selectDate);
+                    var calendarDom = $((me.el.selector).toString());
+                    calendarDom.trigger('afterSelectDate', [ {
                         date: date,
                         dateName: dateName,
                         curItem: curItem
@@ -473,6 +541,26 @@
             }
         },
 
+        /**
+         * 选择日期的后置函数
+         * @para {date object|date string} YYYY-MM-DD
+         */
+        afterSelectDate: function( date ) {
+            var me = this,
+                config = this.config,
+                date = ( typeof date == 'string' ) ? date : util.formatDate( date ),
+                curSltItem = $( this.el[ 0 ].querySelector( 'li[data-date="' + date + '"]' ) );
+            if(curSltItem.hasClass("cur")){
+                return false;
+            }
+            //添加当前选中日期高亮
+            if ( curSltItem.length ) {
+                var curDateNameEl = $( curSltItem.find( 'i' )[ 1 ] );
+                $( this.el[ 0 ].querySelector( '.cur' )).removeClass('cur');
+                curSltItem.addClass( 'cur' );
+            }
+        },
+
         nextMonth: function() {
             var step = this.step;
             this.render( new Date( this.year, this.month + step - 1, 1 ) );
@@ -487,12 +575,10 @@
 
         show: function() {
             this.el.show();
-            $.trigger( this, 'show' );
         },
 
         hide: function() {
             this.el.hide();
-            $.trigger( this, 'hide' );
         }
     } );
 

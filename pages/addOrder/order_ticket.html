@@ -143,14 +143,16 @@
     </div><!-- 订单支付页 -->
 
     <script type="text/template7" id="calendarDom">
-        <div class="calendar-modal">
-            <div class="calendar-innner">
+
+        <section class="calendar-modal">
+            <div class="calendar-mask complete-center"></div><!-- 遮罩层 -->
+            <div class="calendar-content complete-center">
                 <section class="box-header-navbar border-bottom-solid">
-                    <div class="left icon">
+                    <div class="left icon" data-func="back">
                         <i class="icon iconfont icon-iosarrowleft"></i>
                     </div>
                     <h3 class="center">选择日期</h3>
-                    <div class="right">
+                    <div class="right"  data-func="complete">
                         <span class="link-title">完成</span>
                     </div>
                 </section>
@@ -167,7 +169,8 @@
                 </section>
                 <div id="calendar" class="calendar-box"></div>
             </div>
-        </div>
+        </section>
+        
     </script>  
 
     
@@ -198,7 +201,16 @@
 
         myApp.onPageInit('index', function (page) {
             var $$el,
-                $$addSubDom;             // 加减区的Dom
+                $$addSubDom,             // 加减区的Dom
+                calendarTemp,            // 日历的template
+                $c_modalDom,             // 日历的模态层Dom
+                $c_maskDom,              // 日历的遮罩层Dom
+                $c_contentDom,           // 日历的内容层Dom
+                $c_backLink,             // 日历头部的返回链接
+                $c_completeLink,         // 日历头部的完成链接
+                oSelectDate,             // 选择的时间值
+                calendarIns,             // 日历对象
+                calendarDom;             // 日历列表的容器Dom
 
             $$el = $$(page.container);
             $$addSubDom = $$el.find("#adder-subtractor");
@@ -217,10 +229,17 @@
             });
             
             // 初始化给页面增加日历的DOM
-            var calendarDom = $('script#calendarDom').html();
-            $("body").append(calendarDom);
+            calendarTemp = $('script#calendarDom').html();
+            $("body").append(calendarTemp);
+
+            $c_modalDom = $('.calendar-modal');
+            $c_maskDom = $c_modalDom.find('.calendar-mask');
+            $c_contentDom = $c_modalDom.find('.calendar-content');
+            $c_backLink = $c_modalDom.find('[data-func=back]');
+            $c_completeLink = $c_modalDom.find('[data-func=complete]');
             
-            var calendarIns = new calendar.calendar( {
+            calendarIns = new calendar.calendar( {
+                el: '#calendar',
                 count: 4,
                 selectDate: new Date(),
                 selectDateName: '入住',
@@ -228,29 +247,76 @@
                 maxDate: new Date( +new Date() + 100 * 86400000 ),
                 isShowHoliday: true,
                 isShowWeek: false
-            } );
-
-            $.bind( calendarIns, 'afterSelectDate', function( event ) {
-                console.log( 'after select date' );
-                var curItem = event.curItem,
-                    date = event.date,
-                    dateName = event.dateName;
-
-                calendarIns.setSelectDate( date );
-            } );
-
-            // 更多日期
-            $(".time-block.more").on("touchstart",function(){
-                
             });
+
+            // 定义打开日历的序列函数方法
+            var calendarOpen = [
+                { e: $c_modalDom, p: { opacity: 1 }, o: {  delay: 0, duration: 0, display: "block" } },
+                { e: $c_maskDom, p: { opacity: 1 }, o: {  delay: 0, duration: 400, easing: [ .2,1.14,.65,1.5 ], display: "block", sequenceQueue: false } },
+                { e: $c_contentDom, p: { translateX: "100%" }, o: { delay: 0, duration: 0, display: "block", sequenceQueue: false } },
+                { e: $c_contentDom, p: { translateX: 0 }, o: { delay: 0, duration: 400, easing: [ 0, 0, 0.2, 1 ], sequenceQueue: false } },
+            ];
+
+            // 定义关闭日历的序列函数方法
+            var calendarClose = [
+                { e: $c_contentDom, p: "reverse", o: { delay: 0, duration: 300, easing: [ .2,1.14,.65,1.5 ], display: "none", sequenceQueue: false } },
+                { e: $c_maskDom, p: "reverse", o: {  delay: 0, duration: 300, easing: [ .2,1.14,.65,1.5 ], display: "none", sequenceQueue: false } },
+                { e: $c_modalDom, p: "reverse", o: {  delay: 0, duration: 300, easing: [ .2,1.14,.65,1.5 ], display: "none" } },
+            ];
+
+            // 更多日期 || 打开日历
+            $(".time-block.more").on("touchstart",function(){
+                openCalendar();
+            });
+            
+            // 日历页的返回按钮
+            $c_backLink.on("touchstart",function(){
+                closeCalendar();
+            });
+
+            $c_completeLink.on("touchstart",function(){
+                var _dateVal = oSelectDate.replace(/^\d{4}-{1}/,'');
+                // 是否已经存在创建的DOM
+                var isExist = $("section.time-selection-box >div").hasClass("creat-block");
+                if(!isExist){
+                    var _tplDom = '<div class="time-block creat-block">'+
+                                 '<span>已选</span>'+
+                                  '<em>'+_dateVal+'</em>'+
+                            '</div>'
+                    $(".time-block.more").before(_tplDom);
+                }else{
+                    $("section.time-selection-box div.creat-block").html('<span>已选</span><em>'+_dateVal+'</em>')
+                }
+                // 今日明日选中高亮切换
+                $(".time-block:not(.more)").on("touchstart",function(){
+                    $(this).addClass("active").siblings(".time-block:not(.more)").removeClass("active");
+                });
+                // 给选择的日期高亮
+                $("section.time-selection-box div.creat-block").addClass("active").siblings(".time-block:not(.more)").removeClass("active");
+                // 关闭日历
+                closeCalendar();
+            });
+            
+            calendarDom = $((calendarIns.el.selector).toString());
+            calendarDom.bind('afterSelectDate', function( e, val ) {
+                var curItem = val.curItem,
+                    date = val.date,
+                    dateName = val.dateName;
+
+                oSelectDate = date;
+            });
+            
+            // 将$ .Velocity.mock设置为任意乘数，以加快或减慢页面上的所有动画
+            $.Velocity.mock = 1;
+
             // 启用日期
             function openCalendar(){
-                
+                $.Velocity.RunSequence(calendarOpen);
             }
 
             // 关闭日历
-            function openCalendar(){
-            
+            function closeCalendar(){
+                $.Velocity.RunSequence(calendarClose);
             }
 
         });
