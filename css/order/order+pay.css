@@ -916,7 +916,7 @@ section.adder-subtractor span.add{
     background-color: #FFFFFF;
     position: relative;
     top: 0;
-    color: #666;
+    color: #777;
 }
 .cal-wrap:last-child{
     margin-bottom: .25rem;
@@ -992,6 +992,22 @@ section.adder-subtractor span.add{
 .cal-wrap ul.day li i.w_title{
     font-size: 12px;
 }
+.cal-wrap ul.day li em.w_price{
+    color: #777;
+    display: block;
+    width: 100%;
+    height: 16px;
+    line-height: 16px;
+    font-size: 12px;
+    text-align: center;
+    position: absolute;
+    bottom: 4px;
+    margin: auto;
+}
+.cal-wrap ul.day li:not(.iv) em span.no-ticket{
+    color: #f59193;
+    font-size: 11px;
+}
 
 /* 多行 */
 .cal-wrap ul.day li.dl {
@@ -1009,23 +1025,22 @@ section.adder-subtractor span.add{
 
 /* 节日 */
 .cal-wrap ul.day li.jr {
-    color: #47c54e;
+    color: #f99a55;
 }
 
 /* 双休 */
 .cal-wrap ul.day li.wk {
-    color: #f9b655;
+    color: #f99a55;
 }
 
 /* 不可点状态 */
-.cal-wrap ul.day li.iv {
+.cal-wrap ul.day li.iv,
+.cal-wrap ul.day li.iv em.w_price{
     color: #b8b8b8!important;
 }
 
 /* 当前选中态 */
 .cal-wrap ul.day li.cur {
-    /* background-color: #5ae24f;
-    color: #FFFFFF; */
 }
 
 .cal-wrap ul.day li.cur i.w_day{

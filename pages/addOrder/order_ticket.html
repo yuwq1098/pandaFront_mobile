@@ -54,13 +54,13 @@
                                 <div class="group-item border-bottom-solid">
                                     <span class="subtitle vertical-layout">游玩日期</span>
                                     <section class="time-selection-box vertical-layout clearfix">
-                                        <div class="time-block active">
+                                        <div class="time-block active" date-time="2017-04-13">
                                             <span>今天</span>
-                                            <em>04-11</em>
+                                            <em>04-13</em>
                                         </div>
-                                        <div class="time-block">
+                                        <div class="time-block"  date-time="2017-04-14">
                                             <span>明天</span>
-                                            <em>04-12</em>
+                                            <em>04-14</em>
                                         </div>
                                         <div class="time-block more">
                                             <span class="complete-center">更多<br/>日期</span>
@@ -182,7 +182,7 @@
     <script type="text/javascript" src="../../js/vendor/velocity.min.js"></script>
     <script type="text/javascript" src="../../js/vendor/velocity.ui.min.js"></script>
     <!-- 加载 移动端日历插件-->
-    <script type="text/javascript" src="../../js/calendar/calendar.js"></script>
+    <script type="text/javascript" src="../../js/calendar/calendar-ticket.js"></script>
     <!-- 加载 我的应用程序 搭载的所有插件脚本-->
     <script type="text/javascript" src="../../js/plugins.js"></script>
     
@@ -246,7 +246,8 @@
                 minDate: new Date(),
                 maxDate: new Date( +new Date() + 100 * 86400000 ),
                 isShowHoliday: true,
-                isShowWeek: false
+                isShowWeek: false,
+                noTicketText: '<span class="no-ticket">无票</span>',
             });
 
             // 定义打开日历的序列函数方法
@@ -279,13 +280,13 @@
                 // 是否已经存在创建的DOM
                 var isExist = $("section.time-selection-box >div").hasClass("creat-block");
                 if(!isExist){
-                    var _tplDom = '<div class="time-block creat-block">'+
+                    var _tplDom = '<div class="time-block creat-block" date-time="'+oSelectDate+'">'+
                                  '<span>已选</span>'+
                                   '<em>'+_dateVal+'</em>'+
                             '</div>'
                     $(".time-block.more").before(_tplDom);
                 }else{
-                    $("section.time-selection-box div.creat-block").html('<span>已选</span><em>'+_dateVal+'</em>')
+                    $("section.time-selection-box div.creat-block").attr("date-time",oSelectDate).html('<span>已选</span><em>'+_dateVal+'</em>')
                 }
                 // 今日明日选中高亮切换
                 $(".time-block:not(.more)").on("touchstart",function(){

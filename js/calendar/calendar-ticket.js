@@ -9,8 +9,6 @@
  * ----------------------------------------------
  * 对外调用接口及自定义事件
  * @method render 渲染日历
- * @method nextMonth 上一月
- * @method prevMonth 下一月
  * @method show 显示日历
  * @method hide 隐藏日历
  * @method setSelectDate 设置当前选中日期
@@ -259,6 +257,39 @@
         }
     ];
 
+    var dayPricemMap = [
+        {
+            '2017-04-13':'287',
+            '2017-04-14':'287',
+            '2017-04-15':'287',
+            '2017-04-16':'287',
+            '2017-04-17':'287',
+            '2017-04-18':'287',
+            '2017-04-19':'287',
+            '2017-04-20':'287',
+            '2017-04-21':'287',
+            '2017-04-22':'287',
+            '2017-04-23':'287',
+            '2017-04-24':'287',
+            '2017-04-25':'287',
+            '2017-04-26':'287',
+            '2017-04-27':'287',
+            '2017-04-28':'287',
+            '2017-04-29':'287',
+            '2017-04-30':'287',
+            '2017-04-31':'287',
+            '2017-05-01':'287',
+            '2017-05-02':'287',
+            '2017-05-03':'287',
+            '2017-05-04':'287',
+            '2017-05-05':'287',
+            '2017-05-06':'287',
+            '2017-05-07':'287',
+            '2017-05-08':'287',
+            '2017-05-09':'287',
+        }
+    ];
+
     var calendar = function( config ) {
         this.defaultConfig = {
             /**
@@ -307,6 +338,24 @@
              * type {boolean}
              */
             isShowHoliday: true,
+
+            /**
+             * 是否显示票价
+             * type {boolean}
+             */
+            isShowTicketPrice: true,
+
+            /**
+             * 传入票价JSON数据
+             * type {boolean}
+             */
+            dayPriceData: dayPricemMap[0],
+
+            /**
+             * 无票的提示文本
+             * type {boolean}
+             */
+            noTicketText: '',
 
             /**
              * 在日历中是否显示星期
@@ -448,7 +497,8 @@
                     class: '',
                     date: date,
                     day: day,
-                    name: ''
+                    name: '',
+                    price: '',
                 } );
 
                 //双休单独标注出
@@ -465,7 +515,7 @@
                     tmpDayDataArr[ i ][ 'class' ] = 'iv';
                 }
 
-                //节假日处理
+                // 节假日处理
                 if ( config.isShowHoliday ) {
                     for ( var k = 0, hlen = holidaysMap.length; k < hlen; k++ ) {
                         var name = holidaysMap[ k ][ 'name' ],
@@ -483,6 +533,11 @@
                     }
                 }
 
+                // 票价处理
+                if ( config.isShowTicketPrice ) {
+                    tmpDayDataArr[ i ][ 'price' ] = config.dayPriceData[date]?"￥"+config.dayPriceData[date] : config.noTicketText;
+                }
+
                 //初始化当前选中日期状态
                 if ( config.selectDate ) {
                     if ( dateNum == dateToNum( me.selectDate ) ) {
@@ -498,6 +553,7 @@
                 tmpDayTplArr.push(
                     '<li class="' + item.class + '" data-date="' + item.date + '">' +
                         '<i class="w_day">' + item.day + '</i><i class="w_title">' + item.name + '</i>' + 
+                        '<em class="w_price">'+ item.price +'</em>'+
                     '</li>'
                 );
             }
